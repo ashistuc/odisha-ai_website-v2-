@@ -9,7 +9,7 @@ const PartnersScrolling = () => {
       name: 'AHRC, IIT Bhubaneswar',
       role: 'Academic Collaborators',
       description: 'A leading academic hub advancing high-impact AI research and innovation for real-world applications.',
-      logo: '/odisha-ai_website/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
+      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
       url: 'https://www.iitbbs.ac.in/index.php/ahrc/',
       accent: 'blue'
     },
@@ -18,7 +18,7 @@ const PartnersScrolling = () => {
       name: 'Wadhwani Foundation',
       role: 'Training Partner',
       description: 'A global non-profit accelerating large-scale skilling and entrepreneurship for workforce transformation.',
-      logo: '/odisha-ai_website/Our_Partners_in_Innovation/wadhwani-logo.webp',
+      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/wadhwani-logo.webp',
       url: 'https://wadhwanifoundation.org/',
       accent: 'indigo'
     },
@@ -27,7 +27,7 @@ const PartnersScrolling = () => {
       name: 'NASSCOM',
       role: 'Centre of Excellence Partner',
       description: 'India’s apex technology industry body driving AI innovation, startup growth, and enterprise adoption nationwide.',
-      logo: '/odisha-ai_website/Our_Partners_in_Innovation/nasscom-logo.jpg',
+      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/nasscom-logo.jpg',
       url: 'https://nasscom.in/',
       accent: 'orange'
     }

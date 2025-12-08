@@ -40,7 +40,7 @@ const Header = () => {
             >
 
               <img
-                src="/odisha-ai_website/logo/odisha-govt.svg"
+                src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
                 alt="Government of Odisha"
                 className="w-[200px] object-contain"
               />
@@ -59,7 +59,7 @@ const Header = () => {
               {/* Odisha Govt Logo */}
               <div className="flex flex-col items-center space-y-1">
                 <img
-                  src="/odisha-ai_website/images/mission-removebg-preview.png"
+                  src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
                   alt="Odisha AI Mission Logo"
                   className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
@@ -67,7 +67,7 @@ const Header = () => {
               {/* IndiaAI Logo */}
               <div className="flex flex-col items-center space-y-1">
                 <img
-                  src="/odisha-ai_website/logo/India_AI_logo.png"
+                  src="/odisha-ai_website-v2-/logo/India_AI_logo.png"
                   alt="IndiaAI"
                   className="h-10 w-auto object-contain"
                 />
@@ -75,7 +75,7 @@ const Header = () => {
               {/* E&IT Dept / OCAC Logo */}
               <div className="flex flex-col items-center space-y-1">
                 <img
-                  src="/odisha-ai_website/logo/ocac-logo.png"
+                  src="/odisha-ai_website-v2-/logo/ocac-logo.png"
                   alt="E&IT Department, OCAC"
                   className="h-10 w-auto object-contain"
                 />
@@ -90,7 +90,7 @@ const Header = () => {
             {/* CM Photo */}
             <div className="hidden sm:block mr-2">
               <img
-                src="/odisha-ai_website/images/Mohan_Charan_Majhi.jpg"
+                src="/odisha-ai_website-v2-/images/Mohan_Charan_Majhi.jpg"
                 alt="Hon'ble CM"
                 className="w-16 h-16 md:w-20 md:h-20 rounded-lg border-2 border-orange-100 object-cover"
                 title="Hon'ble Chief Minister"
