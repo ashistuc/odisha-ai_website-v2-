@@ -66,7 +66,7 @@ const LoadingScreen = ({ onLoadComplete }) => {
            */}
         </div>
 
-        <img src="odisha-ai_website/images/mission-removebg-preview.png" className="w-96 mx-auto mb-8" alt="" />
+        <img src="/odisha-ai_website-v2-/images/mission-removebg-preview.png" className="w-96 mx-auto mb-8" alt="" />
 
         {/* Loading Text with gradient */}
         <h1 className="text-4xl font-bold bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent mb-2 animate-in fade-in slide-in-from-bottom-4">
