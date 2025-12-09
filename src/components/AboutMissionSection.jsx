@@ -68,116 +68,79 @@ const AboutMissionSection = () => {
           </h2>
         </div>
 
-        {/* VISION Section - New Creative Design */}
+        {/* VISION Section - Modern Redesign */}
         <div className="mb-24">
-          {/* Vision Container with 3D Effect */}
-          <div className="relative">
-            {/* Animated Background Orbs */}
-            <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-br from-orange-400/30 to-amber-400/30 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-br from-orange-500/20 to-orange-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="relative bg-gradient-to-br from-orange-500 to-amber-600 rounded-2xl overflow-hidden shadow-2xl">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute inset-0" style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+              }}></div>
+            </div>
 
-            {/* Main Vision Card */}
-            <div className="relative bg-gradient-to-br from-orange-50 via-white to-amber-50 dark:from-orange-900/20 dark:via-gray-900 dark:to-amber-900/20 rounded-3xl border-2 border-orange-200 dark:border-orange-800 overflow-hidden shadow-2xl">
-              {/* Top Accent Bar */}
-              <div className="h-2 bg-gradient-to-r from-orange-500 via-orange-600 to-amber-500"></div>
-
-              <div className="p-8 md:p-12 lg:p-16">
-                {/* Vision Badge with Icon */}
-                <div className="flex items-center justify-center mb-8">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-amber-600 rounded-full blur-xl opacity-50 animate-pulse"></div>
-                    <div className="relative bg-gradient-to-r from-orange-600 to-amber-600 text-white px-8 py-3 rounded-full font-bold text-lg flex items-center gap-3 shadow-lg">
-                      <Eye className="w-6 h-6" />
-                      <span>OUR VISION</span>
-                      <Sparkles className="w-5 h-5 animate-pulse" />
-                    </div>
-                  </div>
+            <div className="relative grid lg:grid-cols-2 gap-0">
+              {/* Left Side - Vision Badge & Title */}
+              <div className="p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                {/* Vision Badge */}
+                <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white font-semibold mb-6 w-fit">
+                  <Eye className="w-5 h-5" />
+                  <span className="text-sm uppercase tracking-wider">Our Vision</span>
                 </div>
 
-                {/* Vision Statement - Large and Impactful */}
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-6 leading-relaxed">
-                    To make Odisha a{' '}
-                    <span className="relative inline-block">
-                      <span className="relative z-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                        leading state
-                      </span>
-                      <span className="absolute bottom-0 left-0 w-full h-3 bg-orange-200 dark:bg-orange-800/50 -z-0"></span>
-                    </span>
-                    {' '}in the responsible use of Artificial Intelligence for{' '}
-                    <span className="relative inline-block">
-                      <span className="relative z-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                        inclusive growth
-                      </span>
-                      <span className="absolute bottom-0 left-0 w-full h-3 bg-orange-200 dark:bg-orange-800/50 -z-0"></span>
-                    </span>
-                    ,{' '}
-                    <span className="relative inline-block">
-                      <span className="relative z-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                        resilient governance
-                      </span>
-                      <span className="absolute bottom-0 left-0 w-full h-3 bg-orange-200 dark:bg-orange-800/50 -z-0"></span>
-                    </span>
-                    , and{' '}
-                    <span className="relative inline-block">
-                      <span className="relative z-10 bg-gradient-to-r from-orange-600 to-amber-600 bg-clip-text text-transparent">
-                        citizen-centric public services
-                      </span>
-                      <span className="absolute bottom-0 left-0 w-full h-3 bg-orange-200 dark:bg-orange-800/50 -z-0"></span>
-                    </span>
-                    .
-                  </h3>
-                </div>
+                {/* Large Title */}
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+                  Leading the
+                  <br />
+                  <span className="text-white/90">AI Revolution</span>
+                </h2>
 
-                {/* Vision Pillars - 3 Key Highlights */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-orange-100 dark:border-orange-800 hover:border-orange-400 dark:hover:border-orange-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-orange-400 to-amber-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
-                    <div className="relative">
-                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <Target className="w-7 h-7 text-white" />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Inclusive Growth</h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        Empowering all citizens with AI-driven opportunities for economic and social advancement
-                      </p>
-                    </div>
-                  </div>
+                {/* Subtitle */}
+                <p className="text-xl md:text-2xl text-white/90 leading-relaxed font-light">
+                  Transforming Odisha through responsible and inclusive artificial intelligence
+                </p>
 
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-orange-100 dark:border-orange-800 hover:border-orange-400 dark:hover:border-orange-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-orange-400 to-amber-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
-                    <div className="relative">
-                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <Lock className="w-7 h-7 text-white" />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Resilient Governance</h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        Building robust, transparent, and efficient government systems powered by AI
-                      </p>
-                    </div>
-                  </div>
+                {/* Decorative Line */}
+                <div className="mt-8 w-24 h-1 bg-white/40"></div>
+              </div>
 
-                  <div className="group relative bg-white dark:bg-gray-800 rounded-2xl p-6 border-2 border-orange-100 dark:border-orange-800 hover:border-orange-400 dark:hover:border-orange-600 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                    <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-orange-400 to-amber-400 rounded-full opacity-10 group-hover:opacity-20 transition-opacity blur-2xl"></div>
-                    <div className="relative">
-                      <div className="w-14 h-14 bg-gradient-to-br from-orange-500 to-amber-500 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                        <Users className="w-7 h-7 text-white" />
-                      </div>
-                      <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Citizen-Centric Services</h4>
-                      <p className="text-gray-600 dark:text-gray-300 text-sm">
-                        Delivering accessible, efficient, and personalized public services to every citizen
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Vision Description */}
-                <div className="mt-10 text-center">
-                  <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                    This vision encompasses a{' '}
-                    <span className="font-semibold text-orange-600 dark:text-orange-400">transformative journey</span>
-                    {' '}where AI becomes a catalyst for positive change, empowering citizens, strengthening institutions, and creating sustainable economic opportunities across all sections of society.
+              {/* Right Side - Vision Statement */}
+              <div className="bg-white dark:bg-gray-900 p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+                <div className="space-y-6">
+                  {/* Main Vision Statement */}
+                  <p className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white leading-relaxed">
+                    To make Odisha a <span className="text-orange-600 dark:text-orange-400">leading state</span> in the responsible use of Artificial Intelligence
                   </p>
+
+                  {/* Three Key Focus Areas */}
+                  <div className="space-y-4 pt-4">
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-lg text-gray-700 dark:text-gray-300">
+                        <span className="font-semibold text-gray-900 dark:text-white">Inclusive Growth</span> - Empowering all citizens with AI-driven opportunities
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-lg text-gray-700 dark:text-gray-300">
+                        <span className="font-semibold text-gray-900 dark:text-white">Resilient Governance</span> - Building robust and transparent systems
+                      </p>
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-orange-500 rounded-full mt-2 flex-shrink-0"></div>
+                      <p className="text-lg text-gray-700 dark:text-gray-300">
+                        <span className="font-semibold text-gray-900 dark:text-white">Citizen-Centric Services</span> - Delivering accessible public services
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bottom Quote */}
+                  <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-base text-gray-600 dark:text-gray-400 italic">
+                      "A transformative journey where AI becomes a catalyst for positive change, empowering citizens and creating sustainable opportunities."
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
