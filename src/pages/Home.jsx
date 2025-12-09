@@ -3,6 +3,8 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
 import { detailedProjects, partners, innovationCentres, quickLinks, aiNews, aiTools, policyTargets, faqs, aiTrainingPrograms, heroTargets2029, heroTargets2036, actsNotifications, tenders, eventGallery, aiStartups, heroSlides, contactInfo } from '../mock';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from '../translations/translations';
 import InnovationCentres from '../components/InnovationCentres';
 import QuickLinks from '../components/QuickLinks';
 import AINewsInteractive from '../components/AINewsInteractive';
@@ -30,6 +32,8 @@ import AboutMissionSection from '../components/AboutMissionSection';
 import StrategicPillars from '../components/StrategicPillars';
 
 const Home = () => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const [isLoading, setIsLoading] = useState(true);
   const [showIntroQuotes, setShowIntroQuotes] = useState(false);
   const [isPDFReaderOpen, setIsPDFReaderOpen] = useState(false);
@@ -233,18 +237,18 @@ const Home = () => {
         <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-              Ready to Join Odisha's AI Revolution?
+              {t('cta.title')}
             </h2>
             <p className="text-xl text-white mb-8 opacity-90">
-              Be part of the transformation. Collaborate, Innovate, and Lead with AI.
+              {t('cta.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 px-8 shadow-lg">
-                Join the Ecosystem
+                {t('cta.joinButton')}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
               <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8">
-                Contact Us
+                {t('cta.contactButton')}
               </Button>
             </div>
           </div>

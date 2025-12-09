@@ -114,7 +114,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
                 className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={() => document.getElementById('submit-idea-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Explore Now
+                Submit Your AI Proposal
               </Button>
               <Button
                 size="lg"
@@ -146,8 +146,8 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
               key={index}
               onClick={() => goToSlide(index)}
               className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                  ? 'w-12 bg-orange-500'
-                  : 'w-2 bg-white/50 hover:bg-white/70'
+                ? 'w-12 bg-orange-500'
+                : 'w-2 bg-white/50 hover:bg-white/70'
                 }`}
               aria-label={`Go to slide ${index + 1}`}
             />

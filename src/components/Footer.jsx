@@ -2,43 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, Twitter, Linkedin, Youtube } from 'lucide-react';
 import Logo from './Logo';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslation } from '../translations/translations';
 
 const Footer = () => {
+  const { language } = useLanguage();
+  const { t } = useTranslation(language);
   const footerLinks = [
     {
-      title: 'Quick Links',
+      titleKey: 'footer.quickLinks',
       links: [
-        { name: 'About Us', path: '/about' },
-        { name: 'AI Use Cases', path: '/use-cases' },
-        { name: 'Ecosystem', path: '/ecosystem' },
-        { name: 'Opportunities', path: '/opportunities' }
+        { nameKey: 'footer.aboutUs', path: '/about' },
+        { nameKey: 'footer.aiUseCases', path: '/use-cases' },
+        { nameKey: 'footer.ecosystem', path: '/ecosystem' },
+        { nameKey: 'footer.opportunities', path: '/opportunities' }
       ]
     },
     {
-      title: 'Resources',
+      titleKey: 'footer.resources',
       links: [
-        { name: 'AI Policy 2025', path: '/resources/policy' },
-        { name: 'Guidelines', path: '/resources/guidelines' },
-        { name: 'Publications', path: '/resources/publications' },
-        { name: 'FAQ', path: '/resources/faq' }
+        { nameKey: 'footer.aiPolicy', path: '/resources/policy' },
+        { nameKey: 'footer.guidelines', path: '/resources/guidelines' },
+        { nameKey: 'footer.publications', path: '/resources/publications' },
+        { nameKey: 'nav.faq', path: '/resources/faq' }
       ]
     },
     {
-      title: 'Skilling',
+      titleKey: 'footer.skilling',
       links: [
-        { name: 'AI in Schools', path: '/skilling/schools' },
-        { name: 'Higher Education', path: '/skilling/higher-ed' },
-        { name: 'Workforce Development', path: '/skilling/workforce' },
-        { name: 'Odisha for AI', path: '/skilling/odisha-for-ai' }
+        { nameKey: 'footer.aiInSchools', path: '/skilling/schools' },
+        { nameKey: 'footer.higherEducation', path: '/skilling/higher-ed' },
+        { nameKey: 'footer.workforceDevelopment', path: '/skilling/workforce' },
+        { nameKey: 'footer.odishaForAI', path: '/skilling/odisha-for-ai' }
       ]
     },
     {
-      title: 'Legal',
+      titleKey: 'footer.legal',
       links: [
-        { name: 'Privacy Policy', path: '/privacy' },
-        { name: 'Terms of Use', path: '/terms' },
-        { name: 'Accessibility', path: '/accessibility' },
-        { name: 'Sitemap', path: '/sitemap' }
+        { nameKey: 'footer.privacyPolicy', path: '/privacy' },
+        { nameKey: 'footer.termsOfService', path: '/terms' },
+        { nameKey: 'footer.accessibility', path: '/accessibility' },
+        { nameKey: 'footer.sitemap', path: '/sitemap' }
       ]
     }
   ];
@@ -53,12 +57,12 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4">
               <Logo className="w-12 h-12" />
               <div>
-                <h3 className="text-white font-bold text-lg">Odisha AI Mission</h3>
-                <p className="text-xs text-gray-400">Govt. of Odisha</p>
+                <h3 className="text-white font-bold text-lg">{t('footer.brandTitle')}</h3>
+                <p className="text-xs text-gray-400">{t('footer.brandSubtitle')}</p>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-4">
-              Empowering Innovation, Inclusion, and Intelligence through responsible AI adoption.
+              {t('footer.brandDescription')}
             </p>
             <div className="flex space-x-3">
               <a href="#" className="w-9 h-9 bg-gray-800 hover:bg-orange-600 rounded-full flex items-center justify-center transition-colors duration-300">
@@ -76,7 +80,7 @@ const Footer = () => {
           {/* Links Sections */}
           {footerLinks.map((section, index) => (
             <div key={index}>
-              <h4 className="text-white font-semibold mb-4">{section.title}</h4>
+              <h4 className="text-white font-semibold mb-4">{t(section.titleKey)}</h4>
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
@@ -84,7 +88,7 @@ const Footer = () => {
                       to={link.path}
                       className="text-sm text-gray-400 hover:text-orange-500 transition-colors duration-200"
                     >
-                      {link.name}
+                      {t(link.nameKey)}
                     </Link>
                   </li>
                 ))}
@@ -99,21 +103,21 @@ const Footer = () => {
             <div className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
               <div>
-                <h5 className="text-white font-medium mb-1">Address</h5>
+                <h5 className="text-white font-medium mb-1">{t('contact.address')}</h5>
                 <p className="text-sm text-gray-400">OCAC, Electronics Niketan, Bhubaneswar, Odisha - 751012</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <Mail className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
               <div>
-                <h5 className="text-white font-medium mb-1">Email</h5>
+                <h5 className="text-white font-medium mb-1">{t('contact.email')}</h5>
                 <p className="text-sm text-gray-400">ai-mission@odisha.gov.in</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
               <Phone className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
               <div>
-                <h5 className="text-white font-medium mb-1">Phone</h5>
+                <h5 className="text-white font-medium mb-1">{t('contact.phone')}</h5>
                 <p className="text-sm text-gray-400">+91-674-2535201</p>
               </div>
             </div>
@@ -126,13 +130,13 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © 2025 Odisha AI Mission. All rights reserved. Powered by OCAC | Electronics & IT Department, Government of Odisha
+              {t('footer.copyright')}
             </p>
             <div className="flex items-center space-x-6">
               {/* Visitor Counter */}
               <div className="flex items-center space-x-4 px-4 py-2 bg-gray-800 rounded-lg">
                 <div className="text-center">
-                  <div className="text-xs text-gray-400">Total Visitors</div>
+                  <div className="text-xs text-gray-400">{t('footer.totalVisitors')}</div>
                   <div className="text-lg font-bold text-orange-500">
                     {(() => {
                       if (typeof window !== 'undefined') {
@@ -144,7 +148,7 @@ const Footer = () => {
                 </div>
                 <div className="w-px h-8 bg-gray-700"></div>
                 <div className="text-center">
-                  <div className="text-xs text-gray-400">Today</div>
+                  <div className="text-xs text-gray-400">{t('footer.today')}</div>
                   <div className="text-base font-semibold text-green-500">
                     {(() => {
                       if (typeof window !== 'undefined') {
@@ -155,7 +159,7 @@ const Footer = () => {
                   </div>
                 </div>
               </div>
-              <span className="text-sm text-gray-400">Made with ❤️ for Odisha</span>
+              <span className="text-sm text-gray-400">{t('footer.madeWithLove')}</span>
             </div>
           </div>
         </div>

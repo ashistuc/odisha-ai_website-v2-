@@ -64,14 +64,14 @@ const Header = () => {
                   className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
-              {/* IndiaAI Logo */}
+              {/* IndiaAI Logo 
               <div className="flex flex-col items-center space-y-1">
                 <img
                   src="/odisha-ai_website-v2-/logo/India_AI_logo.png"
                   alt="IndiaAI"
                   className="h-10 w-auto object-contain"
                 />
-              </div>
+              </div>*/}
               <div className="flex flex-col items-center space-y-1">
                 <img
                   src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
