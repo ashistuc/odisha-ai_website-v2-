@@ -59,7 +59,7 @@ const Header = () => {
               {/* Odisha Govt Logo */}
               <div className="flex flex-col items-center space-y-1">
                 <img
-                  src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
+                  src="/odisha-ai_website-v2-/images/mission-removebg-preview1.png"
                   alt="Odisha AI Mission Logo"
                   className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                 />
@@ -72,6 +72,14 @@ const Header = () => {
                   className="h-10 w-auto object-contain"
                 />
               </div>
+              <div className="flex flex-col items-center space-y-1">
+                <img
+                  src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
+                  alt="Odisha AI Mission Logo"
+                  className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+
               {/* E&IT Dept / OCAC Logo */}
               <div className="flex flex-col items-center space-y-1">
                 <img

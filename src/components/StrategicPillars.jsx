@@ -192,7 +192,7 @@ const StrategicPillars = () => {
                         <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-2xl border border-gray-100 dark:border-gray-700 min-h-[600px] flex flex-col justify-between relative overflow-hidden animate-in fade-in slide-in-from-right-8 duration-500" key={activeTab}>
 
                             {/* Background Decor in card */}
-                            <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-orange-50 to-transparent dark:from-orange-900/20 rounded-bl-full opacity-50"></div>
+
 
                             <div>
                                 {/* Header */}
