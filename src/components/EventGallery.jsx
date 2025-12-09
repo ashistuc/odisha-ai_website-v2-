@@ -60,7 +60,7 @@ const EventGallery = ({ events }) => {
         {events.map((event) => (
           <Card
             key={event.id}
-            className="group cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-pink-400 dark:hover:border-pink-600 hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800"
+            className="group cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-600 hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800"
             onClick={() => setSelectedEvent(event)}
             role="button"
             tabIndex={0}
@@ -80,7 +80,7 @@ const EventGallery = ({ events }) => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div className="absolute bottom-3 left-3 right-3">
-                <Badge className="bg-pink-600 text-white mb-2">
+                <Badge className="bg-orange-600 text-white mb-2">
                   {event.media.length} {event.media.length === 1 ? 'item' : 'items'}
                 </Badge>
               </div>

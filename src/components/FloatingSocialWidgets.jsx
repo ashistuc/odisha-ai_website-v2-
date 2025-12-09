@@ -13,10 +13,10 @@ const FloatingSocialWidgets = () => {
   ];
 
   return (
-    <div className="fixed left-6 top-1/2 -translate-y-1/2 z-stack-floating flex flex-col items-center space-y-3">
+    <div className="fixed right-6 bottom-6 z-stack-floating flex flex-col items-center space-y-3">
       {/* Social Icons - Show when expanded */}
       {isExpanded && (
-        <div className="flex flex-col space-y-3 animate-in slide-in-from-left duration-300">
+        <div className="flex flex-col space-y-3 animate-in slide-in-from-bottom duration-300">
           {socialLinks.map((social, index) => {
             const Icon = social.icon;
             return (
@@ -39,11 +39,10 @@ const FloatingSocialWidgets = () => {
       {/* Toggle Button */}
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className={`w-14 h-14 ${
-          isExpanded 
-            ? 'bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700' 
+        className={`w-14 h-14 ${isExpanded
+            ? 'bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700'
             : 'bg-gradient-to-br from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700'
-        } text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300`}
+          } text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300`}
         aria-label={isExpanded ? 'Close social menu' : 'Open social menu'}
         aria-expanded={isExpanded}
       >

@@ -13,7 +13,7 @@ const FAQSection = ({ faqs }) => {
   return (
     <div>
       <div className="text-center mb-12">
-        <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4 px-4 py-2">
+        <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 mb-4 px-4 py-2">
           <HelpCircle className="w-4 h-4 mr-2" />
           Frequently Asked Questions
         </Badge>
@@ -27,13 +27,12 @@ const FAQSection = ({ faqs }) => {
 
       <div className="max-w-4xl mx-auto space-y-4">
         {faqs.map((faq, index) => (
-          <Card 
+          <Card
             key={index}
-            className={`border-2 transition-all duration-300 cursor-pointer ${
-              openIndex === index 
-                ? 'border-orange-400 shadow-lg' 
+            className={`border-2 transition-all duration-300 cursor-pointer ${openIndex === index
+                ? 'border-orange-400 shadow-lg'
                 : 'border-gray-200 hover:border-orange-200 hover:shadow-md'
-            }`}
+              }`}
             onClick={() => toggleFAQ(index)}
           >
             <CardContent className="p-6">
@@ -41,17 +40,15 @@ const FAQSection = ({ faqs }) => {
                 <h3 className="text-lg font-semibold text-gray-900 pr-8 flex-1">
                   {faq.question}
                 </h3>
-                <ChevronDown 
-                  className={`w-5 h-5 text-orange-600 flex-shrink-0 transition-transform duration-300 ${
-                    openIndex === index ? 'rotate-180' : ''
-                  }`}
+                <ChevronDown
+                  className={`w-5 h-5 text-orange-600 flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
+                    }`}
                 />
               </div>
-              
-              <div 
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? 'max-h-96 mt-4' : 'max-h-0'
-                }`}
+
+              <div
+                className={`overflow-hidden transition-all duration-300 ${openIndex === index ? 'max-h-96 mt-4' : 'max-h-0'
+                  }`}
               >
                 <p className="text-gray-600 leading-relaxed">
                   {faq.answer}
@@ -64,8 +61,8 @@ const FAQSection = ({ faqs }) => {
 
       <div className="text-center mt-10">
         <p className="text-gray-600 mb-4">Still have questions?</p>
-        <a 
-          href="mailto:contact@odisha-ai-mission.gov.in" 
+        <a
+          href="mailto:contact@odisha-ai-mission.gov.in"
           className="text-orange-600 hover:text-orange-700 font-semibold underline"
         >
           Contact our support team

@@ -261,11 +261,11 @@ const Home = () => {
       {/* Floating Social Widgets */}
       <FloatingSocialWidgets />
 
-      {/* AI Mascot Navigator */}
-      <AIMascot />
+      {/* AI Mascot Navigator - Hidden as per user request */}
+      {/* <AIMascot /> */}
 
-      {/* AI Chatbot */}
-      <AIChatbot />
+      {/* AI Chatbot - Hidden as per user request */}
+      {/* <AIChatbot /> */}
     </>
   );
 };

@@ -29,7 +29,7 @@ const AIProjectIdeaForm = () => {
     // Here you would typically send the data to your backend
     console.log('Form submitted:', formData);
     setSubmitted(true);
-    
+
     // Reset after 3 seconds
     setTimeout(() => {
       setSubmitted(false);
@@ -220,10 +220,10 @@ const AIProjectIdeaForm = () => {
             </div>
 
             <div className="flex items-center justify-center pt-4">
-              <Button 
+              <Button
                 type="submit"
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-orange-600 hover:from-purple-700 hover:to-orange-700 text-white px-12 shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-orange-600 to-orange-600 hover:from-orange-700 hover:to-orange-700 text-white px-12 shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Submit Your Idea
                 <Send className="ml-2 w-5 h-5" />

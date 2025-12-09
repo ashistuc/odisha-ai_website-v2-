@@ -83,7 +83,7 @@ const ResourcesSection = ({ aiNews }) => {
                                 className="group block p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-purple-300 transition-all duration-300"
                             >
                                 <div className="flex justify-between items-start mb-4">
-                                    <div className="p-3 bg-purple-50 rounded-lg group-hover:bg-purple-100 transition-colors">
+                                    <div className="p-3 bg-orange-50 rounded-lg group-hover:bg-orange-100 transition-colors">
                                         <GraduationCap className="w-6 h-6 text-purple-600" />
                                     </div>
                                     <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-purple-600 transition-colors" />
@@ -142,7 +142,7 @@ const ResourcesSection = ({ aiNews }) => {
     return (
         <div>
             <div className="text-center mb-16">
-                <Badge className="bg-blue-100 text-blue-700 hover:bg-blue-200 mb-4 px-4 py-2">
+                <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 mb-4 px-4 py-2">
                     Knowledge Hub
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">

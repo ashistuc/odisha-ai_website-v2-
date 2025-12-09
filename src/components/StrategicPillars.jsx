@@ -222,9 +222,9 @@ const StrategicPillars = () => {
 
                                 {/* Feature/Stats */}
                                 {getActivePillar().content.highlight && (
-                                    <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-6 text-white relative overflow-hidden">
+                                    <div className="bg-gradient-to-r from-orange-600 to-amber-600 rounded-xl p-6 text-white relative overflow-hidden">
                                         <div className="relative z-10 flex items-start gap-4">
-                                            <Globe className="w-8 h-8 mt-1 flex-shrink-0 text-blue-200" />
+                                            <Globe className="w-8 h-8 mt-1 flex-shrink-0 text-orange-200" />
                                             <div>
                                                 <h5 className="font-bold text-lg mb-1">{getActivePillar().content.highlight.title}</h5>
                                                 <p className="opacity-90">{getActivePillar().content.highlight.text}</p>
@@ -236,8 +236,8 @@ const StrategicPillars = () => {
                                 {getActivePillar().content.stats && (
                                     <div className="grid grid-cols-2 gap-4">
                                         {getActivePillar().content.stats.map((stat, idx) => (
-                                            <div key={idx} className="bg-green-50 dark:bg-green-900/20 rounded-xl p-6 text-center border border-green-100 dark:border-green-800">
-                                                <div className="text-3xl font-black text-green-600 dark:text-green-400 mb-1">{stat.value}</div>
+                                            <div key={idx} className="bg-orange-50 dark:bg-orange-900/20 rounded-xl p-6 text-center border border-orange-100 dark:border-orange-800">
+                                                <div className="text-3xl font-black text-orange-600 dark:text-orange-400 mb-1">{stat.value}</div>
                                                 <div className="text-sm font-medium text-gray-600 dark:text-gray-300">{stat.label}</div>
                                             </div>
                                         ))}

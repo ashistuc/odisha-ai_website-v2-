@@ -48,7 +48,7 @@ const InnovationCentres = ({ centres }) => {
     <div>
       {/* Section Header */}
       <div className="text-center mb-12">
-        <Badge className="bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 mb-4 px-4 py-2">
+        <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 hover:bg-orange-200 mb-4 px-4 py-2">
           <Lightbulb className="w-4 h-4 mr-2" />
           Innovation Network
         </Badge>
@@ -74,25 +74,24 @@ const InnovationCentres = ({ centres }) => {
               const resolvedImagePath = imagePath ? resolveBackgroundUrl(imagePath) : '';
               const hasImage = Boolean(resolvedImagePath);
               const overlayColor = overlayColors[index % overlayColors.length];
-              
+
               const backgroundStyle = hasImage
                 ? {
-                    backgroundImage: `url(${resolvedImagePath})`,
-                    backgroundSize: 'contain',
-                    backgroundPosition: 'center',
-                    backgroundRepeat: 'no-repeat',
-                  }
+                  backgroundImage: `url(${resolvedImagePath})`,
+                  backgroundSize: 'contain',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat',
+                }
                 : undefined;
 
               return (
                 <div
-                  className={`h-48 relative overflow-hidden ${
-                    hasImage ? 'bg-slate-100 dark:bg-slate-800' : `bg-gradient-to-br ${gradientClass}`
-                  }`}
+                  className={`h-48 relative overflow-hidden ${hasImage ? 'bg-slate-100 dark:bg-slate-800' : `bg-gradient-to-br ${gradientClass}`
+                    }`}
                   style={backgroundStyle}
                 >
                   {/* Random color overlay (no text heading or state name) */}
-                  <div 
+                  <div
                     className="absolute inset-0 transition-opacity duration-500 group-hover:opacity-70"
                     style={{ backgroundColor: overlayColor }}
                   ></div>
@@ -140,8 +139,8 @@ const InnovationCentres = ({ centres }) => {
                         <div className="text-2xl font-bold text-orange-600">{centre.achievements.projects}</div>
                         <div className="text-xs text-gray-600">Projects</div>
                       </div>
-                      <div className="text-center p-2 bg-blue-50 rounded-lg">
-                        <div className="text-2xl font-bold text-blue-600">{centre.achievements.publications}</div>
+                      <div className="text-center p-2 bg-orange-50 rounded-lg">
+                        <div className="text-2xl font-bold text-orange-600">{centre.achievements.publications}</div>
                         <div className="text-xs text-gray-600">Publications</div>
                       </div>
                     </div>

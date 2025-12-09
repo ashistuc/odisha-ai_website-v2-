@@ -11,7 +11,7 @@ const PartnersScrolling = () => {
       description: 'A leading academic hub advancing high-impact AI research and innovation for real-world applications.',
       logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
       url: 'https://www.iitbbs.ac.in/index.php/ahrc/',
-      accent: 'blue'
+      accent: 'orange'
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const PartnersScrolling = () => {
       description: 'A global non-profit accelerating large-scale skilling and entrepreneurship for workforce transformation.',
       logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/wadhwani-logo.webp',
       url: 'https://wadhwanifoundation.org/',
-      accent: 'indigo'
+      accent: 'orange'
     },
     {
       id: 3,
@@ -39,13 +39,13 @@ const PartnersScrolling = () => {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-purple-50 dark:bg-purple-900/20 text-purple-700 dark:text-purple-300 px-4 py-1.5 rounded-full mb-6 text-sm font-semibold border border-purple-100 dark:border-purple-800/50 shadow-sm">
+          <div className="inline-flex items-center space-x-2 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 px-4 py-1.5 rounded-full mb-6 text-sm font-semibold border border-orange-100 dark:border-orange-800/50 shadow-sm">
             <Handshake className="w-4 h-4" />
             <span>Strategic Alliances</span>
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-            Partners in <span className="bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">Innovation</span>
+            Partners in <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Innovation</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">
@@ -78,7 +78,7 @@ const PartnersScrolling = () => {
                   {partner.role}
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-blue-600 transition-all">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-orange-600 group-hover:to-orange-700 transition-all">
                   {partner.name}
                 </h3>
 
