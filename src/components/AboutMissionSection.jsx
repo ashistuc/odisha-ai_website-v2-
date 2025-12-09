@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Badge } from './ui/badge';
 import { ArrowRight, Zap, Users, Lightbulb, Lock, Leaf, Sparkles, Target, Eye, Rocket } from 'lucide-react';
 
 const AboutMissionSection = () => {
-
-  const [activeObjective, setActiveObjective] = useState(null);
 
   const coreObjectives = [
     {
@@ -213,58 +211,27 @@ const AboutMissionSection = () => {
               </div>
             </div>
 
-            {/* Right Side: Interactive Objectives List */}
-            <div className="lg:col-span-7 flex flex-col justify-center space-y-5">
+            {/* Right Side: Simplified Objectives List */}
+            <div className="lg:col-span-7 flex flex-col justify-center space-y-4">
               {coreObjectives.map((objective, index) => {
                 const IconComponent = objective.icon;
-                const isActive = activeObjective === objective.id;
                 return (
                   <div
                     key={objective.id}
-                    onMouseEnter={() => setActiveObjective(objective.id)}
-                    onMouseLeave={() => setActiveObjective(null)}
-                    className={`group relative bg-white dark:bg-gray-900 rounded-xl p-6 flex flex-col transition-all duration-300 border-2 overflow-hidden cursor-pointer ${isActive
-                        ? 'border-orange-400 dark:border-orange-600 shadow-xl -translate-y-1'
-                        : 'border-gray-200 dark:border-gray-700 hover:border-orange-300 dark:hover:border-orange-700 hover:shadow-lg hover:-translate-y-1'
-                      }`}
+                    className="relative bg-white dark:bg-gray-900 rounded-xl p-5 flex items-center border-2 border-gray-200 dark:border-gray-700 overflow-hidden"
                   >
-                    {/* Decorative Hover Bar */}
-                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${objective.color} transition-all duration-300`}></div>
+                    {/* Decorative Bar */}
+                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${objective.color}`}></div>
 
-                    <div className="flex items-start gap-5">
-                      {/* Icon */}
-                      <div className={`${objective.iconBg} w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 flex-shrink-0 ${isActive ? 'scale-110' : ''
-                        }`}>
-                        <IconComponent className="w-7 h-7 text-orange-600 dark:text-orange-400" />
-                      </div>
-
-                      {/* Content */}
-                      <div className="flex-1">
-                        {/* Title */}
-                        <h4 className={`text-lg font-bold mb-2 transition-colors leading-tight ${isActive
-                            ? 'text-orange-600 dark:text-orange-400'
-                            : 'text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400'
-                          }`}>
-                          {objective.title}
-                        </h4>
-
-                        {/* Description - Shows on hover */}
-                        <div className={`overflow-hidden transition-all duration-300 ${isActive ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'
-                          }`}>
-                          <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed mt-2">
-                            {objective.description}
-                          </p>
-                        </div>
-                      </div>
-
-                      {/* Interaction Arrow */}
-                      <div className={`transition-all duration-300 flex-shrink-0 ${isActive
-                          ? 'opacity-100 translate-x-0 text-orange-500'
-                          : 'opacity-0 -translate-x-4 text-gray-400 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-orange-500'
-                        }`}>
-                        <ArrowRight className="w-5 h-5" />
-                      </div>
+                    {/* Icon */}
+                    <div className={`${objective.iconBg} w-12 h-12 rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}>
+                      <IconComponent className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                     </div>
+
+                    {/* Title Only */}
+                    <h4 className="flex-1 text-base font-bold text-gray-900 dark:text-white leading-tight">
+                      {objective.title}
+                    </h4>
                   </div>
                 );
               })}

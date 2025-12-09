@@ -85,16 +85,28 @@ const Header = () => {
             </div>
           </div>
 
-          {/* Right Actions: Settings & Hamburger */}
-          <div className="flex items-center space-x-2">
-            {/* CM Photo */}
-            <div className="hidden sm:block mr-2">
-              <img
-                src="/odisha-ai_website-v2-/images/Mohan_Charan_Majhi.jpg"
-                alt="Hon'ble CM"
-                className="w-16 h-16 md:w-20 md:h-20 rounded-lg border-2 border-orange-100 object-cover"
-                title="Hon'ble Chief Minister"
-              />
+          {/* Right Actions: CM Section, Settings & Hamburger */}
+          <div className="flex items-center space-x-4">
+            {/* CM Section - Inline */}
+            <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-4">
+              {/* Text Content */}
+              <div className="text-right mb-3">
+                <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                  Shri Mohan Charan Majhi
+                </h2>
+                <p className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-wider font-medium">
+                  Hon'ble Chief Minister
+                </p>
+              </div>
+
+              {/* CM Photo - Extends from bottom */}
+              <div className="relative">
+                <img
+                  src="/odisha-ai_website-v2-/images/cm-img.png"
+                  alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
+                  className="h-20 w-auto object-contain object-bottom"
+                />
+              </div>
             </div>
 
             {/* Accessibility Toolbar Button */}
