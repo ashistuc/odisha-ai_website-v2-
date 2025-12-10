@@ -132,7 +132,7 @@ const StrategicPillars = () => {
     const getActivePillar = () => pillars.find(p => p.id === activeTab);
 
     return (
-        <section className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
+        <section id="strategic-pillars-section" className="py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden relative">
             {/* Background Decor */}
             <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-50/50 to-transparent dark:from-orange-900/10 pointer-events-none"></div>
 

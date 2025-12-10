@@ -19,13 +19,15 @@ const Header = () => {
 
   const navItems = [
     { name: 'Home', section: 'main-content' },
-    { name: 'Targets & Vision', section: 'targets-section' },
-    { name: 'Implementation', section: 'implementation-section' },
-    { name: 'AI Training', section: 'skilling-section' },
-    { name: 'AI Startups', section: 'startups-section' },
-    { name: 'Tenders', section: 'tenders-section' },
-    { name: 'Event Gallery', section: 'gallery-section' },
-    { name: 'FAQ', section: 'faq-section' }
+    { name: 'About Mission', section: 'about-mission-section' },
+    { name: 'Strategic Pillars', section: 'strategic-pillars-section' },
+    { name: 'Resources', section: 'resources-section' },
+    { name: 'Partners', section: 'partners-section' },
+    { name: 'Policy & Acts', section: 'policy-section' },
+    { name: 'Events', section: 'gallery-section' },
+    { name: 'Submit Idea', section: 'submit-idea-section' },
+    { name: 'FAQ', section: 'faq-section' },
+    { name: 'Contact', section: 'contact-section' }
   ];
 
   return (
