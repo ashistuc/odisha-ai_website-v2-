@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, X, ChevronLeft, ChevronRight, Image as ImageIcon, Video, Play } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Calendar, MapPin, X, ChevronLeft, ChevronRight, Image as ImageIcon, Video, Play, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
 
-const EventGallery = ({ events }) => {
+const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }) => {
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [lightboxMedia, setLightboxMedia] = useState(null);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const { isOdia } = useLanguage();
+
+  // Apply limit if provided
+  const displayEvents = limit ? events.slice(0, limit) : events;
 
   const openLightbox = (event, index) => {
     setLightboxMedia(event.media);
@@ -42,22 +48,24 @@ const EventGallery = ({ events }) => {
   return (
     <div>
       {/* Header */}
-      <div className="text-center mb-12">
-        <Badge className="bg-pink-100 text-pink-700 dark:bg-pink-900 dark:text-pink-300 hover:bg-pink-200 mb-4 px-4 py-2">
-          <ImageIcon className="w-4 h-4 mr-2" />
-          Event Memories
-        </Badge>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Interactive <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Event Gallery</span>
-        </h2>
-        <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Explore moments captured from AI Mission events, workshops, and celebrations across Odisha
-        </p>
-      </div>
+      {!hideHeader && (
+        <div className="text-center mb-12">
+          <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 hover:bg-orange-200 mb-4 px-4 py-2">
+            <ImageIcon className="w-4 h-4 mr-2" />
+            {isOdia ? 'ଇଭେଣ୍ଟ ସ୍ମୃତି' : 'Event Memories'}
+          </Badge>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {isOdia ? 'ଇଣ୍ଟରଆକ୍ଟିଭ୍ ' : 'Interactive '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଇଭେଣ୍ଟ ଗ୍ୟାଲେରୀ' : 'Event Gallery'}</span>
+          </h2>
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            {isOdia ? 'ଓଡ଼ିଶା ଜୁଡ଼ି AI ମିଶନ ଇଭେଣ୍ଟ, ୱର୍କସପ ଏବଂ ଉତ୍ସବରୁ ଧରାଯାଇଥିବା ମୁହୂର୍ତ୍ତଗୁଡ଼ିକୁ ଅନ୍ବେଷଣ କରନ୍ତୁ' : 'Explore moments captured from AI Mission events, workshops, and celebrations across Odisha'}
+          </p>
+        </div>
+      )}
 
       {/* Events Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-        {events.map((event) => (
+        {displayEvents.map((event) => (
           <Card
             key={event.id}
             className="group cursor-pointer border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-600 hover:shadow-2xl transition-all duration-300 overflow-hidden bg-white dark:bg-gray-800"
@@ -87,7 +95,7 @@ const EventGallery = ({ events }) => {
             </div>
 
             <CardHeader className="pb-3">
-              <CardTitle className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-pink-600 dark:group-hover:text-pink-400 transition-colors">
+              <CardTitle className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
                 {event.eventName}
               </CardTitle>
             </CardHeader>
@@ -112,6 +120,18 @@ const EventGallery = ({ events }) => {
           </Card>
         ))}
       </div>
+
+      {/* View All Button */}
+      {showViewAll && (
+        <div className="text-center">
+          <Link to="/events">
+            <Button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-3 shadow-lg">
+              {isOdia ? 'ସମସ୍ତ ଦେଖନ୍ତୁ' : 'View All Events'}
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Button>
+          </Link>
+        </div>
+      )}
 
       {/* Event Detail Modal */}
       {selectedEvent && (
@@ -164,7 +184,7 @@ const EventGallery = ({ events }) => {
                 <button
                   key={index}
                   onClick={() => openLightbox(selectedEvent, index)}
-                  className="group relative aspect-video rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-pink-400 dark:hover:border-pink-600 transition-all focus:outline-none focus:ring-2 focus:ring-pink-500"
+                  className="group relative aspect-video rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-600 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500"
                   aria-label={`View ${media.caption}`}
                 >
                   <img
@@ -175,7 +195,7 @@ const EventGallery = ({ events }) => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
                     {media.type === 'video' ? (
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-16 h-16 bg-pink-600 rounded-full flex items-center justify-center">
+                        <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center">
                           <Play className="w-8 h-8 text-white ml-1" />
                         </div>
                       </div>
@@ -191,7 +211,7 @@ const EventGallery = ({ events }) => {
                     </p>
                   </div>
                   {media.type === 'video' && (
-                    <Badge className="absolute top-2 right-2 bg-pink-600 text-white">
+                    <Badge className="absolute top-2 right-2 bg-orange-600 text-white">
                       <Video className="w-3 h-3 mr-1" />
                       Video
                     </Badge>
@@ -211,7 +231,7 @@ const EventGallery = ({ events }) => {
         >
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 text-white hover:text-pink-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
+            className="absolute top-4 right-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
             aria-label="Close viewer"
           >
             <X className="w-8 h-8" />
@@ -225,7 +245,7 @@ const EventGallery = ({ events }) => {
                   e.stopPropagation();
                   prevMedia();
                 }}
-                className="absolute left-4 text-white hover:text-pink-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
+                className="absolute left-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
                 aria-label="Previous media"
               >
                 <ChevronLeft className="w-12 h-12" />
@@ -235,7 +255,7 @@ const EventGallery = ({ events }) => {
                   e.stopPropagation();
                   nextMedia();
                 }}
-                className="absolute right-4 text-white hover:text-pink-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
+                className="absolute right-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
                 aria-label="Next media"
               >
                 <ChevronRight className="w-12 h-12" />

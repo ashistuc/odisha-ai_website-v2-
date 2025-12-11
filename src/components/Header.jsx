@@ -1,147 +1,210 @@
 import React, { useState } from 'react';
-import { Menu, X, ChevronDown, Settings } from 'lucide-react';
-import { Button } from './ui/button';
-import Logo from './Logo';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 import AccessibilityToolbar from './AccessibilityToolbar';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../contexts/LanguageContext';
+import { translations } from '../translations/translations';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
+  const { language, isOdia } = useLanguage();
+  const t = translations[language];
+  const location = useLocation();
 
   const scrollToSection = (sectionId) => {
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/odisha-ai_website-v2-/#${sectionId}`;
+      return;
+    }
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       setIsMenuOpen(false);
-      setActiveDropdown(null);
     }
   };
 
   const navItems = [
-    { name: 'Home', section: 'main-content' },
-    { name: 'About Mission', section: 'about-mission-section' },
-    { name: 'Strategic Pillars', section: 'strategic-pillars-section' },
-    { name: 'Resources', section: 'resources-section' },
-    { name: 'Partners', section: 'partners-section' },
-    { name: 'Policy & Acts', section: 'policy-section' },
-    { name: 'Events', section: 'gallery-section' },
-    { name: 'Submit Idea', section: 'submit-idea-section' },
-    { name: 'FAQ', section: 'faq-section' },
-    { name: 'Contact', section: 'contact-section' }
+    { name: isOdia ? 'ମୁଖ୍ୟ ପୃଷ୍ଠା' : 'Home', type: 'link', href: '/' },
+    { name: isOdia ? 'ମିଶନ୍ ବିଷୟରେ' : 'About Mission', type: 'link', href: '/about-mission' },
+    { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', type: 'link', href: '/strategic-pillars' },
+    { name: isOdia ? 'ସମ୍ବଳ' : 'Resources', type: 'scroll', section: 'resources-section' },
+    { name: isOdia ? 'ସହଯୋଗୀ' : 'Partners', type: 'link', href: '/partners' },
+    { name: isOdia ? 'ନୀତି ଏବଂ ଆଇନ' : 'Policy & Acts', type: 'link', href: '/policy-acts' },
+    { name: isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events', type: 'link', href: '/events' },
+    { name: isOdia ? 'ଧାରଣା ଦାଖଲ' : 'Submit Idea', type: 'scroll', section: 'submit-idea-section' },
+    { name: isOdia ? 'ସାଧାରଣ ପ୍ରଶ୍ନ' : 'FAQ', type: 'scroll', section: 'faq-section' },
+    { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact', type: 'link', href: '/contact' }
   ];
 
+  const handleNavClick = (item) => {
+    setIsMenuOpen(false);
+    if (item.type === 'scroll') {
+      scrollToSection(item.section);
+    }
+  };
+
   return (
-    <header className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-stack-header shadow-sm transition-colors duration-300 border-t-4 border-t-orange-500 header-glow">
-      <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-3 lg:py-4">
-          {/* Logo Section with Government Logos */}
-          <div className="flex items-center space-x-6">
-            <button
-              onClick={() => scrollToSection('main-content')}
-              className="flex items-center space-x-3 group"
-            >
+    <>
+      <header className="bg-white dark:bg-gray-900 sticky top-0 z-stack-header shadow-sm transition-colors duration-300 border-t-4 border-t-orange-500 header-glow">
+        <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-3 lg:py-4">
+            {/* Logo Section with Government Logos */}
+            <div className="flex items-center space-x-6">
+              <Link
+                to="/"
+                className="flex items-center space-x-3 group"
+              >
 
-              <img
-                src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
-                alt="Government of Odisha"
-                className="w-[200px] object-contain"
-              />
-              {/*} <div className="leading-tight text-left">
-                <h1 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white">
-                  Odisha AI Mission
-                </h1>
-                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                  Government of Odisha
-                </p>
-              </div>*/}
-            </button>
-
-            {/* Partner Logos */}
-            <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
-              {/* Odisha Govt Logo */}
-              <div className="flex flex-col items-center space-y-1">
                 <img
-                  src="/odisha-ai_website-v2-/images/mission-removebg-preview1.png"
-                  alt="Odisha AI Mission Logo"
-                  className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                  src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
+                  alt="Government of Odisha"
+                  className="w-[200px] object-contain"
                 />
+              </Link>
+
+              {/* Partner Logos */}
+              <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
+                {/* Odisha Govt Logo */}
+                <div className="flex flex-col items-center space-y-1">
+                  <img
+                    src="/odisha-ai_website-v2-/images/mission-removebg-preview1.png"
+                    alt="Odisha AI Mission Logo"
+                    className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+                <div className="flex flex-col items-center space-y-1">
+                  <img
+                    src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
+                    alt="Odisha AI Mission Logo"
+                    className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                </div>
+
+                {/* E&IT Dept / OCAC Logo */}
+                <div className="flex flex-col items-center space-y-1">
+                  <img
+                    src="/odisha-ai_website-v2-/logo/ocac-logo.png"
+                    alt="E&IT Department, OCAC"
+                    className="h-10 w-auto object-contain"
+                  />
+                </div>
               </div>
-              {/* IndiaAI Logo 
-              <div className="flex flex-col items-center space-y-1">
-                <img
-                  src="/odisha-ai_website-v2-/logo/India_AI_logo.png"
-                  alt="IndiaAI"
-                  className="h-10 w-auto object-contain"
-                />
-              </div>*/}
-              <div className="flex flex-col items-center space-y-1">
-                <img
-                  src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
-                  alt="Odisha AI Mission Logo"
-                  className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
-                />
-              </div>
-
-              {/* E&IT Dept / OCAC Logo */}
-              <div className="flex flex-col items-center space-y-1">
-                <img
-                  src="/odisha-ai_website-v2-/logo/ocac-logo.png"
-                  alt="E&IT Department, OCAC"
-                  className="h-10 w-auto object-contain"
-                />
-              </div>
-
-
             </div>
-          </div>
 
-          {/* Right Actions: CM Section, Settings & Hamburger */}
-          <div className="flex items-center space-x-4">
-            {/* CM Section - Inline */}
-            <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-4">
-              {/* Text Content */}
-              <div className="text-right mb-3">
-                <h2 className="text-lg font-bold text-gray-900 dark:text-white">
-                  Shri Mohan Charan Majhi
-                </h2>
-                <p className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-wider font-medium">
-                  Hon'ble Chief Minister
-                </p>
+            {/* Right Actions: CM Section, Language Toggle & Settings */}
+            <div className="flex items-center space-x-4">
+              {/* CM Section - Inline */}
+              <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-4">
+                {/* Text Content */}
+                <div className="text-right mb-3">
+                  <h2 className="text-lg font-bold text-gray-900 dark:text-white">
+                    {t?.header?.cmName || 'Shri Mohan Charan Majhi'}
+                  </h2>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 uppercase tracking-wider font-medium">
+                    {t?.header?.cmDesignation || "Hon'ble Chief Minister"}
+                  </p>
+                </div>
+
+                {/* CM Photo - Extends from bottom */}
+                <div className="relative">
+                  <img
+                    src="/odisha-ai_website-v2-/images/cm-img.png"
+                    alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
+                    className="h-20 w-auto object-contain object-bottom"
+                  />
+                </div>
               </div>
 
-              {/* CM Photo - Extends from bottom */}
+              {/* Language Toggle */}
+              <div className="hidden sm:block">
+                <LanguageToggle inline={true} />
+              </div>
+
+              {/* Accessibility Toolbar Button */}
               <div className="relative">
-                <img
-                  src="/odisha-ai_website-v2-/images/cm-img.png"
-                  alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
-                  className="h-20 w-auto object-contain object-bottom"
-                />
+                <AccessibilityToolbar inline={true} />
               </div>
-            </div>
 
-            {/* Accessibility Toolbar Button */}
-            <div className="relative">
-              <AccessibilityToolbar inline={true} />
+              {/* Mobile Menu Button - Only visible on small screens */}
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="lg:hidden p-2 text-gray-700 dark:text-white hover:text-orange-600 transition-colors duration-200"
+                aria-label="Toggle menu"
+              >
+                {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
             </div>
-
-            {/* Hamburger Menu Button */}
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-2 text-gray-700 dark:text-white hover:text-orange-600 transition-colors duration-200"
-              aria-label="Toggle menu"
-            >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
         </div>
 
-        {/* Hamburger Menu - Full Screen */}
+        {/* Orange Navigation Bar - Always Visible */}
+        <nav className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 shadow-md">
+          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Desktop Navigation */}
+            <div className="hidden lg:flex items-center justify-center py-2">
+              <ul className="flex items-center space-x-1">
+                {navItems.map((item, index) => (
+                  <li key={index}>
+                    {item.type === 'link' ? (
+                      <Link
+                        to={item.href}
+                        className={`px-4 py-2 text-white font-medium text-sm rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
+                          }`}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => handleNavClick(item)}
+                        className="px-4 py-2 text-white font-medium text-sm hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
+                      >
+                        {item.name}
+                      </button>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Mobile Navigation - Horizontal Scroll */}
+            <div className="lg:hidden overflow-x-auto py-2 scrollbar-hide">
+              <ul className="flex items-center space-x-1 min-w-max">
+                {navItems.map((item, index) => (
+                  <li key={index}>
+                    {item.type === 'link' ? (
+                      <Link
+                        to={item.href}
+                        className={`px-3 py-1.5 text-white font-medium text-xs rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
+                          }`}
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <button
+                        onClick={() => handleNavClick(item)}
+                        className="px-3 py-1.5 text-white font-medium text-xs hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
+                      >
+                        {item.name}
+                      </button>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        {/* Mobile Hamburger Menu - Full Screen (for smaller screens) */}
         {isMenuOpen && (
-          <div className="fixed inset-0 bg-white dark:bg-gray-900 z-stack-modal overflow-y-auto animate-in slide-in-from-top duration-300">
+          <div className="lg:hidden fixed inset-0 bg-white dark:bg-gray-900 z-stack-modal overflow-y-auto animate-in slide-in-from-top duration-300">
             <div className="max-w-7xl mx-auto px-4 py-6">
               <div className="flex items-center justify-between mb-8">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Navigation</h2>
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{isOdia ? 'ନାଭିଗେସନ୍' : 'Navigation'}</h2>
                 <div className="flex items-center space-x-4">
+                  <LanguageToggle inline={true} />
                   <button
                     onClick={() => setIsMenuOpen(false)}
                     className="p-2 text-gray-700 dark:text-white hover:text-orange-600"
@@ -152,20 +215,31 @@ const Header = () => {
               </div>
               <nav className="space-y-2">
                 {navItems.map((item, index) => (
-                  <button
-                    key={index}
-                    onClick={() => scrollToSection(item.section)}
-                    className="w-full text-left px-6 py-4 text-lg text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 font-medium rounded-lg transition-all"
-                  >
-                    {item.name}
-                  </button>
+                  item.type === 'link' ? (
+                    <Link
+                      key={index}
+                      to={item.href}
+                      onClick={() => setIsMenuOpen(false)}
+                      className="w-full block text-left px-6 py-4 text-lg text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 font-medium rounded-lg transition-all"
+                    >
+                      {item.name}
+                    </Link>
+                  ) : (
+                    <button
+                      key={index}
+                      onClick={() => handleNavClick(item)}
+                      className="w-full text-left px-6 py-4 text-lg text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 font-medium rounded-lg transition-all"
+                    >
+                      {item.name}
+                    </button>
+                  )
                 ))}
               </nav>
             </div>
           </div>
         )}
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

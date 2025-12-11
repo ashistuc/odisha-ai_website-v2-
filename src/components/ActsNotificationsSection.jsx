@@ -3,8 +3,11 @@ import { FileText, Shield, Building2, Lock, Gift, GraduationCap, ShoppingCart, D
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ActsNotificationsSection = ({ items }) => {
+  const { isOdia } = useLanguage();
+
   const iconMap = {
     FileText: FileText,
     Shield: Shield,
@@ -30,13 +33,13 @@ const ActsNotificationsSection = ({ items }) => {
       <div className="text-center mb-12">
         <Badge className="bg-indigo-100 text-indigo-700 hover:bg-indigo-200 mb-4 px-4 py-2">
           <FileText className="w-4 h-4 mr-2" />
-          Legal & Regulatory Framework
+          {isOdia ? 'ଆଇନଗତ ଏବଂ ନିୟାମକ ଢାଞ୍ଚା' : 'Legal & Regulatory Framework'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Acts, Notifications, <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Govt Orders & Guidelines</span>
+          {isOdia ? 'ଆଇନ, ବିଜ୍ଞପ୍ତି, ' : 'Acts, Notifications, '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ସରକାରୀ ଆଦେଶ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ' : 'Govt Orders & Guidelines'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Stay updated with the latest legal framework, policy notifications, and government directives for AI implementation
+          {isOdia ? 'AI କାର୍ଯ୍ୟକାରିତା ପାଇଁ ନବୀନତମ ଆଇନଗତ ଢାଞ୍ଚା, ନୀତି ବିଜ୍ଞପ୍ତି ଏବଂ ସରକାରୀ ନିର୍ଦ୍ଦେଶନାମା ସହ ଅଦ୍ୟତନ ରହନ୍ତୁ' : 'Stay updated with the latest legal framework, policy notifications, and government directives for AI implementation'}
         </p>
       </div>
 
@@ -77,19 +80,19 @@ const ActsNotificationsSection = ({ items }) => {
                     </p>
                     <div className="flex items-center justify-between pt-2 border-t border-gray-200">
                       <span className="text-xs text-gray-500">
-                        {new Date(item.date).toLocaleDateString('en-IN', { 
-                          year: 'numeric', 
-                          month: 'short', 
-                          day: 'numeric' 
+                        {new Date(item.date).toLocaleDateString('en-IN', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
                         })}
                       </span>
-                      <Button 
-                        size="sm" 
-                        variant="ghost" 
+                      <Button
+                        size="sm"
+                        variant="ghost"
                         className="text-orange-600 hover:text-orange-700 hover:bg-orange-50"
                       >
                         <Download className="w-4 h-4 mr-1" />
-                        Download
+                        {isOdia ? 'ଡାଉନଲୋଡ୍' : 'Download'}
                       </Button>
                     </div>
                   </CardContent>
@@ -102,7 +105,7 @@ const ActsNotificationsSection = ({ items }) => {
 
       <div className="text-center mt-8">
         <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg">
-          View All Documents
+          {isOdia ? 'ସବୁ ଦସ୍ତାବେଜ ଦେଖନ୍ତୁ' : 'View All Documents'}
           <ExternalLink className="ml-2 w-5 h-5" />
         </Button>
       </div>

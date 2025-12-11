@@ -1726,42 +1726,67 @@ export const heroSlides = [
   {
     id: 1,
     type: 'image',
-    imageUrl: '/odisha-ai_website-v2-/images/11.png',
-    title: 'AI for Governance & Citizen Services',
+    imageUrl: '/odisha-ai_website-v2-/images/12.png',
+    title: 'Odisha AI Mission',
+    titleOd: 'ଓଡ଼ିଶା AI ମିଶନ',
     subtitle: '',
-    description: 'AI to improve efficiency, transparency, citizen engagement, fraud detection, and data-driven decision-making in public services.',
-    logos: ['Govt of Odisha', 'E&IT Dept', 'OCAC', 'IndiaAI'],
-    event: 'AI Policy 2025 Launched - May 2025'
+    description: 'Odisha\'s AI Mission is focused on using Al for public good—improving lives, strengthening the economy and ensuring inclusive digital growth across the state.',
+    descriptionOd: 'ଓଡ଼ିଶାର AI ମିଶନ ଜନସାଧାରଣ ମଙ୍ଗଳ ପାଇଁ AI ବ୍ୟବହାର ଉପରେ ଧ୍ୟାନ ଦିଏ—ଜୀବନକୁ ଉନ୍ନତ କରିବା, ଅର୍ଥନୀତିକୁ ଶକ୍ତିଶାଳୀ କରିବା ଏବଂ ରାଜ୍ୟରେ ଅନ୍ତର୍ଭୁକ୍ତ ଡିଜିଟାଲ ଅଭିବୃଦ୍ଧି ସୁନିଶ୍ଚିତ କରିବା।',
+    logos: ['Govt of Odisha', 'Societies Grow', 'Govern', 'Innovate'],
+    event: 'AI Policy 2025 Launched - May 2025',
+    eventOd: 'AI ନୀତି ୨୦୨୫ ଆରମ୍ଭ - ମେ ୨୦୨୫'
   },
   {
     id: 2,
     type: 'image',
-    imageUrl: '/odisha-ai_website-v2-/images/3.png',
-    title: 'AI for Healthcare',
+    imageUrl: '/odisha-ai_website-v2-/images/11.png',
+    title: 'AI for Governance & Citizen Services',
+    titleOd: 'ଶାସନ ଏବଂ ନାଗରିକ ସେବା ପାଇଁ AI',
     subtitle: '',
-    description: 'AI-enabled diagnostics and smart resource planning to strengthen patient care and improve health outcomes across Odisha.',
-    logos: ['Govt of Odisha', 'OCAC'],
-    event: '20 Lakh Screenings Target by 2036'
+    description: 'AI to improve efficiency, transparency, citizen engagement, fraud detection, and data-driven decision-making in public services.',
+    descriptionOd: 'ସରକାରୀ ସେବାରେ ଦକ୍ଷତା, ସ୍ୱଚ୍ଛତା, ନାଗରିକ ସମ୍ପୃକ୍ତତା, ଜାଲିୟାତି ଚିହ୍ନଟ ଏବଂ ଡାଟା-ଆଧାରିତ ନିଷ୍ପତ୍ତି ଗ୍ରହଣ ଉନ୍ନତ କରିବା ପାଇଁ AI।',
+    logos: ['Govt of Odisha', 'E&IT Dept', 'OCAC', 'IndiaAI'],
+    event: 'AI Policy 2025 Launched - May 2025',
+    eventOd: 'AI ନୀତି ୨୦୨୫ ଆରମ୍ଭ - ମେ ୨୦୨୫'
   },
   {
     id: 3,
     type: 'image',
-    imageUrl: '/odisha-ai_website-v2-/images/4.png',
-    title: 'AI for Agriculture ',
+    imageUrl: '/odisha-ai_website-v2-/images/3.png',
+    title: 'AI for Healthcare',
+    titleOd: 'ସ୍ୱାସ୍ଥ୍ୟସେବା ପାଇଁ AI',
     subtitle: '',
-    description: 'AI-driven real-time crop insights, predictive analytics, and faster insurance support to boost farm productivity and resilience.',
-    logos: ['Govt of Odisha', 'IndiaAI'],
-    event: 'AI Crop Advisory for 85% Farmland by 2036'
+    description: 'AI-enabled diagnostics and smart resource planning to strengthen patient care and improve health outcomes across Odisha.',
+    descriptionOd: 'ରୋଗୀ ସେବାକୁ ଶକ୍ତିଶାଳୀ କରିବା ଏବଂ ଓଡ଼ିଶାରେ ସ୍ୱାସ୍ଥ୍ୟ ଫଳାଫଳ ଉନ୍ନତ କରିବା ପାଇଁ AI-ସକ୍ଷମ ନିଦାନ ଏବଂ ସ୍ମାର୍ଟ ସମ୍ପଦ ଯୋଜନା।',
+    logos: ['Govt of Odisha', 'OCAC'],
+    event: '20 Lakh Screenings Target by 2036',
+    eventOd: '୨୦୩୬ ସୁଦ୍ଧା ୨୦ ଲକ୍ଷ ସ୍କ୍ରିନିଂ ଲକ୍ଷ୍ୟ'
   },
   {
     id: 4,
     type: 'image',
+    imageUrl: '/odisha-ai_website-v2-/images/4.png',
+    title: 'AI for Agriculture ',
+    titleOd: 'କୃଷି ପାଇଁ AI',
+    subtitle: '',
+    description: 'AI-driven real-time crop insights, predictive analytics, and faster insurance support to boost farm productivity and resilience.',
+    descriptionOd: 'ଫାର୍ମ ଉତ୍ପାଦନଶୀଳତା ଏବଂ ସ୍ଥିରତା ବୃଦ୍ଧି ପାଇଁ AI-ଚାଳିତ ବାସ୍ତବ-ସମୟ ଫସଲ ଅନ୍ତର୍ଦୃଷ୍ଟି, ଭବିଷ୍ୟଦ୍ବାଣୀ ବିଶ୍ଳେଷଣ ଏବଂ ଦ୍ରୁତ ବୀମା ସମର୍ଥନ।',
+    logos: ['Govt of Odisha', 'IndiaAI'],
+    event: 'AI Crop Advisory for 85% Farmland by 2036',
+    eventOd: '୨୦୩୬ ସୁଦ୍ଧା ୮୫% କୃଷିଜମି ପାଇଁ AI ଫସଲ ପରାମର୍ଶ'
+  },
+  {
+    id: 5,
+    type: 'image',
     imageUrl: '/odisha-ai_website-v2-/images/1.png',
     title: 'AI for Education',
+    titleOd: 'ଶିକ୍ଷା ପାଇଁ AI',
     subtitle: '',
     description: 'AI-powered personalised learning, career guidance, and skill development to bridge education–employment gaps and expand opportunities.',
+    descriptionOd: 'ଶିକ୍ଷା-ନିଯୁକ୍ତି ବ୍ୟବଧାନକୁ ପୂରଣ କରିବା ଏବଂ ସୁଯୋଗ ବିସ୍ତାର ପାଇଁ AI-ଚାଳିତ ବ୍ୟକ୍ତିଗତ ଶିକ୍ଷଣ, କ୍ୟାରିୟର ମାର୍ଗଦର୍ଶନ ଏବଂ ଦକ୍ଷତା ବିକାଶ।',
     logos: ['E&IT Dept', 'OCAC'],
-    event: '3-Month AI Training Program Launched - 2024'
+    event: '3-Month AI Training Program Launched - 2024',
+    eventOd: '୩-ମାସ AI ତାଲିମ କାର୍ଯ୍ୟକ୍ରମ ଆରମ୍ଭ - ୨୦୨୪'
   },
 
   {
@@ -1769,10 +1794,13 @@ export const heroSlides = [
     type: 'image',
     imageUrl: '/odisha-ai_website-v2-/images/2.png',
     title: 'AI for Disaster Management',
+    titleOd: 'ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା ପାଇଁ AI',
     subtitle: '',
     description: 'Advanced AI simulations and predictive intelligence to enhance climate preparedness and disaster response capabilities.',
+    descriptionOd: 'ଜଳବାୟୁ ପ୍ରସ୍ତୁତି ଏବଂ ବିପର୍ଯ୍ୟୟ ପ୍ରତିକ୍ରିୟା ସାମର୍ଥ୍ୟ ବୃଦ୍ଧି ପାଇଁ ଉନ୍ନତ AI ସିମୁଲେସନ୍ ଏବଂ ଭବିଷ୍ୟଦ୍ବାଣୀ ବୁଦ୍ଧିମତ୍ତା।',
     logos: ['Govt of Odisha', 'OCAC'],
-    event: 'Apurva AI Workshop Series - Ongoing'
+    event: 'Apurva AI Workshop Series - Ongoing',
+    eventOd: 'ଅପୂର୍ବ AI ୱର୍କସପ ସିରିଜ୍ - ଚାଲୁ'
   }
 ];
 // Contact Us and Map Section

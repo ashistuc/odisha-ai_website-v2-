@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const FAQSection = ({ faqs }) => {
   const [openIndex, setOpenIndex] = useState(null);
+  const { isOdia } = useLanguage();
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -15,13 +17,13 @@ const FAQSection = ({ faqs }) => {
       <div className="text-center mb-12">
         <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 mb-4 px-4 py-2">
           <HelpCircle className="w-4 h-4 mr-2" />
-          Frequently Asked Questions
+          {isOdia ? 'ପ୍ରାୟଶଃ ପଚରାଯାଉଥିବା ପ୍ରଶ୍ନ' : 'Frequently Asked Questions'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Got Questions? We've Got <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Answers</span>
+          {isOdia ? 'ପ୍ରଶ୍ନ ଅଛି? ଆମ ପାଖରେ ' : 'Got Questions? We\'ve Got '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଉତ୍ତର ଅଛି' : 'Answers'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Everything you need to know about Odisha's AI Mission and how you can be a part of it
+          {isOdia ? 'ଓଡ଼ିଶାର AI ମିଶନ ବିଷୟରେ ଆପଣଙ୍କୁ ଜାଣିବାକୁ ଲାଗୁଥିବା ସବୁକିଛି ଏବଂ ଆପଣ କିପରି ଏହାର ଏକ ଅଂଶ ହୋଇପାରିବେ' : 'Everything you need to know about Odisha\'s AI Mission and how you can be a part of it'}
         </p>
       </div>
 
@@ -30,8 +32,8 @@ const FAQSection = ({ faqs }) => {
           <Card
             key={index}
             className={`border-2 transition-all duration-300 cursor-pointer ${openIndex === index
-                ? 'border-orange-400 shadow-lg'
-                : 'border-gray-200 hover:border-orange-200 hover:shadow-md'
+              ? 'border-orange-400 shadow-lg'
+              : 'border-gray-200 hover:border-orange-200 hover:shadow-md'
               }`}
             onClick={() => toggleFAQ(index)}
           >
@@ -60,12 +62,12 @@ const FAQSection = ({ faqs }) => {
       </div>
 
       <div className="text-center mt-10">
-        <p className="text-gray-600 mb-4">Still have questions?</p>
+        <p className="text-gray-600 mb-4">{isOdia ? 'ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରଶ୍ନ ଅଛି?' : 'Still have questions?'}</p>
         <a
           href="mailto:contact@odisha-ai-mission.gov.in"
           className="text-orange-600 hover:text-orange-700 font-semibold underline"
         >
-          Contact our support team
+          {isOdia ? 'ଆମ ସମର୍ଥନ ଦଳ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Contact our support team'}
         </a>
       </div>
     </div>

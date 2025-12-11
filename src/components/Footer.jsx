@@ -6,17 +6,33 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from '../translations/translations';
 
 const Footer = () => {
-  const { language } = useLanguage();
+  const { language, isOdia } = useLanguage();
   const { t } = useTranslation(language);
+
+  const scrollToSection = (sectionId) => {
+    // Navigate to home first if not there, then scroll
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const quickLinks = [
+    { name: isOdia ? 'ମିଶନ ବିଷୟରେ' : 'About Mission', section: 'about-mission-section' },
+    { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', section: 'strategic-pillars-section' },
+    { name: isOdia ? 'ସହଭାଗୀ' : 'Partners', section: 'partners-section' },
+    { name: isOdia ? 'ସମ୍ପଦ' : 'Resources', section: 'resources-section' },
+    { name: isOdia ? 'ଇଭେଣ୍ଟ' : 'Events', section: 'gallery-section' },
+    { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact Us', section: 'contact-section' }
+  ];
+
   const footerLinks = [
     {
       titleKey: 'footer.quickLinks',
-      links: [
-        { nameKey: 'footer.aboutUs', path: '/about' },
-        { nameKey: 'footer.aiUseCases', path: '/use-cases' },
-        { nameKey: 'footer.ecosystem', path: '/ecosystem' },
-        { nameKey: 'footer.opportunities', path: '/opportunities' }
-      ]
+      links: quickLinks.map(link => ({
+        name: link.name,
+        section: link.section
+      }))
     },
     {
       titleKey: 'footer.resources',
@@ -84,12 +100,21 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <Link
-                      to={link.path}
-                      className="text-sm text-gray-400 hover:text-orange-500 transition-colors duration-200"
-                    >
-                      {t(link.nameKey)}
-                    </Link>
+                    {link.section ? (
+                      <button
+                        onClick={() => scrollToSection(link.section)}
+                        className="text-sm text-gray-400 hover:text-orange-500 transition-colors duration-200 text-left"
+                      >
+                        {link.name}
+                      </button>
+                    ) : (
+                      <Link
+                        to={link.path}
+                        className="text-sm text-gray-400 hover:text-orange-500 transition-colors duration-200"
+                      >
+                        {t(link.nameKey)}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

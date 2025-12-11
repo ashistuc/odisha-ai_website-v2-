@@ -3,6 +3,7 @@ import { Lightbulb, Send, CheckCircle } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const AIProjectIdeaForm = () => {
   const [formData, setFormData] = useState({
@@ -16,6 +17,7 @@ const AIProjectIdeaForm = () => {
     impact: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const { isOdia } = useLanguage();
 
   const handleChange = (e) => {
     setFormData({
@@ -65,10 +67,10 @@ const AIProjectIdeaForm = () => {
         <CardContent className="p-12 text-center">
           <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
           <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            Thank You for Your Submission!
+            {isOdia ? 'ଆପଣଙ୍କ ଦାଖଲ ପାଇଁ ଧନ୍ୟବାଦ!' : 'Thank You for Your Submission!'}
           </h3>
           <p className="text-gray-600">
-            Your innovative AI project idea has been received. Our team will review it and get back to you soon.
+            {isOdia ? 'ଆପଣଙ୍କ ନବସୃଜନମୂଳକ AI ପ୍ରକଳ୍ପ ଧାରଣା ପ୍ରାପ୍ତ ହୋଇଛି। ଆମ ଦଳ ଏହାକୁ ସମୀକ୍ଷା କରି ଶୀଘ୍ର ଆପଣଙ୍କ ସହ ଯୋଗାଯୋଗ କରିବେ।' : 'Your innovative AI project idea has been received. Our team will review it and get back to you soon.'}
           </p>
         </CardContent>
       </Card>
@@ -80,13 +82,13 @@ const AIProjectIdeaForm = () => {
       <div className="text-center mb-12">
         <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 mb-4 px-4 py-2">
           <Lightbulb className="w-4 h-4 mr-2" />
-          Innovation Hub
+          {isOdia ? 'ନବସୃଜନ କେନ୍ଦ୍ର' : 'Innovation Hub'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Share Your <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Innovative AI Project Idea</span>
+          {isOdia ? 'ଆପଣଙ୍କ ' : 'Share Your '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ନବସୃଜନମୂଳକ AI ପ୍ରକଳ୍ପ ଧାରଣା ଶେୟାର କରନ୍ତୁ' : 'Innovative AI Project Idea'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          Have a groundbreaking AI solution? Submit your idea and get support from Odisha's AI ecosystem
+          {isOdia ? 'ଏକ ଅଭୂତପୂର୍ବ AI ସମାଧାନ ଅଛି? ଆପଣଙ୍କ ଧାରଣା ଦାଖଲ କରନ୍ତୁ ଏବଂ ଓଡ଼ିଶାର AI ଇକୋସିଷ୍ଟମରୁ ସମର୍ଥନ ପାଆନ୍ତୁ' : 'Have a groundbreaking AI solution? Submit your idea and get support from Odisha\'s AI ecosystem'}
         </p>
       </div>
 

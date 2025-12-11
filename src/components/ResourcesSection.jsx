@@ -6,9 +6,11 @@ import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { ScrollArea } from './ui/scroll-area';
 import AINewsInteractive from './AINewsInteractive';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ResourcesSection = ({ aiNews }) => {
     const [activeDialog, setActiveDialog] = useState(null);
+    const { isOdia } = useLanguage();
 
     const learningResources = [
         { title: "Odisha AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha." },
@@ -39,25 +41,25 @@ const ResourcesSection = ({ aiNews }) => {
     const cards = [
         {
             id: 'news',
-            title: 'AI News and Blogs',
+            title: isOdia ? 'AI ସମାଚାର ଓ ବ୍ଲଗ' : 'AI News and Blogs',
             icon: Newspaper,
-            description: 'Stay updated with the latest trends, breakthroughs, and announcements in the world of Artificial Intelligence.',
-            color: 'from-blue-500 to-cyan-500',
+            description: isOdia ? 'AI ଦୁନିଆର ନୂତନ ପ୍ରଵଣତା, ଉନ୍ନତି ଓ ଘୋଷଣା ସହ ଅଦ୍ୟତନ ରହନ୍ତୁ।' : 'Stay updated with the latest trends, breakthroughs, and announcements in the world of Artificial Intelligence.',
+            color: 'from-orange-500 to-red-700',
             delay: '0'
         },
         {
             id: 'learning',
-            title: 'Learning',
+            title: isOdia ? 'ଶିକ୍ଷଣ' : 'Learning',
             icon: GraduationCap,
-            description: 'Access world-class courses, tutorials, and materials to start or advance your journey in AI.',
-            color: 'from-purple-500 to-pink-500',
+            description: isOdia ? 'AI ରେ ଆପଣଙ୍କ ଯାତ୍ରା ଆରମ୍ଭ ବା ଅଗ୍ରଗତି କରିବା ପାଇଁ ବିଶ୍ବସ୍ତରୀୟ କୋର୍ସ, ଟ୍ୟୁଟୋରିୟାଲ ଓ ସାମଗ୍ରୀ ପ୍ରାପ୍ତ କରନ୍ତୁ।' : 'Access world-class courses, tutorials, and materials to start or advance your journey in AI.',
+            color: 'from-orange-500 to-red-700',
             delay: '100'
         },
         {
             id: 'datasets',
-            title: 'Datasets',
+            title: isOdia ? 'ଡାଟାସେଟ୍' : 'Datasets',
             icon: Database,
-            description: 'Explore a rich repository of datasets including regional language data for research and development.',
+            description: isOdia ? 'ଗବେଷଣା ଓ ବିକାଶ ପାଇଁ ଆଞ୍ଚଳିକ ଭାଷା ଡାଟା ସହ ଡାଟାସେଟ୍‌ର ଏକ ଧନୀ ଭଣ୍ଡାର ଅନ୍ବେଷଣ କରନ୍ତୁ।' : 'Explore a rich repository of datasets including regional language data for research and development.',
             color: 'from-orange-500 to-red-500',
             delay: '200'
         }
@@ -143,13 +145,13 @@ const ResourcesSection = ({ aiNews }) => {
         <div>
             <div className="text-center mb-16">
                 <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 mb-4 px-4 py-2">
-                    Knowledge Hub
+                    {isOdia ? 'ଜ୍ଞାନ କେନ୍ଦ୍ର' : 'Knowledge Hub'}
                 </Badge>
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                    <span className="text-gray-900">RESOURCES</span>
+                    <span className="text-gray-900">{isOdia ? 'ସମ୍ପଦ' : 'RESOURCES'}</span>
                 </h2>
                 <p className="text-xl text-gray-700 font-medium max-w-4xl mx-auto mb-3">
-                    Comprehensive tools and information to empower your AI journey
+                    {isOdia ? 'ଆପଣଙ୍କ AI ଯାତ୍ରାକୁ ଶକ୍ତିଶାଳୀ କରିବା ପାଇଁ ବ୍ୟାପକ ସାଧନ ଓ ତଥ୍ୟ' : 'Comprehensive tools and information to empower your AI journey'}
                 </p>
             </div>
 
@@ -177,7 +179,7 @@ const ResourcesSection = ({ aiNews }) => {
                             </p>
 
                             <Button variant="ghost" className="group-hover:translate-x-1 transition-transform p-0 hover:bg-transparent font-semibold">
-                                Explore <ArrowRight className="ml-2 w-4 h-4" />
+                                {isOdia ? 'ଅନ୍ବେଷଣ କରନ୍ତୁ' : 'Explore'} <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
                         </CardContent>
                     </Card>

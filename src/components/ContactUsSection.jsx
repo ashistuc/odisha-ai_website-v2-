@@ -2,21 +2,24 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ContactUsSection = ({ contactInfo }) => {
+  const { isOdia } = useLanguage();
+
   return (
     <div>
       {/* Header */}
       <div className="text-center mb-12">
         <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 hover:bg-orange-200 mb-4 px-4 py-2">
           <MapPin className="w-4 h-4 mr-2" />
-          Get in Touch
+          {isOdia ? 'ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Get in Touch'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          Contact <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Us</span>
+          {isOdia ? 'ଆମ ସହ ' : 'Contact '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଯୋଗାଯୋଗ' : 'Us'}</span>
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-          Have questions about Odisha AI Mission? We're here to help!
+          {isOdia ? 'ଓଡ଼ିଶା AI ମିଶନ ବିଷୟରେ ପ୍ରଶ୍ନ ଅଛି? ଆମେ ସାହାଯ୍ୟ କରିବାକୁ ଏଠାରେ ଅଛୁ!' : 'Have questions about Odisha AI Mission? We\'re here to help!'}
         </p>
       </div>
 
@@ -35,7 +38,7 @@ const ContactUsSection = ({ contactInfo }) => {
                   <MapPin className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">Address</p>
+                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'ଠିକଣା' : 'Address'}</p>
                   <p className="text-gray-600 dark:text-gray-300">
                     {contactInfo.fullAddress}
                   </p>
@@ -48,7 +51,7 @@ const ContactUsSection = ({ contactInfo }) => {
                   <Phone className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">Phone</p>
+                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'ଫୋନ୍' : 'Phone'}</p>
                   <a href={`tel:${contactInfo.phone}`} className="text-blue-600 dark:text-blue-400 hover:underline">
                     {contactInfo.phone}
                   </a>
@@ -61,7 +64,7 @@ const ContactUsSection = ({ contactInfo }) => {
                   <Mail className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">Email</p>
+                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'ଇମେଲ୍' : 'Email'}</p>
                   <a href={`mailto:${contactInfo.email}`} className="text-blue-600 dark:text-blue-400 hover:underline">
                     {contactInfo.email}
                   </a>
@@ -74,11 +77,11 @@ const ContactUsSection = ({ contactInfo }) => {
                   <Clock className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">Office Hours</p>
+                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'କାର୍ଯ୍ୟାଳୟ ସମୟ' : 'Office Hours'}</p>
                   <p className="text-gray-600 dark:text-gray-300">
-                    Monday - Friday: 10:00 AM - 5:30 PM<br />
-                    Saturday: 10:00 AM - 2:00 PM<br />
-                    Sunday: Closed
+                    {isOdia ? 'ସୋମବାର - ଶୁକ୍ରବାର: ସକାଳ ୧୦:୦୦ - ସନ୍ଧ୍ୟା ୫:୩୦' : 'Monday - Friday: 10:00 AM - 5:30 PM'}<br />
+                    {isOdia ? 'ଶନିବାର: ସକାଳ ୧୦:୦୦ - ଅପରାହ୍ଣ ୨:୦୦' : 'Saturday: 10:00 AM - 2:00 PM'}<br />
+                    {isOdia ? 'ରବିବାର: ବନ୍ଦ' : 'Sunday: Closed'}
                   </p>
                 </div>
               </div>

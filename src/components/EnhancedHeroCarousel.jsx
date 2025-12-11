@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const { isOdia } = useLanguage();
 
   const handleReadPolicy = () => {
     if (onReadPolicy) {
@@ -74,7 +76,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             {slide.event && (
               <div className="mb-4 inline-block animate-in fade-in slide-in-from-top duration-700">
                 <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg border-2 border-orange-400 animate-pulse-slow">
-                  🎯 {slide.event}
+                  🎯 {isOdia && slide.eventOd ? slide.eventOd : slide.event}
                 </div>
               </div>
             )}
@@ -94,7 +96,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
 
             {/* Title - Animated */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-left animate-in fade-in slide-in-from-left duration-1000">
-              {slide.title}
+              {isOdia && slide.titleOd ? slide.titleOd : slide.title}
             </h1>
 
             {/* Subtitle - Animated */}
@@ -104,7 +106,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
 
             {/* Description - Animated */}
             <p className="text-xl text-gray-200 mb-8 leading-relaxed text-left max-w-2xl animate-in fade-in slide-in-from-left duration-1000 delay-300">
-              {slide.description}
+              {isOdia && slide.descriptionOd ? slide.descriptionOd : slide.description}
             </p>
 
             {/* CTA Buttons - Animated */}
@@ -114,7 +116,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
                 className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={() => document.getElementById('submit-idea-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
-                Submit Your AI Proposal
+                {isOdia ? 'ଆପଣଙ୍କ AI ପ୍ରସ୍ତାବ ଦାଖଲ କରନ୍ତୁ' : 'Submit Your AI Proposal'}
               </Button>
               <Button
                 size="lg"
@@ -122,7 +124,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
                 className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6 transform transition-all hover:scale-105"
                 onClick={handleReadPolicy}
               >
-                Read Odisha AI policy 2025
+                {isOdia ? 'ଓଡ଼ିଶା AI ନୀତି ୨୦୨୫ ପଢ଼ନ୍ତୁ' : 'Read Odisha AI policy 2025'}
               </Button>
             </div>
           </div>
@@ -168,7 +170,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
         onClick={() => setIsAutoPlaying(!isAutoPlaying)}
         className="absolute bottom-8 right-8 z-20 text-white text-sm bg-black/30 hover:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full transition-colors"
       >
-        {isAutoPlaying ? '⏸ Pause' : '▶ Play'}
+        {isAutoPlaying ? (isOdia ? '⏸ ବିରତି' : '⏸ Pause') : (isOdia ? '▶ ଚଳାନ୍ତୁ' : '▶ Play')}
       </button>
     </div>
   );

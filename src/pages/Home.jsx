@@ -154,7 +154,7 @@ const Home = () => {
         {/* Event Gallery Section */}
         <section id="gallery-section" className="py-20 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <EventGallery events={eventGallery} />
+            <EventGallery events={eventGallery} limit={3} showViewAll={true} />
           </div>
         </section>
 
