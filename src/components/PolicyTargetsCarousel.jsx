@@ -21,7 +21,7 @@ const PolicyTargetsCarousel = ({ policyTargets }) => {
 
   useEffect(() => {
     if (!isAutoPlaying) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % policyTargets.length);
     }, 5000);
@@ -51,7 +51,7 @@ const PolicyTargetsCarousel = ({ policyTargets }) => {
           AI Policy 2025 Roadmap
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          Transforming Odisha with <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Ambitious Targets</span>
+          Transforming Odisha with <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">Ambitious Targets</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           Our vision to become India's AI powerhouse - tracking progress across key sectors from 2025 to 2036
@@ -87,7 +87,7 @@ const PolicyTargetsCarousel = ({ policyTargets }) => {
                     <span className="text-gray-600">Current (2025)</span>
                     <span className="font-bold text-gray-800 text-lg">{target.current}</span>
                   </div>
-                  
+
                   {/* Progress Bar for 2029 */}
                   <div>
                     <div className="flex items-center justify-between text-sm mb-1">
@@ -138,11 +138,10 @@ const PolicyTargetsCarousel = ({ policyTargets }) => {
                   setIsAutoPlaying(false);
                   setCurrentIndex(idx);
                 }}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  idx === currentIndex 
-                    ? 'w-8 bg-orange-600' 
+                className={`h-2 rounded-full transition-all duration-300 ${idx === currentIndex
+                    ? 'w-8 bg-orange-600'
                     : 'w-2 bg-gray-300 hover:bg-gray-400'
-                }`}
+                  }`}
                 aria-label={`Go to ${policyTargets[idx].category}`}
               />
             ))}

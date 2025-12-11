@@ -143,7 +143,7 @@ const ImplementationPhaseSection = () => {
           Implementation Roadmap
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
-          <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">
             Get It Done:
           </span>{' '}
           AI Implementation Timeline
@@ -164,11 +164,10 @@ const ImplementationPhaseSection = () => {
             <button
               key={phase.id}
               onClick={() => setActivePhase(index)}
-              className={`flex-1 relative group transition-all duration-300 p-3 rounded-lg ${
-                isActive
+              className={`flex-1 relative group transition-all duration-300 p-3 rounded-lg ${isActive
                   ? `bg-white shadow-md ${phaseColors.border} border-2`
                   : 'hover:bg-white/50'
-              }`}
+                }`}
             >
               <div className="flex items-center justify-center sm:flex-col space-x-3 sm:space-x-0 sm:space-y-2">
                 <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gradient-to-br ${phaseColors.bg} flex items-center justify-center ${isActive ? 'animate-pulse' : ''}`}>

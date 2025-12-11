@@ -40,7 +40,7 @@ const PartnersScrolling = () => {
           </div>
 
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 tracking-tight">
-            {isOdia ? 'ନବସୃଜନରେ ' : 'Partners in '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ସହଭାଗୀ' : 'Innovation'}</span>
+            {isOdia ? 'ନବସୃଜନରେ ' : 'Partners in '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ସହଭାଗୀ' : 'Innovation'}</span>
           </h2>
 
           <p className="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400">

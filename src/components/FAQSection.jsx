@@ -20,7 +20,7 @@ const FAQSection = ({ faqs }) => {
           {isOdia ? 'ପ୍ରାୟଶଃ ପଚରାଯାଉଥିବା ପ୍ରଶ୍ନ' : 'Frequently Asked Questions'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          {isOdia ? 'ପ୍ରଶ୍ନ ଅଛି? ଆମ ପାଖରେ ' : 'Got Questions? We\'ve Got '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଉତ୍ତର ଅଛି' : 'Answers'}</span>
+          {isOdia ? 'ପ୍ରଶ୍ନ ଅଛି? ଆମ ପାଖରେ ' : 'Got Questions? We\'ve Got '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ଉତ୍ତର ଅଛି' : 'Answers'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           {isOdia ? 'ଓଡ଼ିଶାର AI ମିଶନ ବିଷୟରେ ଆପଣଙ୍କୁ ଜାଣିବାକୁ ଲାଗୁଥିବା ସବୁକିଛି ଏବଂ ଆପଣ କିପରି ଏହାର ଏକ ଅଂଶ ହୋଇପାରିବେ' : 'Everything you need to know about Odisha\'s AI Mission and how you can be a part of it'}

@@ -20,7 +20,7 @@ const AboutMissionSection = () => {
             {isOdia ? 'ଆମର ରଣନୀତିକ ଦିଗ' : 'Our Strategic Direction'}
           </Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-8">
-            {isOdia ? 'ମିଶନ୍ ' : 'About the '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ବିଷୟରେ' : 'Mission'}</span>
+            {isOdia ? 'ମିଶନ୍ ' : 'About the '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ବିଷୟରେ' : 'Mission'}</span>
           </h2>
         </div>
 

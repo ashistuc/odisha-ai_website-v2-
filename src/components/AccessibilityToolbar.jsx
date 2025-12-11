@@ -42,7 +42,7 @@ const AccessibilityToolbar = ({ inline = false }) => {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={inline
-          ? "p-2 text-gray-700 dark:text-white hover:text-orange-600 transition-colors duration-200 focus:outline-none"
+          ? "p-2 text-white dark:text-white hover:text-orange-600 transition-colors duration-200 focus:outline-none"
           : "fixed top-6 right-6 z-[100] w-14 h-14 bg-orange-600 hover:bg-orange-700 dark:bg-orange-500 dark:hover:bg-orange-600 text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300"
         }
         aria-label="Open accessibility settings"

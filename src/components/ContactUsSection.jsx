@@ -16,7 +16,7 @@ const ContactUsSection = ({ contactInfo }) => {
           {isOdia ? 'ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Get in Touch'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-          {isOdia ? 'ଆମ ସହ ' : 'Contact '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଯୋଗାଯୋଗ' : 'Us'}</span>
+          {isOdia ? 'ଆମ ସହ ' : 'Contact '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ଯୋଗାଯୋଗ' : 'Us'}</span>
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
           {isOdia ? 'ଓଡ଼ିଶା AI ମିଶନ ବିଷୟରେ ପ୍ରଶ୍ନ ଅଛି? ଆମେ ସାହାଯ୍ୟ କରିବାକୁ ଏଠାରେ ଅଛୁ!' : 'Have questions about Odisha AI Mission? We\'re here to help!'}

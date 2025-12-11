@@ -10,7 +10,7 @@ const LanguageToggle = ({ inline = false }) => {
         return (
             <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800"
+                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-white dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800"
                 aria-label="Toggle Language"
                 title={isOdia ? 'Switch to English' : 'Switch to Odia'}
             >

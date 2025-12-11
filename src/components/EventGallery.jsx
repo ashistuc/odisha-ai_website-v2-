@@ -55,7 +55,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
             {isOdia ? 'ଇଭେଣ୍ଟ ସ୍ମୃତି' : 'Event Memories'}
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            {isOdia ? 'ଇଣ୍ଟରଆକ୍ଟିଭ୍ ' : 'Interactive '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ଇଭେଣ୍ଟ ଗ୍ୟାଲେରୀ' : 'Event Gallery'}</span>
+            {isOdia ? 'ଇଣ୍ଟରଆକ୍ଟିଭ୍ ' : 'Interactive '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ଇଭେଣ୍ଟ ଗ୍ୟାଲେରୀ' : 'Event Gallery'}</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
             {isOdia ? 'ଓଡ଼ିଶା ଜୁଡ଼ି AI ମିଶନ ଇଭେଣ୍ଟ, ୱର୍କସପ ଏବଂ ଉତ୍ସବରୁ ଧରାଯାଇଥିବା ମୁହୂର୍ତ୍ତଗୁଡ଼ିକୁ ଅନ୍ବେଷଣ କରନ୍ତୁ' : 'Explore moments captured from AI Mission events, workshops, and celebrations across Odisha'}

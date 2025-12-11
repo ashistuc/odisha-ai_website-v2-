@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Twitter, Linkedin, Youtube } from 'lucide-react';
+import { Mail, Phone, MapPin } from 'lucide-react';
 import Logo from './Logo';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from '../translations/translations';
@@ -80,17 +80,6 @@ const Footer = () => {
             <p className="text-sm text-gray-400 mb-4">
               {t('footer.brandDescription')}
             </p>
-            <div className="flex space-x-3">
-              <a href="#" className="w-9 h-9 bg-gray-800 hover:bg-orange-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                <Twitter className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 bg-gray-800 hover:bg-orange-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                <Linkedin className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-9 h-9 bg-gray-800 hover:bg-orange-600 rounded-full flex items-center justify-center transition-colors duration-300">
-                <Youtube className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Links Sections */}

@@ -36,7 +36,7 @@ const ActsNotificationsSection = ({ items }) => {
           {isOdia ? 'ଆଇନଗତ ଏବଂ ନିୟାମକ ଢାଞ୍ଚା' : 'Legal & Regulatory Framework'}
         </Badge>
         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-          {isOdia ? 'ଆଇନ, ବିଜ୍ଞପ୍ତି, ' : 'Acts, Notifications, '}<span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">{isOdia ? 'ସରକାରୀ ଆଦେଶ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ' : 'Govt Orders & Guidelines'}</span>
+          {isOdia ? 'ଆଇନ, ବିଜ୍ଞପ୍ତି, ' : 'Acts, Notifications, '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ସରକାରୀ ଆଦେଶ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ' : 'Govt Orders & Guidelines'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
           {isOdia ? 'AI କାର୍ଯ୍ୟକାରିତା ପାଇଁ ନବୀନତମ ଆଇନଗତ ଢାଞ୍ଚା, ନୀତି ବିଜ୍ଞପ୍ତି ଏବଂ ସରକାରୀ ନିର୍ଦ୍ଦେଶନାମା ସହ ଅଦ୍ୟତନ ରହନ୍ତୁ' : 'Stay updated with the latest legal framework, policy notifications, and government directives for AI implementation'}

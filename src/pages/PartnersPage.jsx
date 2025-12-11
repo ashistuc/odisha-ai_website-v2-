@@ -53,7 +53,7 @@ const PartnersPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white dark:from-gray-900 dark:to-gray-800">
             {/* Hero Section */}
-            <div className="relative bg-gradient-to-r from-orange-600 to-orange-700 py-24 overflow-hidden">
+            <div className="relative bg-gradient-to-r from-orange-600 to-orange-600 py-24 overflow-hidden">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <Badge className="bg-white/20 text-white mb-6 px-4 py-2 border-white/30">
                         <Handshake className="w-4 h-4 mr-2" />

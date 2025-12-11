@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Home } from 'lucide-react';
 import AccessibilityToolbar from './AccessibilityToolbar';
@@ -8,9 +8,24 @@ import { translations } from '../translations/translations';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const { language, isOdia } = useLanguage();
   const t = translations[language];
   const location = useLocation();
+
+  // Handle scroll to show/hide parts of header
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (sectionId) => {
     // If we're not on the home page, navigate to home first
@@ -47,7 +62,30 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white dark:bg-gray-900 sticky top-0 z-stack-header shadow-sm transition-colors duration-300 border-t-4 border-t-orange-500 header-glow">
+      <header className="bg-white dark:bg-gray-900 sticky top-0 z-stack-header shadow-sm transition-all duration-300  header-glow">
+        {/* Top Strip - Always visible, but right side icons hide on scroll */}
+        <div className="bg-orange-700 text-white">
+          <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center">
+              {/* Left Side - Government of Odisha - Always visible */}
+              <div className="text-sm font-medium">
+                {isOdia ? 'ଓଡ଼ିଶା ସରକାର' : 'Government of Odisha'}
+              </div>
+
+              {/* Right Side - Language Toggle & Settings - Hidden on scroll */}
+              <div className={`flex items-center space-x-3 transition-all duration-300 ${isScrolled ? 'max-w-0 overflow-hidden opacity-0' : 'max-w-xs opacity-100'}`}>
+                <div className="hidden sm:block text-white">
+                  <LanguageToggle inline={true} />
+                </div>
+                <div className="relative text-white">
+                  <AccessibilityToolbar inline={true} />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Logo Section - Always visible */}
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-3 lg:py-4">
             {/* Logo Section with Government Logos */}
@@ -56,7 +94,6 @@ const Header = () => {
                 to="/"
                 className="flex items-center space-x-3 group"
               >
-
                 <img
                   src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
                   alt="Government of Odisha"
@@ -74,13 +111,6 @@ const Header = () => {
                     className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                {/* <div className="flex flex-col items-center space-y-1">
-                  <img
-                    src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
-                    alt="Odisha AI Mission Logo"
-                    className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div> */}
 
                 {/* E&IT Dept / OCAC Logo */}
                 <div className="flex flex-col items-center space-y-1">
@@ -93,7 +123,7 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Right Actions: CM Section, Language Toggle & Settings */}
+            {/* Right Actions: CM Section */}
             <div className="flex items-center space-x-4">
               {/* CM Section - Inline */}
               <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-4">
@@ -117,16 +147,6 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Language Toggle */}
-              <div className="hidden sm:block">
-                <LanguageToggle inline={true} />
-              </div>
-
-              {/* Accessibility Toolbar Button */}
-              <div className="relative">
-                <AccessibilityToolbar inline={true} />
-              </div>
-
               {/* Mobile Menu Button - Only visible on small screens */}
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -142,8 +162,8 @@ const Header = () => {
         {/* Orange Navigation Bar - Always Visible */}
         <nav className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 shadow-md">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center justify-center py-2">
+            {/* Desktop Navigation - Reduced Padding */}
+            <div className="hidden lg:flex items-center justify-center">
               <ul className="flex items-center space-x-1">
                 {navItems.map((item, index) => (
                   <li key={index}>
@@ -151,7 +171,9 @@ const Header = () => {
                       <Link
                         to={item.href}
                         aria-label={item.ariaLabel || item.name}
-                        className={`px-4 py-2 text-white font-medium text-sm rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
+                        className={`px-3 py-1.5 text-white font-medium text-sm rounded-md transition-all duration-200 whitespace-nowrap ${
+                          // Remove active state for home icon (index 0), keep for others
+                          index !== 0 && location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
                           }`}
                       >
                         {item.name}
@@ -160,7 +182,7 @@ const Header = () => {
                       <button
                         onClick={() => handleNavClick(item)}
                         aria-label={item.ariaLabel || item.name}
-                        className="px-4 py-2 text-white font-medium text-sm hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
+                        className="px-3 py-1.5 text-white font-medium text-sm hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
                       >
                         {item.name}
                       </button>
@@ -170,8 +192,8 @@ const Header = () => {
               </ul>
             </div>
 
-            {/* Mobile Navigation - Horizontal Scroll */}
-            <div className="lg:hidden overflow-x-auto py-2 scrollbar-hide">
+            {/* Mobile Navigation - Horizontal Scroll - Reduced Padding */}
+            <div className="lg:hidden overflow-x-auto py-1.5 scrollbar-hide">
               <ul className="flex items-center space-x-1 min-w-max">
                 {navItems.map((item, index) => (
                   <li key={index}>
@@ -179,7 +201,9 @@ const Header = () => {
                       <Link
                         to={item.href}
                         aria-label={item.ariaLabel || item.name}
-                        className={`px-3 py-1.5 text-white font-medium text-xs rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
+                        className={`px-2.5 py-1 text-white font-medium text-xs rounded-md transition-all duration-200 whitespace-nowrap ${
+                          // Remove active state for home icon (index 0), keep for others  
+                          index !== 0 && location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
                           }`}
                         onClick={() => setIsMenuOpen(false)}
                       >
@@ -189,7 +213,7 @@ const Header = () => {
                       <button
                         onClick={() => handleNavClick(item)}
                         aria-label={item.ariaLabel || item.name}
-                        className="px-3 py-1.5 text-white font-medium text-xs hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
+                        className="px-2.5 py-1 text-white font-medium text-xs hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
                       >
                         {item.name}
                       </button>

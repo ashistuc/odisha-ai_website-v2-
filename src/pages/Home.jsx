@@ -86,7 +86,7 @@ const Home = () => {
                 Featured Projects
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Featured AI Projects in <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Odisha</span>
+                Featured AI Projects in <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">Odisha</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
                 Transforming governance and citizen services through innovative AI implementations
@@ -166,7 +166,7 @@ const Home = () => {
                 Latest News
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                AI News & <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Updates</span>
+                AI News & <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">Updates</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Stay updated with the latest developments in AI ecosystem
@@ -184,7 +184,7 @@ const Home = () => {
                 AI Resources
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                AI Tools & <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Resources</span>
+                AI Tools & <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">Resources</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Explore powerful AI tools and platforms available for developers and researchers
@@ -202,7 +202,7 @@ const Home = () => {
                 Quick Access
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                Important <span className="bg-gradient-to-r from-orange-600 to-orange-700 bg-clip-text text-transparent">Links</span>
+                Important <span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">Links</span>
               </h2>
               <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
                 Direct access to government portals and partner organizations

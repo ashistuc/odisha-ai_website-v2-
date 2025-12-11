@@ -131,38 +131,39 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
         </div>
       </div>
 
-      {/* Navigation Controls */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex items-center space-x-4">
-        <Button
-          onClick={prevSlide}
-          size="icon"
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full border border-white/30"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </Button>
+      {/* Left Navigation Button */}
+      <Button
+        onClick={prevSlide}
+        size="icon"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        aria-label="Previous slide"
+      >
+        <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
+      </Button>
 
-        {/* Slide Indicators */}
-        <div className="flex space-x-2">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
+      {/* Right Navigation Button */}
+      <Button
+        onClick={nextSlide}
+        size="icon"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        aria-label="Next slide"
+      >
+        <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />
+      </Button>
+
+      {/* Slide Indicators - Hidden */}
+      <div className="hidden">
+        {slides.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
                 ? 'w-12 bg-orange-500'
                 : 'w-2 bg-white/50 hover:bg-white/70'
-                }`}
-              aria-label={`Go to slide ${index + 1}`}
-            />
-          ))}
-        </div>
-
-        <Button
-          onClick={nextSlide}
-          size="icon"
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white rounded-full border border-white/30"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </Button>
+              }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
 
       {/* Auto-play Toggle */}
