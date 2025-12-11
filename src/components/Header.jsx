@@ -63,7 +63,7 @@ const Header = () => {
   return (
     <>
       <header className="bg-white dark:bg-gray-900 sticky top-0 z-stack-header shadow-sm transition-all duration-300  header-glow">
-        {/* Top Strip - Always visible, but right side icons hide on scroll */}
+        {/* Top Strip - Always visible */}
         <div className="bg-orange-700 text-white">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center">
@@ -72,8 +72,8 @@ const Header = () => {
                 {isOdia ? 'ଓଡ଼ିଶା ସରକାର' : 'Government of Odisha'}
               </div>
 
-              {/* Right Side - Language Toggle & Settings - Hidden on scroll */}
-              <div className={`flex items-center space-x-3 transition-all duration-300 ${isScrolled ? 'max-w-0 overflow-hidden opacity-0' : 'max-w-xs opacity-100'}`}>
+              {/* Right Side - Language Toggle & Settings - Always visible */}
+              <div className="flex items-center space-x-3">
                 <div className="hidden sm:block text-white">
                   <LanguageToggle inline={true} />
                 </div>
@@ -87,7 +87,7 @@ const Header = () => {
 
         {/* Logo Section - Always visible */}
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-3 lg:py-4">
+          <div className="flex justify-between items-center py-1 lg:py-2">
             {/* Logo Section with Government Logos */}
             <div className="flex items-center space-x-6">
               <Link
@@ -108,7 +108,7 @@ const Header = () => {
                   <img
                     src="/odisha-ai_website-v2-/images/mission-removebg-preview1.png"
                     alt="Odisha AI Mission Logo"
-                    className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="w-28 object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
 
@@ -126,7 +126,7 @@ const Header = () => {
             {/* Right Actions: CM Section */}
             <div className="flex items-center space-x-4">
               {/* CM Section - Inline */}
-              <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-4">
+              <div className="hidden lg:flex items-end gap-4 mr-2 pl-4 border-l-2 border-orange-500 -mb-3 lg:-mb-2">
                 {/* Text Content */}
                 <div className="text-right mb-3">
                   <h2 className="text-lg font-bold text-gray-900 dark:text-white">
