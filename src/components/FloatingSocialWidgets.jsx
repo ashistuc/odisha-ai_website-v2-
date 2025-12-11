@@ -40,8 +40,8 @@ const FloatingSocialWidgets = () => {
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className={`w-14 h-14 ${isExpanded
-            ? 'bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700'
-            : 'bg-gradient-to-br from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700'
+          ? 'bg-gray-700 hover:bg-gray-800 dark:bg-gray-600 dark:hover:bg-gray-700'
+          : 'bg-gradient-to-br from-orange-600 to-orange-600 hover:from-orange-700 hover:to-orange-700'
           } text-white rounded-full shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-4 focus:ring-orange-300`}
         aria-label={isExpanded ? 'Close social menu' : 'Open social menu'}
         aria-expanded={isExpanded}

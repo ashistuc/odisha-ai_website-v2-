@@ -40,7 +40,7 @@ const FAQSection = ({ faqs }) => {
             <CardContent className="p-6">
               <div className="flex items-start justify-between">
                 <h3 className="text-lg font-semibold text-gray-900 pr-8 flex-1">
-                  {faq.question}
+                  {isOdia ? (faq.questionOd || faq.question) : faq.question}
                 </h3>
                 <ChevronDown
                   className={`w-5 h-5 text-orange-600 flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
@@ -53,7 +53,7 @@ const FAQSection = ({ faqs }) => {
                   }`}
               >
                 <p className="text-gray-600 leading-relaxed">
-                  {faq.answer}
+                  {isOdia ? (faq.answerOd || faq.answer) : faq.answer}
                 </p>
               </div>
             </CardContent>

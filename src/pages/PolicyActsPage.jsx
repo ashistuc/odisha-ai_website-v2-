@@ -30,6 +30,18 @@ const PolicyActsPage = () => {
 
     const filterOptions = ['All', 'Act', 'Notification', 'Govt Order', 'Guideline'];
 
+    const getFilterLabel = (key) => {
+        if (!isOdia) return key;
+        const labels = {
+            'All': 'ସମସ୍ତ',
+            'Act': 'ଆଇନ',
+            'Notification': 'ବିଜ୍ଞପ୍ତି',
+            'Govt Order': 'ସରକାରୀ ଆଦେଶ',
+            'Guideline': 'ନିର୍ଦ୍ଦେଶାବଳୀ'
+        };
+        return labels[key] || key;
+    };
+
     const filteredItems = actsNotifications.filter(item => {
         const matchesFilter = activeFilter === 'All' || item.type === activeFilter;
         const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -69,9 +81,6 @@ const PolicyActsPage = () => {
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* Stats Section */}
-
-
                 {/* Search and Filter Section */}
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg mb-12 border border-gray-100">
                     <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
@@ -99,7 +108,7 @@ const PolicyActsPage = () => {
                                         : 'bg-gray-100 text-gray-600 hover:bg-orange-100 hover:text-orange-600'
                                         }`}
                                 >
-                                    {filter === 'All' ? (isOdia ? 'ସମସ୍ତ' : 'All') : filter}
+                                    {getFilterLabel(filter)}
                                 </button>
                             ))}
                         </div>
@@ -120,7 +129,7 @@ const PolicyActsPage = () => {
                                 <CardHeader className="pb-3">
                                     <div className="flex items-start justify-between mb-3">
                                         <Badge className={`${typeStyle.bg} ${typeStyle.text} border ${typeStyle.border}`}>
-                                            {item.type}
+                                            {getFilterLabel(item.type)}
                                         </Badge>
                                         <div className={`${typeStyle.bg} p-3 rounded-xl group-hover:scale-110 transition-transform`}>
                                             <IconComponent className={`w-5 h-5 ${typeStyle.text}`} />
@@ -136,7 +145,7 @@ const PolicyActsPage = () => {
                                     </p>
                                     <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
                                         <span className="text-xs text-gray-500 dark:text-gray-500 font-medium">
-                                            {new Date(item.date).toLocaleDateString('en-IN', {
+                                            {new Date(item.date).toLocaleDateString(isOdia ? 'or-IN' : 'en-IN', {
                                                 year: 'numeric',
                                                 month: 'short',
                                                 day: 'numeric'

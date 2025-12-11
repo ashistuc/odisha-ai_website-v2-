@@ -82,15 +82,15 @@ const ResourcesSection = ({ aiNews }) => {
                                 href={resource.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group block p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-purple-300 transition-all duration-300"
+                                className="group block p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg hover:border-orange-300 transition-all duration-300"
                             >
                                 <div className="flex justify-between items-start mb-4">
                                     <div className="p-3 bg-orange-50 rounded-lg group-hover:bg-orange-100 transition-colors">
-                                        <GraduationCap className="w-6 h-6 text-purple-600" />
+                                        <GraduationCap className="w-6 h-6 text-orange-600" />
                                     </div>
-                                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-purple-600 transition-colors" />
+                                    <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-orange-600 transition-colors" />
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-purple-700 mb-2">
+                                <h3 className="text-lg font-bold text-gray-900 group-hover:text-orange-700 mb-2">
                                     {resource.title}
                                 </h3>
                                 <p className="text-sm text-gray-600 line-clamp-2">
@@ -190,8 +190,8 @@ const ResourcesSection = ({ aiNews }) => {
                 <DialogContent className="max-w-5xl h-[85vh] flex flex-col p-0 overflow-hidden">
                     <DialogHeader className="p-6 pb-2 border-b bg-white shrink-0">
                         <DialogTitle className="text-2xl font-bold flex items-center gap-2">
-                            {activeDialog === 'news' && <Newspaper className="w-6 h-6 text-blue-600" />}
-                            {activeDialog === 'learning' && <GraduationCap className="w-6 h-6 text-purple-600" />}
+                            {activeDialog === 'news' && <Newspaper className="w-6 h-6 text-orange-600" />}
+                            {activeDialog === 'learning' && <GraduationCap className="w-6 h-6 text-orange-600" />}
                             {activeDialog === 'datasets' && <Database className="w-6 h-6 text-orange-600" />}
                             {getDialogTitle()}
                         </DialogTitle>

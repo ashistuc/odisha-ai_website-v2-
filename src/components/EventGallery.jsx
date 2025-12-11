@@ -89,7 +89,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
               <div className="absolute bottom-3 left-3 right-3">
                 <Badge className="bg-orange-600 text-white mb-2">
-                  {event.media.length} {event.media.length === 1 ? 'item' : 'items'}
+                  {event.media.length} {event.media.length === 1 ? (isOdia ? 'ଆଇଟମ୍' : 'item') : (isOdia ? 'ଆଇଟମ୍' : 'items')}
                 </Badge>
               </div>
             </div>
@@ -103,7 +103,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
             <CardContent className="space-y-2">
               <div className="flex items-center text-sm text-gray-600 dark:text-gray-400">
                 <Calendar className="w-4 h-4 mr-2 text-gray-500" />
-                {new Date(event.date).toLocaleDateString('en-IN', {
+                {new Date(event.date).toLocaleDateString(isOdia ? 'or-IN' : 'en-IN', {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric'
@@ -152,7 +152,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                 <div className="flex flex-wrap gap-4 text-sm text-gray-600 dark:text-gray-400">
                   <div className="flex items-center">
                     <Calendar className="w-4 h-4 mr-2" />
-                    {new Date(selectedEvent.date).toLocaleDateString('en-IN', {
+                    {new Date(selectedEvent.date).toLocaleDateString(isOdia ? 'or-IN' : 'en-IN', {
                       year: 'numeric',
                       month: 'long',
                       day: 'numeric'
@@ -172,7 +172,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                 size="icon"
                 onClick={() => setSelectedEvent(null)}
                 className="hover:bg-gray-100 dark:hover:bg-gray-800"
-                aria-label="Close gallery"
+                aria-label={isOdia ? 'ଗ୍ୟାଲେରୀ ବନ୍ଦ କରନ୍ତୁ' : 'Close gallery'}
               >
                 <X className="w-6 h-6" />
               </Button>
@@ -185,7 +185,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                   key={index}
                   onClick={() => openLightbox(selectedEvent, index)}
                   className="group relative aspect-video rounded-lg overflow-hidden border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 dark:hover:border-orange-600 transition-all focus:outline-none focus:ring-2 focus:ring-orange-500"
-                  aria-label={`View ${media.caption}`}
+                  aria-label={isOdia ? `ଦେଖନ୍ତୁ ${media.caption}` : `View ${media.caption}`}
                 >
                   <img
                     src={media.type === 'video' ? media.thumbnail : media.url}
@@ -213,7 +213,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                   {media.type === 'video' && (
                     <Badge className="absolute top-2 right-2 bg-orange-600 text-white">
                       <Video className="w-3 h-3 mr-1" />
-                      Video
+                      {isOdia ? 'ଭିଡିଓ' : 'Video'}
                     </Badge>
                   )}
                 </button>
@@ -232,7 +232,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
           <button
             onClick={closeLightbox}
             className="absolute top-4 right-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
-            aria-label="Close viewer"
+            aria-label={isOdia ? 'ଦର୍ଶକ ବନ୍ଦ କରନ୍ତୁ' : 'Close viewer'}
           >
             <X className="w-8 h-8" />
           </button>
@@ -246,7 +246,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                   prevMedia();
                 }}
                 className="absolute left-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
-                aria-label="Previous media"
+                aria-label={isOdia ? 'ପୂର୍ବ ମିଡିଆ' : 'Previous media'}
               >
                 <ChevronLeft className="w-12 h-12" />
               </button>
@@ -256,7 +256,7 @@ const EventGallery = ({ events, limit, showViewAll = false, hideHeader = false }
                   nextMedia();
                 }}
                 className="absolute right-4 text-white hover:text-orange-400 transition-colors z-10 focus:outline-none focus:ring-2 focus:ring-white rounded-full p-2"
-                aria-label="Next media"
+                aria-label={isOdia ? 'ପରବର୍ତ୍ତୀ ମିଡିଆ' : 'Next media'}
               >
                 <ChevronRight className="w-12 h-12" />
               </button>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Home } from 'lucide-react';
 import AccessibilityToolbar from './AccessibilityToolbar';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -26,7 +26,7 @@ const Header = () => {
   };
 
   const navItems = [
-    { name: isOdia ? 'ମୁଖ୍ୟ ପୃଷ୍ଠା' : 'Home', type: 'link', href: '/' },
+    { name: <Home className="w-5 h-5" />, ariaLabel: isOdia ? 'ମୁଖ୍ୟ ପୃଷ୍ଠା' : 'Home', type: 'link', href: '/' },
     { name: isOdia ? 'ମିଶନ୍ ବିଷୟରେ' : 'About Mission', type: 'link', href: '/about-mission' },
     { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', type: 'link', href: '/strategic-pillars' },
     { name: isOdia ? 'ସମ୍ବଳ' : 'Resources', type: 'scroll', section: 'resources-section' },
@@ -74,13 +74,13 @@ const Header = () => {
                     className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-                <div className="flex flex-col items-center space-y-1">
+                {/* <div className="flex flex-col items-center space-y-1">
                   <img
                     src="/odisha-ai_website-v2-/images/mission-removebg-preview.png"
                     alt="Odisha AI Mission Logo"
                     className="w-20 object-contain group-hover:scale-110 transition-transform duration-300"
                   />
-                </div>
+                </div> */}
 
                 {/* E&IT Dept / OCAC Logo */}
                 <div className="flex flex-col items-center space-y-1">
@@ -150,6 +150,7 @@ const Header = () => {
                     {item.type === 'link' ? (
                       <Link
                         to={item.href}
+                        aria-label={item.ariaLabel || item.name}
                         className={`px-4 py-2 text-white font-medium text-sm rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
                           }`}
                       >
@@ -158,6 +159,7 @@ const Header = () => {
                     ) : (
                       <button
                         onClick={() => handleNavClick(item)}
+                        aria-label={item.ariaLabel || item.name}
                         className="px-4 py-2 text-white font-medium text-sm hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
                       >
                         {item.name}
@@ -176,6 +178,7 @@ const Header = () => {
                     {item.type === 'link' ? (
                       <Link
                         to={item.href}
+                        aria-label={item.ariaLabel || item.name}
                         className={`px-3 py-1.5 text-white font-medium text-xs rounded-md transition-all duration-200 whitespace-nowrap ${location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
                           }`}
                         onClick={() => setIsMenuOpen(false)}
@@ -185,6 +188,7 @@ const Header = () => {
                     ) : (
                       <button
                         onClick={() => handleNavClick(item)}
+                        aria-label={item.ariaLabel || item.name}
                         className="px-3 py-1.5 text-white font-medium text-xs hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
                       >
                         {item.name}
@@ -219,6 +223,7 @@ const Header = () => {
                     <Link
                       key={index}
                       to={item.href}
+                      aria-label={item.ariaLabel || item.name}
                       onClick={() => setIsMenuOpen(false)}
                       className="w-full block text-left px-6 py-4 text-lg text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 font-medium rounded-lg transition-all"
                     >
@@ -228,6 +233,7 @@ const Header = () => {
                     <button
                       key={index}
                       onClick={() => handleNavClick(item)}
+                      aria-label={item.ariaLabel || item.name}
                       className="w-full text-left px-6 py-4 text-lg text-gray-700 dark:text-gray-300 hover:bg-orange-50 dark:hover:bg-gray-800 hover:text-orange-600 dark:hover:text-orange-400 font-medium rounded-lg transition-all"
                     >
                       {item.name}
