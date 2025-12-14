@@ -142,7 +142,7 @@ const AboutMission = () => {
                                 </p>
                                 <Link to="/strategic-pillars" className="mt-6 inline-block">
                                     <Button className="bg-orange-600 hover:bg-orange-700 text-white">
-                                        {isOdia ? 'ମୁଖ୍ୟ ଧ୍ୟାନ କ୍ଷେତ୍ର ଦେଖନ୍ତୁ' : 'View Key Focus Areas'}
+                                        {isOdia ? 'ରଣନୈତିକ ସ୍ତମ୍ଭଗୁଡ଼ିକ ଦେଖନ୍ତୁ' : 'View Strategic Pillars'}
                                         <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -181,8 +181,8 @@ const AboutMission = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <Link to="/strategic-pillars" className="group">
-                            <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-blue-300 transition-all duration-300 hover:shadow-lg">
-                                <div className="w-14 h-14 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
+                                <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Server className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ମୁଖ୍ୟ ଧ୍ୟାନ କ୍ଷେତ୍ର' : 'Key Focus Areas'}</h3>
@@ -199,8 +199,8 @@ const AboutMission = () => {
                             </div>
                         </Link>
                         <Link to="/partners" className="group">
-                            <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-purple-300 transition-all duration-300 hover:shadow-lg">
-                                <div className="w-14 h-14 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
+                                <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Users className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ସହଯୋଗୀ' : 'Partners'}</h3>
@@ -208,8 +208,8 @@ const AboutMission = () => {
                             </div>
                         </Link>
                         <Link to="/events" className="group">
-                            <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-green-300 transition-all duration-300 hover:shadow-lg">
-                                <div className="w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                            <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
+                                <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Lightbulb className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events'}</h3>

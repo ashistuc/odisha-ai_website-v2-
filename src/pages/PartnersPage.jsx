@@ -70,7 +70,7 @@ const PartnersPage = () => {
                 </div>
             </div>
 
-            {/* Stats */}
+            {/* Stats 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
                 <div className="grid md:grid-cols-4 gap-4">
                     {partnerTypes.map((type, index) => (
@@ -83,7 +83,7 @@ const PartnersPage = () => {
                     ))}
                 </div>
             </div>
-
+*/}
             {/* Featured Partners */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
                 <div className="text-center mb-12">

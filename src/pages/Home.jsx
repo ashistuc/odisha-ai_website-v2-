@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <>
-      <LoadingScreen onLoadComplete={() => setIsLoading(false)} />
+      {/* <LoadingScreen onLoadComplete={() => setIsLoading(false)} /> */}
       {showIntroQuotes && <IntroQuotesSequence onComplete={handleIntroComplete} />}
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 scroll-smooth">
         {/* Hero Carousel Section */}
@@ -101,7 +101,7 @@ const Home = () => {
           {/* Transparent background */}
           <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80')] bg-cover bg-center bg-fixed"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ">
-            <ResourcesSection aiNews={aiNews} />
+            <ResourcesSection aiNews={aiNews} limit={3} />
           </div>
         </section>
 
@@ -152,11 +152,13 @@ const Home = () => {
         </section>
 */}
         {/* Event Gallery Section */}
+        {/* Event Gallery Section - Hidden
         <section id="gallery-section" className="py-20 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <EventGallery events={eventGallery} limit={3} showViewAll={true} />
           </div>
         </section>
+        */}
 
         {/* AI News Section
         <section id="news-section" className="py-20 bg-white dark:bg-gray-900">
@@ -219,21 +221,21 @@ const Home = () => {
           </div>
         </section>
 
-        {/* FAQ Section */}
+        {/* FAQ Section 
         <section id="faq-section" className="py-20 bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FAQSection faqs={faqs} />
           </div>
         </section>
-
+*/}
         {/* Contact Us Section */}
-        <section id="contact-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="contact-section" className="py-20 bg-white dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ContactUsSection contactInfo={contactInfo} />
           </div>
         </section>
 
-        {/* CTA Section */}
+        {/* CTA Section 
         <section className="py-20 bg-gradient-to-r from-orange-500 to-orange-600">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
@@ -253,6 +255,7 @@ const Home = () => {
             </div>
           </div>
         </section>
+        */}
       </div>
 
       {/* Interactive PDF Reader */}

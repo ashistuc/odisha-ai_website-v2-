@@ -44,12 +44,12 @@ const Header = () => {
     { name: <Home className="w-5 h-5" />, ariaLabel: isOdia ? 'ମୁଖ୍ୟ ପୃଷ୍ଠା' : 'Home', type: 'link', href: '/' },
     { name: isOdia ? 'ମିଶନ୍ ବିଷୟରେ' : 'About Mission', type: 'link', href: '/about-mission' },
     { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', type: 'link', href: '/strategic-pillars' },
-    { name: isOdia ? 'ସମ୍ବଳ' : 'Resources', type: 'scroll', section: 'resources-section' },
+    { name: isOdia ? 'ସମ୍ବଳ' : 'Resources', type: 'link', href: '/resources' },
     { name: isOdia ? 'ସହଯୋଗୀ' : 'Partners', type: 'link', href: '/partners' },
     { name: isOdia ? 'ନୀତି ଏବଂ ଆଇନ' : 'Policy & Acts', type: 'link', href: '/policy-acts' },
-    { name: isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events', type: 'link', href: '/events' },
+    /*  { name: isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events', type: 'link', href: '/events' },*/
     { name: isOdia ? 'ଧାରଣା ଦାଖଲ' : 'Submit Idea', type: 'scroll', section: 'submit-idea-section' },
-    { name: isOdia ? 'ସାଧାରଣ ପ୍ରଶ୍ନ' : 'FAQ', type: 'scroll', section: 'faq-section' },
+
     { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact', type: 'link', href: '/contact' }
   ];
 
@@ -69,17 +69,17 @@ const Header = () => {
             <div className="flex justify-between items-center">
               {/* Left Side - Government of Odisha - Always visible */}
               <div className="text-sm font-medium">
-                {isOdia ? 'ଓଡ଼ିଶା ସରକାର' : 'Government of Odisha'}
+                Government of Odisha | ଓଡ଼ିଶା ସରକାର
               </div>
 
               {/* Right Side - Language Toggle & Settings - Always visible */}
-              <div className="flex items-center space-x-3">
+              <div className="flex items-center space-x-3 py-1">
                 <div className="hidden sm:block text-white">
                   <LanguageToggle inline={true} />
                 </div>
-                <div className="relative text-white">
+                {/*  <div className="relative text-white">
                   <AccessibilityToolbar inline={true} />
-                </div>
+                </div>*/}
               </div>
             </div>
           </div>
@@ -106,9 +106,9 @@ const Header = () => {
                 {/* Odisha Govt Logo */}
                 <div className="flex flex-col items-center space-y-1">
                   <img
-                    src="/odisha-ai_website-v2-/images/mission-removebg-preview1.png"
+                    src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
                     alt="Odisha AI Mission Logo"
-                    className="w-28 object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="w-[100px] object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
 

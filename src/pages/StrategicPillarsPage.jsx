@@ -189,8 +189,8 @@ const StrategicPillarsPage = () => {
                         {isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars'}
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        {isOdia ? 'ମୁଖ୍ୟ ଧ୍ୟାନ ' : 'Key Focus '}
-                        <span className="text-orange-200">{isOdia ? 'କ୍ଷେତ୍ର' : 'Areas'}</span>
+                        {isOdia ? 'ରଣନୀତିକ ' : 'Strategic '}
+                        <span className="text-orange-200">{isOdia ? 'ସ୍ତମ୍ଭ' : 'Pillars'}</span>
                     </h1>
                     <p className="text-xl text-orange-100 max-w-3xl leading-relaxed">
                         {isOdia
@@ -298,11 +298,7 @@ const StrategicPillarsPage = () => {
                                     )}
                                 </div>
 
-                                <div className="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700 flex justify-end">
-                                    <button className="text-orange-600 dark:text-orange-400 font-semibold flex items-center hover:translate-x-1 transition-transform">
-                                        {isOdia ? `${getActivePillar().labelOd} ବିଷୟରେ ଅଧିକ ଜାଣନ୍ତୁ` : `Learn more about ${getActivePillar().label}`} <ArrowRight className="ml-2 w-4 h-4" />
-                                    </button>
-                                </div>
+
                             </div>
                         </div>
                     </div>

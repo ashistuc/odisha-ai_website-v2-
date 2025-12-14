@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent } from '../components/ui/card';
@@ -42,15 +42,6 @@ const ContactPage = () => {
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                    <Phone className="w-6 h-6 text-orange-600" />
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-gray-900">{isOdia ? 'ଫୋନ୍' : 'Phone'}</p>
-                                    <p className="text-gray-600">+91-674-2567892</p>
-                                </div>
-                            </div>
 
                             <div className="flex items-start space-x-4">
                                 <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
@@ -62,17 +53,27 @@ const ContactPage = () => {
                                 </div>
                             </div>
 
-                            <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                                    <Clock className="w-6 h-6 text-orange-600" />
-                                </div>
-                                <div>
-                                    <p className="font-semibold text-gray-900">{isOdia ? 'କାର୍ଯ୍ୟାଳୟ ସମୟ' : 'Office Hours'}</p>
-                                    <p className="text-gray-600">
-                                        {isOdia ? 'ସୋମବାର - ଶୁକ୍ରବାର: ୧୦:୦୦ - ୫:୩୦' : 'Monday - Friday: 10:00 AM - 5:30 PM'}
-                                    </p>
+                            <div className="pt-6 border-t border-gray-100">
+                                <p className="font-semibold text-gray-900 mb-4">{isOdia ? 'ସୋସିଆଲ ମିଡିଆ' : 'Follow Us'}</p>
+                                <div className="flex space-x-4">
+                                    <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-blue-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-600 transition-all duration-300">
+                                        <Facebook className="w-5 h-5" />
+                                    </a>
+                                    <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:text-black transition-all duration-300">
+                                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                        </svg>
+                                    </a>
+                                    <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-blue-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-700 transition-all duration-300">
+                                        <Linkedin className="w-5 h-5" />
+                                    </a>
+                                    <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-pink-50 rounded-full flex items-center justify-center text-gray-400 hover:text-pink-600 transition-all duration-300">
+                                        <Instagram className="w-5 h-5" />
+                                    </a>
                                 </div>
                             </div>
+
+
                         </CardContent>
                     </Card>
 

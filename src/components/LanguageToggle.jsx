@@ -6,19 +6,30 @@ const LanguageToggle = ({ inline = false }) => {
     const { language, toggleLanguage, isOdia } = useLanguage();
 
     if (inline) {
-        // Inline version for header
+        // Inline segmented control version for header
         return (
-            <button
-                onClick={toggleLanguage}
-                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-white dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200 rounded-lg hover:bg-orange-50 dark:hover:bg-gray-800"
-                aria-label="Toggle Language"
-                title={isOdia ? 'Switch to English' : 'Switch to Odia'}
-            >
-                <Languages className="w-5 h-5" />
-                <span className="font-semibold">
-                    {isOdia ? 'English' : 'ଓଡ଼ିଆ'}
-                </span>
-            </button>
+            <div className="flex items-center bg-black/20 backdrop-blur-sm rounded-lg p-1 gap-1 border border-white/10">
+                <button
+                    onClick={() => isOdia && toggleLanguage()}
+                    className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all duration-200 ${!isOdia
+                            ? 'bg-white text-orange-700 shadow-sm scale-105'
+                            : 'text-white/90 hover:text-white hover:bg-white/10'
+                        }`}
+                    aria-label="Switch to English"
+                >
+                    English
+                </button>
+                <button
+                    onClick={() => !isOdia && toggleLanguage()}
+                    className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all duration-200 ${isOdia
+                            ? 'bg-white text-orange-700 shadow-sm scale-105'
+                            : 'text-white/90 hover:text-white hover:bg-white/10'
+                        }`}
+                    aria-label="Switch to Odia"
+                >
+                    ଓଡ଼ିଆ
+                </button>
+            </div>
         );
     }
 

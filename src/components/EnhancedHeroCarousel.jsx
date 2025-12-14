@@ -73,6 +73,24 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
             {/* Event Badge - Animated */}
+            {/* Government Logos - Updated with Images */}
+            <div className="flex items-center flex-wrap gap-4 mb-6">
+              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20 animate-in fade-in duration-1000">
+                <img
+                  src="/odisha-ai_website-v2-/logo/Ai_summit.jpeg"
+                  alt="AI Summit"
+                  className="h-[200px] w-[200px] object-contain rounded"
+                />
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20 animate-in fade-in duration-1000 delay-100">
+                <img
+                  src="/odisha-ai_website-v2-/logo/Odisha_Ai_Summit.png"
+                  alt="Odisha AI Summit"
+                  className="h-[200px] w-[200px] object-contain"
+                />
+              </div>
+            </div>
+
             {slide.event && (
               <div className="mb-4 inline-block animate-in fade-in slide-in-from-top duration-700">
                 <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg border-2 border-orange-400 animate-pulse-slow">
@@ -81,18 +99,6 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
               </div>
             )}
 
-            {/* Government Logos */}
-            <div className="flex items-center flex-wrap gap-3 mb-6">
-              {slide.logos.map((logo, index) => (
-                <div
-                  key={index}
-                  className="bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20 animate-in fade-in duration-1000"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <span className="text-white text-xs font-semibold">{logo}</span>
-                </div>
-              ))}
-            </div>
 
             {/* Title - Animated */}
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-left animate-in fade-in slide-in-from-left duration-1000">
@@ -110,18 +116,17 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             </p>
 
             {/* CTA Buttons - Animated */}
-            <div className="flex flex-wrap gap-4 justify-start animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
+            <div className="flex  gap-4 justify-start animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
               <Button
                 size="lg"
-                className="bg-orange-600 hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
+                className=" bg-transparent outline-orange-600 border-orange-600 border-2 w-[35%] hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={() => document.getElementById('submit-idea-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {isOdia ? 'ଆପଣଙ୍କ AI ପ୍ରସ୍ତାବ ଦାଖଲ କରନ୍ତୁ' : 'Submit Your AI Proposal'}
               </Button>
               <Button
                 size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white/10 text-lg px-8 py-6 transform transition-all hover:scale-105"
+                className="outline-orange-600 border-orange-600 border-2 bg-orange-600 w-[35%] hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={handleReadPolicy}
               >
                 {isOdia ? 'ଓଡ଼ିଶା AI ନୀତି ୨୦୨୫ ପଢ଼ନ୍ତୁ' : 'Read Odisha AI policy 2025'}
@@ -158,21 +163,13 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all duration-300 ${index === currentSlide
-                ? 'w-12 bg-orange-500'
-                : 'w-2 bg-white/50 hover:bg-white/70'
+              ? 'w-12 bg-orange-500'
+              : 'w-2 bg-white/50 hover:bg-white/70'
               }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
-
-      {/* Auto-play Toggle */}
-      <button
-        onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-        className="absolute bottom-8 right-8 z-20 text-white text-sm bg-black/30 hover:bg-black/50 backdrop-blur-sm px-4 py-2 rounded-full transition-colors"
-      >
-        {isAutoPlaying ? (isOdia ? '⏸ ବିରତି' : '⏸ Pause') : (isOdia ? '▶ ଚଳାନ୍ତୁ' : '▶ Play')}
-      </button>
     </div>
   );
 };

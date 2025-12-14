@@ -71,7 +71,7 @@ const StrategicPillars = () => {
                         {isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars'}
                     </Badge>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6">
-                        {isOdia ? 'ମୁଖ୍ୟ ଧ୍ୟାନ ' : 'Key Focus '}<span className="text-orange-600 dark:text-orange-500">{isOdia ? 'କ୍ଷେତ୍ର' : 'Areas'}</span>
+                        {isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars'}
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">
                         {isOdia ? 'ନବସୃଜନ, ଅନ୍ତର୍ଭୁକ୍ତି ଏବଂ ସ୍ଥିରତାର ଭବିଷ୍ୟତ ଆଡ଼କୁ ଓଡ଼ିଶା AI ମିଶନକୁ ଚାଳିତ କରୁଥିବା ଚାରିଟି ମୂଳ ସ୍ତମ୍ଭ।' : 'Four foundational pillars driving the Odisha AI Mission towards a future of innovation, inclusion, and sustainability.'}

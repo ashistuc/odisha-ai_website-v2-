@@ -15,19 +15,15 @@ import ContactPage from './pages/ContactPage';
 import PolicyActsPage from './pages/PolicyActsPage';
 
 
+import ScrollToTop from './components/ScrollToTop';
+
 function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
         <div className="App">
           <BrowserRouter basename="/odisha-ai_website-v2-">
-            <a
-              href="#main-content"
-              className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-orange-600 focus:text-white focus:rounded focus:shadow-lg"
-            >
-              Skip to main content
-            </a>
-
+            <ScrollToTop />
             <Header />
             <main id="main-content">
               <Routes>
