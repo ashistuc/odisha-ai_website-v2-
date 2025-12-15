@@ -36,7 +36,7 @@ const FloatingSocialWidgets = () => {
         </div>
       )}
 
-      {/* Toggle Button */}
+      {/* Toggle Button 
       <button
         onClick={() => setIsExpanded(!isExpanded)}
         className={`w-14 h-14 ${isExpanded
@@ -52,7 +52,7 @@ const FloatingSocialWidgets = () => {
           <Share2 className="w-6 h-6 transition-transform duration-300" />
         )}
       </button>
-
+*/}
     </div>
   );
 };
