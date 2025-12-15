@@ -81,7 +81,7 @@ const ContactUsSection = ({ contactInfo }) => {
                     <a href="https://www.linkedin.com/company/odisha-computer-application-centre" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors" aria-label="LinkedIn">
                       <Linkedin className="w-6 h-6" />
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/eit_odisha" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
                       <Instagram className="w-6 h-6" />
                     </a>
                   </div>

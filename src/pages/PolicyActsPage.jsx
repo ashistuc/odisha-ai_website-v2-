@@ -67,24 +67,24 @@ const PolicyActsPage = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <Badge className="bg-white/20 text-white mb-6 px-4 py-2 border-white/30">
                         <FileText className="w-4 h-4 mr-2" />
-                        {isOdia ? 'ଆଇନଗତ ଏବଂ ନିୟାମକ ଢାଞ୍ଚା' : 'Legal & Regulatory Framework'}
+                        {isOdia ? 'ଅଫିସିଆଲ୍ ଅପଡେଟ୍ସ' : 'Official Updates'}
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                        {isOdia ? 'ନୀତି ଏବଂ ଆଇନ' : 'Policy & Acts'}
+                        {isOdia ? 'ନୀତି, ଆଦେଶ ଏବଂ ସରକାରୀ ପ୍ରକାଶନ' : 'Policies, Orders & Official Releases'}
                     </h1>
                     <p className="text-xl text-orange-100 max-w-3xl leading-relaxed">
                         {isOdia
-                            ? 'AI କାର୍ଯ୍ୟକାରିତା ପାଇଁ ନବୀନତମ ଆଇନଗତ ଢାଞ୍ଚା, ନୀତି ବିଜ୍ଞପ୍ତି ଏବଂ ସରକାରୀ ନିର୍ଦ୍ଦେଶନାମା ସହ ଅଦ୍ୟତନ ରହନ୍ତୁ'
-                            : 'Stay updated with the latest legal framework, policy notifications, and government directives for AI implementation'}
+                            ? 'ବିଭାଗ ବର୍ଣ୍ଣନା: AI ଇକୋସିଷ୍ଟମ ସହ ଜଡିତ ସରକାରୀ ନୀତି, ଆଇନ, ସରକାରୀ ନିର୍ଦ୍ଦେଶ, ବିଜ୍ଞପ୍ତି ଏବଂ ପ୍ରେସ୍ ରିଲିଜ୍ ବିଷୟରେ ଅବଗତ ରୁହନ୍ତୁ।'
+                            : 'Section description: Stay informed with official policies, acts, government orders, notifications, and press releases related to AI ecosystem'}
                     </p>
                 </div>
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {/* Search and Filter Section */}
+                {/* Search and Filter Section 
                 <div className="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg mb-12 border border-gray-100">
                     <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-                        {/* Search */}
+                       
                         <div className="relative w-full md:w-96">
                             <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
                             <input
@@ -96,7 +96,7 @@ const PolicyActsPage = () => {
                             />
                         </div>
 
-                        {/* Filter Buttons */}
+                       
                         <div className="flex flex-wrap gap-2 items-center">
                             <Filter className="w-5 h-5 text-gray-500 mr-2" />
                             {filterOptions.map((filter) => (
@@ -114,7 +114,7 @@ const PolicyActsPage = () => {
                         </div>
                     </div>
                 </div>
-
+*/}
                 {/* Documents Grid */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {filteredItems.map((item, index) => {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Newspaper, GraduationCap, Database, ArrowRight, ExternalLink, FileText, BarChart, PlayCircle } from 'lucide-react';
+import ReactDOM from 'react-dom';
+import { Newspaper, GraduationCap, Database, ArrowRight, ExternalLink, FileText, BarChart, PlayCircle, X } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -8,11 +9,23 @@ import { ScrollArea } from './ui/scroll-area';
 import { useSearchParams, Link } from 'react-router-dom';
 import AINewsInteractive from './AINewsInteractive';
 import { useLanguage } from '../contexts/LanguageContext';
+import InteractivePDFReader from './InteractivePDFReader';
 
-const ResourcesSection = ({ aiNews, limit }) => {
+const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     const [activeDialog, setActiveDialog] = useState(null);
     const [searchParams, setSearchParams] = useSearchParams();
     const { isOdia } = useLanguage();
+    const [isPDFReaderOpen, setIsPDFReaderOpen] = useState(false);
+    const [videoPopup, setVideoPopup] = useState({ isOpen: false, url: '', title: '', originalUrl: '' });
+    const [videoKey, setVideoKey] = useState(0);
+
+    const handleOpenPolicyPDF = () => {
+        if (onOpenPolicyPDF) {
+            onOpenPolicyPDF();
+        } else {
+            setIsPDFReaderOpen(true);
+        }
+    };
 
     useEffect(() => {
         const dialogParam = searchParams.get('dialog');
@@ -20,6 +33,33 @@ const ResourcesSection = ({ aiNews, limit }) => {
             setActiveDialog(dialogParam);
         }
     }, [searchParams]);
+
+    // Handle Escape key to close video popup
+    useEffect(() => {
+        const handleKeyDown = (e) => {
+            if (e.key === 'Escape' && videoPopup.isOpen) {
+                setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [videoPopup.isOpen]);
+
+    // State to control iframe rendering with delay
+    const [iframeReady, setIframeReady] = useState(false);
+
+    // Delay iframe rendering to ensure portal is fully mounted
+    useEffect(() => {
+        if (videoPopup.isOpen && videoPopup.url) {
+            setIframeReady(false);
+            const timer = setTimeout(() => {
+                setIframeReady(true);
+            }, 100);
+            return () => clearTimeout(timer);
+        } else {
+            setIframeReady(false);
+        }
+    }, [videoPopup.isOpen, videoPopup.url, videoKey]);
 
     const handleOpenChange = (open) => {
         if (!open) {
@@ -37,11 +77,38 @@ const ResourcesSection = ({ aiNews, limit }) => {
         }
     };
 
+    // Helper function to convert video URLs to embeddable format
+    const getEmbedUrl = (url) => {
+        // Google Drive: convert /view to /preview
+        if (url.includes('drive.google.com/file/d/')) {
+            const fileIdMatch = url.match(/\/file\/d\/([^/]+)/);
+            if (fileIdMatch) {
+                return `https://drive.google.com/file/d/${fileIdMatch[1]}/preview`;
+            }
+        }
+        // YouTube: convert watch URL to embed
+        if (url.includes('youtube.com/watch')) {
+            const videoId = new URL(url).searchParams.get('v');
+            if (videoId) {
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+        }
+        // YouTube short URLs
+        if (url.includes('youtu.be/')) {
+            const videoId = url.split('youtu.be/')[1]?.split('?')[0];
+            if (videoId) {
+                return `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            }
+        }
+        // Return original URL if no transformation needed
+        return url;
+    };
+
     const learningResources = [
-        { title: "Odisha AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
+        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
         { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
-        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: null },
-        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: null },
+        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: "/odisha-ai_website-v2-/logo/deeplearning.png" },
+        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: "/odisha-ai_website-v2-/logo/elementsofai.png" },
         { title: "Google AI", url: "https://grow.google/ai/", description: "Learn to use AI to make things faster and smarter.", logo: "/odisha-ai_website-v2-/logo/Google-AI-Logo.png" },
         { title: "IndiaAI Learning", url: "https://indiaai.gov.in/learning", description: "Comprehensive learning resources from IndiaAI.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
     ];
@@ -66,22 +133,26 @@ const ResourcesSection = ({ aiNews, limit }) => {
     const productivityResources = [
         {
             useCase: "Chat with Document",
-            video: "https://bit.ly/video_chatwithdoc",
+            video: "https://drive.google.com/file/d/1s7ZtsIDMQMTQt73t7uIAo0gMVWOFDcsw/preview",
+            videoOriginal: "https://bit.ly/video_chatwithdoc",
             guide: "https://bit.ly/guide_chatwithdoc"
         },
         {
             useCase: "Drafting a Document",
-            video: "https://bit.ly/video_draftadoc",
+            video: "https://drive.google.com/file/d/1OKeefpgmSFjAMjaSWgXmGGzIZXy4FD9L/preview",
+            videoOriginal: "https://bit.ly/video_draftadoc",
             guide: "https://bit.ly/guide_draftadoc"
         },
         {
             useCase: "Deep Research",
-            video: "https://bit.ly/video_deepresearch",
+            video: "https://drive.google.com/file/d/1gYHU9sS4G6rKxG1lFpClYJiHm69kfGzP/preview",
+            videoOriginal: "https://bit.ly/video_deepresearch",
             guide: "https://bit.ly/guide_deepresearch"
         },
         {
             useCase: "Data Analysis and Visualisation",
-            video: "https://bit.ly/video_data_analysis",
+            video: "https://drive.google.com/file/d/1yXQ3ZGAcXPOlD_e6i3UU8HLEqCAl7dEN/preview",
+            videoOriginal: "https://bit.ly/video_data_analysis",
             guide: "https://bit.ly/guide_data_analysis"
         }
     ];
@@ -268,18 +339,24 @@ const ResourcesSection = ({ aiNews, limit }) => {
                                         {resource.useCase}
                                     </h3>
                                     <div className="space-y-3">
-                                        <a
-                                            href={resource.video}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
+                                        <button
+                                            onClick={() => {
+                                                // Close the parent dialog first to release focus trap
+                                                setActiveDialog(null);
+                                                // Then open video popup with a small delay
+                                                setTimeout(() => {
+                                                    setVideoKey(prev => prev + 1);
+                                                    setVideoPopup({ isOpen: true, url: resource.video, title: resource.useCase, originalUrl: resource.videoOriginal || resource.video });
+                                                }, 50);
+                                            }}
+                                            className="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
                                         >
                                             <span className="flex items-center gap-3 font-medium">
                                                 <PlayCircle className="w-5 h-5 text-orange-500 group-hover/link:text-orange-600" />
                                                 Watch Video Tutorial
                                             </span>
-                                            <ExternalLink className="w-4 h-4 opacity-50 group-hover/link:opacity-100" />
-                                        </a>
+                                            <PlayCircle className="w-4 h-4 opacity-50 group-hover/link:opacity-100" />
+                                        </button>
                                         <a
                                             href={resource.guide}
                                             target="_blank"
@@ -338,9 +415,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
                             if (card.url) {
                                 window.open(card.url, '_blank', 'noopener,noreferrer');
                             } else if (card.id === 'policy') {
-                                const reader = document.getElementById('policy-section');
-                                if (reader) reader.scrollIntoView({ behavior: 'smooth' });
-                                else window.location.href = '/odisha-ai_website-v2-/policy-acts';
+                                handleOpenPolicyPDF();
                             } else {
                                 setActiveDialog(card.id);
                             }
@@ -402,6 +477,103 @@ const ResourcesSection = ({ aiNews, limit }) => {
                     </ScrollArea>
                 </DialogContent>
             </Dialog>
+
+            {/* Interactive PDF Reader for Policy */}
+            <InteractivePDFReader
+                isOpen={isPDFReaderOpen}
+                onClose={() => setIsPDFReaderOpen(false)}
+                pdfUrl="/Odisha%20AI%20Policy-2025.pdf"
+            />
+
+            {/* Video Popup Modal - Using Portal to render outside Dialog */}
+            {videoPopup.isOpen && ReactDOM.createPortal(
+                <div
+                    className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
+                    style={{ zIndex: 9999 }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+                    }}
+                >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-md" />
+
+                    {/* Modal Content */}
+                    <div
+                        className="relative w-full max-w-5xl bg-gray-900 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-700 bg-gray-900">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-lg bg-orange-500/20 flex items-center justify-center shrink-0">
+                                    <PlayCircle className="w-5 h-5 text-orange-400" />
+                                </div>
+                                <div className="min-w-0">
+                                    <p className="text-xs uppercase tracking-widest text-orange-400 font-medium">Video Tutorial</p>
+                                    <h3 className="text-base sm:text-lg font-semibold text-white truncate">{videoPopup.title}</h3>
+                                </div>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+                                }}
+                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors shrink-0 cursor-pointer"
+                                aria-label="Close video"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
+
+                        {/* Video Container */}
+                        <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
+                            {/* Loading Spinner - shown when iframe is not ready */}
+                            {!iframeReady && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
+                                    <div className="flex flex-col items-center gap-4">
+                                        <div className="w-12 h-12 border-4 border-orange-500 border-t-transparent rounded-full animate-spin"></div>
+                                        <p className="text-gray-400 text-sm">Loading video...</p>
+                                    </div>
+                                </div>
+                            )}
+                            {/* Video iframe - only render when ready */}
+                            {iframeReady && videoPopup.url && (
+                                <iframe
+                                    key={`video-frame-${videoKey}`}
+                                    src={getEmbedUrl(videoPopup.url)}
+                                    title={videoPopup.title}
+                                    className="absolute top-0 left-0 w-full h-full bg-black"
+                                    frameBorder="0"
+                                    loading="eager"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                />
+                            )}
+                        </div>
+
+                        {/* Footer */}
+                        <div className="px-4 sm:px-6 py-3 border-t border-gray-700 bg-gray-900 flex flex-wrap items-center justify-between gap-2">
+                            <p className="text-xs sm:text-sm text-gray-400">
+                                Press <kbd className="px-2 py-0.5 rounded bg-gray-700 border border-gray-600 text-white font-mono text-xs">Esc</kbd> or click outside to close
+                            </p>
+                            <a
+                                href={videoPopup.originalUrl || videoPopup.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors font-medium"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                Open in new tab <ExternalLink className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>,
+                document.body
+            )}
         </div>
     );
 };

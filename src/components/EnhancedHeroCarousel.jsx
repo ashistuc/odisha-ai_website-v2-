@@ -75,14 +75,8 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             {/* Event Badge - Animated */}
             {/* Government Logos - Updated with Images */}
             <div className="flex items-center flex-wrap gap-4 mb-6">
-              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20 animate-in fade-in duration-1000">
-                <img
-                  src="/odisha-ai_website-v2-/logo/Ai_summit.jpeg"
-                  alt="AI Summit"
-                  className="h-[250px] w-[250px] object-contain rounded"
-                />
-              </div>
-              <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20 animate-in fade-in duration-1000 delay-100">
+
+              <div className="p-2 rounded-lg animate-in fade-in duration-1000 delay-100">
                 <img
                   src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
                   alt="Odisha AI Mission"
@@ -113,14 +107,14 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             <div className="flex  gap-4 justify-start animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
               <Button
                 size="lg"
-                className=" bg-transparent outline-orange-600 border-orange-600 border-2 w-[35%] hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
+                className=" bg-transparent outline-orange-600 border-orange-600 border-2 w-[35%] sm:w-auto hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={() => document.getElementById('submit-idea-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {isOdia ? 'ଆପଣଙ୍କ AI ପ୍ରସ୍ତାବ ଦାଖଲ କରନ୍ତୁ' : 'Submit Your AI Proposal'}
               </Button>
               <Button
                 size="lg"
-                className="outline-orange-600 border-orange-600 border-2 bg-orange-600 w-[35%] hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
+                className="outline-orange-600 border-orange-600 border-2 bg-orange-600 w-[35%] sm:w-auto hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
                 onClick={handleReadPolicy}
               >
                 {isOdia ? 'ଓଡ଼ିଶା AI ନୀତି ୨୦୨୫ ପଢ଼ନ୍ତୁ' : 'Read Odisha AI policy 2025'}
@@ -134,7 +128,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       <Button
         onClick={prevSlide}
         size="icon"
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
@@ -144,7 +138,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       <Button
         onClick={nextSlide}
         size="icon"
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />

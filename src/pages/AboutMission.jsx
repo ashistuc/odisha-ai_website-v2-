@@ -185,7 +185,7 @@ const AboutMission = () => {
                                 <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Server className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ମୁଖ୍ୟ ଧ୍ୟାନ କ୍ଷେତ୍ର' : 'Key Focus Areas'}</h3>
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ରଣନୈତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars'}</h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଚାରିଟି ମୂଳ ସ୍ତମ୍ଭ ଅନୁସନ୍ଧାନ କରନ୍ତୁ' : 'Explore the four foundational pillars'}</p>
                             </div>
                         </Link>

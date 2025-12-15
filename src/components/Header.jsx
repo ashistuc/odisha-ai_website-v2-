@@ -97,8 +97,19 @@ const Header = () => {
         {/* Logo Section - Always visible */}
         <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-1 lg:py-2">
+
             {/* Logo Section with Government Logos */}
             <div className="flex items-center space-x-6">
+              <Link
+                to="/"
+                className="flex items-center space-x-3 group border-r border-gray-200 dark:border-gray-700 pr-6"
+              >
+                <img
+                  src="/odisha-ai_website-v2-/logo/india_elc_it.png"
+                  alt="Government of Odisha"
+                  className="w-[200px] object-contain"
+                />
+              </Link>
               <Link
                 to="/"
                 className="flex items-center space-x-3 group"
@@ -112,7 +123,7 @@ const Header = () => {
 
               {/* Partner Logos */}
               <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
-                {/* Odisha Govt Logo */}
+                {/* Odisha Govt Logo 
                 <div className="flex flex-col items-center space-y-1">
                   <img
                     src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
@@ -120,7 +131,7 @@ const Header = () => {
                     className="w-[100px] object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 </div>
-
+*/}
                 {/* E&IT Dept / OCAC Logo */}
                 <div className="flex flex-col items-center space-y-1">
                   <img

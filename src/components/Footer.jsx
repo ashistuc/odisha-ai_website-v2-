@@ -92,7 +92,7 @@ const Footer = () => {
               <a href="#" className="text-gray-400 hover:text-blue-700 transition-colors">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-pink-600 transition-colors">
+              <a href="https://www.instagram.com/eit_odisha" target="_blank" className="text-gray-400 hover:text-pink-600 transition-colors">
                 <Instagram className="w-5 h-5" />
               </a>
             </div>
@@ -150,7 +150,7 @@ const Footer = () => {
               <Mail className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
               <div>
                 <h5 className="text-white font-medium mb-1">{t('contact.email')}</h5>
-                <p className="text-sm text-gray-400">ai-mission@odisha.gov.in</p>
+                <p className="text-sm text-gray-400">aiteam.ocac@odisha.gov.in</p>
               </div>
             </div>
 
