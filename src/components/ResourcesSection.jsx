@@ -5,7 +5,7 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from './ui/dialog';
 import { ScrollArea } from './ui/scroll-area';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import AINewsInteractive from './AINewsInteractive';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -373,12 +373,12 @@ const ResourcesSection = ({ aiNews, limit }) => {
 
             {limit && (
                 <div className="text-center mt-12">
-                    <a href="/odisha-ai_website-v2-/resources">
+                    <Link to="/resources">
                         <Button size="lg" className="bg-orange-600 hover:bg-orange-700 text-white shadow-lg px-8">
                             {isOdia ? 'ଅଧିକ ଅନ୍ୱେଷଣ କରନ୍ତୁ' : 'Explore More'}
                             <ArrowRight className="w-5 h-5 ml-2" />
                         </Button>
-                    </a>
+                    </Link>
                 </div>
             )}
 
