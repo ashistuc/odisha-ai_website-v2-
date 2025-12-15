@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Home } from 'lucide-react';
 import AccessibilityToolbar from './AccessibilityToolbar';
 import LanguageToggle from './LanguageToggle';
@@ -12,6 +12,7 @@ const Header = () => {
   const { language, isOdia } = useLanguage();
   const t = translations[language];
   const location = useLocation();
+  const navigate = useNavigate();
 
   // Handle scroll to show/hide parts of header
   useEffect(() => {
@@ -28,9 +29,17 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId) => {
-    // If we're not on the home page, navigate to home first
+    // If we're not on the home page, navigate to home first then scroll
     if (location.pathname !== '/') {
-      window.location.href = `/odisha-ai_website-v2-/#${sectionId}`;
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      setIsMenuOpen(false);
       return;
     }
     const element = document.getElementById(sectionId);
@@ -142,7 +151,7 @@ const Header = () => {
                   <img
                     src="/odisha-ai_website-v2-/images/cm-img.png"
                     alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
-                    className="h-20 w-auto object-contain object-bottom"
+                    className="h-[90px] w-auto object-contain object-bottom"
                   />
                 </div>
               </div>

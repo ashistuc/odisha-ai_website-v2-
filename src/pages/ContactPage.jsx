@@ -49,7 +49,7 @@ const ContactPage = () => {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-gray-900">{isOdia ? 'ଇମେଲ୍' : 'Email'}</p>
-                                    <p className="text-gray-600">contact@odisha-ai-mission.gov.in</p>
+                                    <p className="text-gray-600">aiteam.ocac@odisha.gov.in</p>
                                 </div>
                             </div>
 
@@ -61,7 +61,7 @@ const ContactPage = () => {
                                     </a>
                                     <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-gray-100 rounded-full flex items-center justify-center text-gray-400 hover:text-black transition-all duration-300">
                                         <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zl-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                                         </svg>
                                     </a>
                                     <a href="#" className="w-10 h-10 bg-gray-50 hover:bg-blue-50 rounded-full flex items-center justify-center text-gray-400 hover:text-blue-700 transition-all duration-300">

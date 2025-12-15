@@ -44,7 +44,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full h-[85vh] overflow-hidden">
       {/* Slide Background */}
       <div className="absolute inset-0 transition-opacity duration-1000">
         {slide.type === 'video' ? (
@@ -69,7 +69,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-full flex items-center">
+      <div className="relative z-10 h-[85vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
             {/* Event Badge - Animated */}
@@ -79,25 +79,19 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
                 <img
                   src="/odisha-ai_website-v2-/logo/Ai_summit.jpeg"
                   alt="AI Summit"
-                  className="h-[200px] w-[200px] object-contain rounded"
+                  className="h-[250px] w-[250px] object-contain rounded"
                 />
               </div>
               <div className="bg-white/10 backdrop-blur-sm p-2 rounded-lg border border-white/20 animate-in fade-in duration-1000 delay-100">
                 <img
-                  src="/odisha-ai_website-v2-/logo/Odisha_Ai_Summit.png"
-                  alt="Odisha AI Summit"
-                  className="h-[200px] w-[200px] object-contain"
+                  src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
+                  alt="Odisha AI Mission"
+                  className="h-[250px] w-[250px] object-contain"
                 />
               </div>
             </div>
 
-            {slide.event && (
-              <div className="mb-4 inline-block animate-in fade-in slide-in-from-top duration-700">
-                <div className="bg-orange-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg border-2 border-orange-400 animate-pulse-slow">
-                  🎯 {isOdia && slide.eventOd ? slide.eventOd : slide.event}
-                </div>
-              </div>
-            )}
+
 
 
             {/* Title - Animated */}

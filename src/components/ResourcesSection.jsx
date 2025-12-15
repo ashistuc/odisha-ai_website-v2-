@@ -38,12 +38,12 @@ const ResourcesSection = ({ aiNews, limit }) => {
     };
 
     const learningResources = [
-        { title: "Odisha AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha." },
-        { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India." },
-        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI." },
-        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI." },
-        { title: "Google AI", url: "https://grow.google/ai/", description: "Learn to use AI to make things faster and smarter." },
-        { title: "IndiaAI Learning", url: "https://indiaai.gov.in/learning", description: "Comprehensive learning resources from IndiaAI." },
+        { title: "Odisha AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
+        { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
+        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: null },
+        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: null },
+        { title: "Google AI", url: "https://grow.google/ai/", description: "Learn to use AI to make things faster and smarter.", logo: "/odisha-ai_website-v2-/logo/Google-AI-Logo.png" },
+        { title: "IndiaAI Learning", url: "https://indiaai.gov.in/learning", description: "Comprehensive learning resources from IndiaAI.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
     ];
 
     const datasetResources = [
@@ -100,7 +100,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
             title: isOdia ? 'ପ୍ରବନ୍ଧ ଏବଂ ବ୍ଲଗ୍' : 'Articles & Blogs',
             icon: GraduationCap,
             description: isOdia ? 'AI ବିଷୟରେ ଗଭୀର ବିଶ୍ଳେଷଣ ଏବଂ ବିଚାର।' : 'In-depth analysis, expert opinions, and latest trends in the AI ecosystem.',
-            color: 'from-blue-500 to-indigo-600',
+            color: 'from-orange-500 to-red-600',
             url: 'https://indiaai.gov.in/articles',
             delay: '100'
         },
@@ -109,7 +109,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
             title: isOdia ? 'ସମାଚାର' : 'News',
             icon: Newspaper,
             description: isOdia ? 'ସର୍ବଶେଷ AI ସମ୍ବାଦ ସହିତ ଅଦ୍ୟତନ ରହନ୍ତୁ।' : 'Stay updated with the latest happenings and announcements in the world of AI.',
-            color: 'from-green-500 to-emerald-600',
+            color: 'from-orange-500 to-red-600',
             url: 'https://indiaai.gov.in/news',
             delay: '200'
         },
@@ -118,7 +118,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
             title: isOdia ? 'ଗବେଷଣା ଏବଂ କେସ୍ ଷ୍ଟଡିଜ୍' : 'Research & Case Studies',
             icon: Database,
             description: isOdia ? 'ବିସ୍ତୃତ ଗବେଷଣା ରିପୋର୍ଟ ଏବଂ ସଫଳ କାହାଣୀ।' : 'Access detailed research reports and real-world implementation case studies.',
-            color: 'from-purple-500 to-violet-600',
+            color: 'from-orange-500 to-red-600',
             url: 'https://indiaai.gov.in/research-reports',
             delay: '300'
         },
@@ -143,7 +143,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
             title: isOdia ? 'ସରକାରୀ ଉତ୍ପାଦକତା ପାଇଁ AI' : 'AI for Govt Productivity',
             icon: BarChart,
             description: isOdia ? 'ପ୍ରଶାସନିକ ଦକ୍ଷତା ବୃଦ୍ଧି ପାଇଁ AI ସାଧନ।' : 'Tools and frameworks to enhance administrative efficiency and public service delivery.',
-            color: 'from-pink-500 to-rose-600',
+            color: 'from-orange-500 to-red-600',
             delay: '600'
         }
     ];
@@ -175,9 +175,24 @@ const ResourcesSection = ({ aiNews, limit }) => {
 
                                     <div className="p-6 flex-grow flex flex-col content-between h-full">
                                         <div className="mb-4">
-                                            <div className="w-12 h-12 bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                                                <GraduationCap className="w-6 h-6" />
-                                            </div>
+                                            {/* Logo or Icon */}
+                                            {resource.logo ? (
+                                                <div className="w-20 h-20 bg-gray-50 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 border border-gray-200 shadow-sm p-3">
+                                                    <img
+                                                        src={resource.logo}
+                                                        alt={resource.title}
+                                                        className="w-full h-full object-contain"
+                                                        onError={(e) => {
+                                                            e.target.style.display = 'none';
+                                                            e.target.parentElement.innerHTML = '<div class="w-full h-full bg-orange-50 text-orange-600 rounded-xl flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>';
+                                                        }}
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="w-16 h-16 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-sm">
+                                                    <GraduationCap className="w-8 h-8" />
+                                                </div>
+                                            )}
                                             <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-orange-700 transition-colors">
                                                 {resource.title}
                                             </h3>
@@ -187,7 +202,7 @@ const ResourcesSection = ({ aiNews, limit }) => {
                                         </div>
 
                                         <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between text-orange-600 font-semibold text-sm">
-                                            <span>Start Learning</span>
+                                            <span>{isOdia ? 'ଶିକ୍ଷଣ ଆରମ୍ଭ କରନ୍ତୁ' : 'Start Learning'}</span>
                                             <div className="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center group-hover:bg-orange-600 group-hover:text-white transition-all duration-300">
                                                 <ExternalLink className="w-4 h-4" />
                                             </div>
@@ -204,10 +219,10 @@ const ResourcesSection = ({ aiNews, limit }) => {
                         {datasetResources.map((section, idx) => (
                             <div key={idx} className="relative">
                                 <div className="flex items-center gap-4 mb-6">
-                                    <div className="p-2 bg-green-100 text-green-700 rounded-lg">
+                                    <div className="p-2 bg-orange-100 text-orange-700 rounded-lg">
                                         <Database className="w-6 h-6" />
                                     </div>
-                                    <h3 className="text-xl font-bold text-gray-900 border-b-2 border-green-100 pb-1 pr-6 inline-block">
+                                    <h3 className="text-xl font-bold text-gray-900 border-b-2 border-orange-100 pb-1 pr-6 inline-block">
                                         {section.category}
                                     </h3>
                                 </div>
@@ -218,18 +233,18 @@ const ResourcesSection = ({ aiNews, limit }) => {
                                             href={item.url}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="group flex flex-col justify-between p-5 bg-white border border-gray-200 rounded-xl hover:border-green-400 hover:shadow-md hover:bg-green-50/30 transition-all duration-300"
+                                            className="group flex flex-col justify-between p-5 bg-white border border-gray-200 rounded-xl hover:border-orange-400 hover:shadow-md hover:bg-orange-50/30 transition-all duration-300"
                                         >
                                             <div className="flex items-start justify-between gap-3 mb-3">
-                                                <span className="font-semibold text-gray-800 group-hover:text-green-800 leading-tight">
+                                                <span className="font-semibold text-gray-800 group-hover:text-orange-800 leading-tight">
                                                     {item.title}
                                                 </span>
-                                                <Badge variant="outline" className="bg-gray-50 text-xs font-mono text-gray-500 border-gray-200 group-hover:border-green-300 group-hover:text-green-700">
+                                                <Badge variant="outline" className="bg-gray-50 text-xs font-mono text-gray-500 border-gray-200 group-hover:border-orange-300 group-hover:text-orange-700">
                                                     DATA
                                                 </Badge>
                                             </div>
                                             <div className="flex items-center justify-end">
-                                                <span className="text-xs font-medium text-gray-400 group-hover:text-green-600 flex items-center gap-1 transition-colors">
+                                                <span className="text-xs font-medium text-gray-400 group-hover:text-orange-600 flex items-center gap-1 transition-colors">
                                                     Access Dataset <ArrowRight className="w-3 h-3" />
                                                 </span>
                                             </div>

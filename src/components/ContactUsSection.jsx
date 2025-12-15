@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Facebook, Linkedin, Instagram } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Badge } from './ui/badge';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -45,18 +45,7 @@ const ContactUsSection = ({ contactInfo }) => {
                 </div>
               </div>
 
-              {/* Phone */}
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-orange-600 dark:text-orange-400" />
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'ଫୋନ୍' : 'Phone'}</p>
-                  <a href={`tel:${contactInfo.phone}`} className="text-blue-600 dark:text-blue-400 hover:underline">
-                    {contactInfo.phone}
-                  </a>
-                </div>
-              </div>
+
 
               {/* Email */}
               <div className="flex items-start space-x-4">
@@ -71,20 +60,34 @@ const ContactUsSection = ({ contactInfo }) => {
                 </div>
               </div>
 
-              {/* Office Hours */}
+              {/* Social Media Links */}
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Clock className="w-6 h-6 text-orange-600 dark:text-orange-400" />
+                  <svg className="w-6 h-6 text-orange-600 dark:text-orange-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 dark:text-white mb-1">{isOdia ? 'କାର୍ଯ୍ୟାଳୟ ସମୟ' : 'Office Hours'}</p>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    {isOdia ? 'ସୋମବାର - ଶୁକ୍ରବାର: ସକାଳ ୧୦:୦୦ - ସନ୍ଧ୍ୟା ୫:୩୦' : 'Monday - Friday: 10:00 AM - 5:30 PM'}<br />
-                    {isOdia ? 'ଶନିବାର: ସକାଳ ୧୦:୦୦ - ଅପରାହ୍ଣ ୨:୦୦' : 'Saturday: 10:00 AM - 2:00 PM'}<br />
-                    {isOdia ? 'ରବିବାର: ବନ୍ଦ' : 'Sunday: Closed'}
-                  </p>
+                  <p className="font-semibold text-gray-900 dark:text-white mb-2">{isOdia ? 'ସୋସିଆଲ ମିଡିଆ' : 'Follow Us'}</p>
+                  <div className="flex space-x-4">
+                    <a href="https://www.facebook.com/share/1BjYfN9pnG/" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Facebook">
+                      <Facebook className="w-6 h-6" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" aria-label="X (Twitter)">
+                      <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                      </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/company/odisha-computer-application-centre" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors" aria-label="LinkedIn">
+                      <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
+                      <Instagram className="w-6 h-6" />
+                    </a>
+                  </div>
                 </div>
               </div>
+
             </CardContent>
           </Card>
         </div>

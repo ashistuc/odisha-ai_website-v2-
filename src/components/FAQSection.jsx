@@ -64,7 +64,7 @@ const FAQSection = ({ faqs }) => {
       <div className="text-center mt-10">
         <p className="text-gray-600 mb-4">{isOdia ? 'ଏପର୍ଯ୍ୟନ୍ତ ପ୍ରଶ୍ନ ଅଛି?' : 'Still have questions?'}</p>
         <a
-          href="mailto:contact@odisha-ai-mission.gov.in"
+          href="mailto:aiteam.ocac@odisha.gov.in"
           className="text-orange-600 hover:text-orange-700 font-semibold underline"
         >
           {isOdia ? 'ଆମ ସମର୍ଥନ ଦଳ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Contact our support team'}

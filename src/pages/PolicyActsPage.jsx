@@ -22,9 +22,9 @@ const PolicyActsPage = () => {
     };
 
     const typeColorMap = {
-        'Act': { bg: 'bg-blue-100', text: 'text-blue-800', border: 'border-blue-300', hoverBorder: 'hover:border-blue-400' },
-        'Notification': { bg: 'bg-green-100', text: 'text-green-800', border: 'border-green-300', hoverBorder: 'hover:border-green-400' },
-        'Govt Order': { bg: 'bg-purple-100', text: 'text-purple-800', border: 'border-purple-300', hoverBorder: 'hover:border-purple-400' },
+        'Act': { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', hoverBorder: 'hover:border-orange-400' },
+        'Notification': { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', hoverBorder: 'hover:border-orange-400' },
+        'Govt Order': { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', hoverBorder: 'hover:border-orange-400' },
         'Guideline': { bg: 'bg-orange-100', text: 'text-orange-800', border: 'border-orange-300', hoverBorder: 'hover:border-orange-400' }
     };
 
@@ -50,9 +50,9 @@ const PolicyActsPage = () => {
     });
 
     const stats = [
-        { label: isOdia ? 'ଆଇନ' : 'Acts', count: actsNotifications.filter(i => i.type === 'Act').length, color: 'bg-blue-500' },
-        { label: isOdia ? 'ବିଜ୍ଞପ୍ତି' : 'Notifications', count: actsNotifications.filter(i => i.type === 'Notification').length, color: 'bg-green-500' },
-        { label: isOdia ? 'ସରକାରୀ ଆଦେଶ' : 'Govt Orders', count: actsNotifications.filter(i => i.type === 'Govt Order').length, color: 'bg-purple-500' },
+        { label: isOdia ? 'ଆଇନ' : 'Acts', count: actsNotifications.filter(i => i.type === 'Act').length, color: 'bg-orange-500' },
+        { label: isOdia ? 'ବିଜ୍ଞପ୍ତି' : 'Notifications', count: actsNotifications.filter(i => i.type === 'Notification').length, color: 'bg-orange-500' },
+        { label: isOdia ? 'ସରକାରୀ ଆଦେଶ' : 'Govt Orders', count: actsNotifications.filter(i => i.type === 'Govt Order').length, color: 'bg-orange-500' },
         { label: isOdia ? 'ନିର୍ଦ୍ଦେଶାବଳୀ' : 'Guidelines', count: actsNotifications.filter(i => i.type === 'Guideline').length, color: 'bg-orange-500' }
     ];
 
@@ -136,12 +136,17 @@ const PolicyActsPage = () => {
                                         </div>
                                     </div>
                                     <CardTitle className="text-lg font-bold text-gray-900 dark:text-white leading-tight group-hover:text-orange-600 transition-colors">
-                                        {item.title}
+                                        {isOdia && item.titleOd ? item.titleOd : item.title}
                                     </CardTitle>
+                                    {item.source && (
+                                        <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                                            {item.source}
+                                        </p>
+                                    )}
                                 </CardHeader>
                                 <CardContent className="space-y-4">
-                                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-                                        {item.description}
+                                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-3">
+                                        {isOdia && item.descriptionOd ? item.descriptionOd : item.description}
                                     </p>
                                     <div className="flex items-center justify-between pt-3 border-t border-gray-200 dark:border-gray-700">
                                         <span className="text-xs text-gray-500 dark:text-gray-500 font-medium">
@@ -151,13 +156,38 @@ const PolicyActsPage = () => {
                                                 day: 'numeric'
                                             })}
                                         </span>
-                                        <Button
-                                            size="sm"
-                                            className="bg-orange-600 hover:bg-orange-700 text-white"
-                                        >
-                                            <Download className="w-4 h-4 mr-2" />
-                                            {isOdia ? 'ଡାଉନଲୋଡ୍' : 'Download'}
-                                        </Button>
+                                        <div className="flex gap-2">
+                                            {item.externalUrl && item.externalUrl !== '#' && (
+                                                <a
+                                                    href={item.externalUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <Button
+                                                        size="sm"
+                                                        variant="outline"
+                                                        className="text-orange-600 border-orange-300 hover:bg-orange-50"
+                                                    >
+                                                        {isOdia ? 'ବିବରଣୀ' : 'Read'}
+                                                    </Button>
+                                                </a>
+                                            )}
+                                            {item.fileUrl && item.fileUrl !== '#' && (
+                                                <a
+                                                    href={item.fileUrl}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                >
+                                                    <Button
+                                                        size="sm"
+                                                        className="bg-orange-600 hover:bg-orange-700 text-white"
+                                                    >
+                                                        <Download className="w-4 h-4 mr-1" />
+                                                        {isOdia ? 'ଡାଉନଲୋଡ୍' : 'Download'}
+                                                    </Button>
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </CardContent>
                             </Card>

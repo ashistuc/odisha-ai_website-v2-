@@ -1372,68 +1372,88 @@ export const heroTargets2036 = [
 // Acts, Notifications, Govt Orders and Guidelines
 export const actsNotifications = [
   {
+    type: 'Guideline',
+    title: 'India AI Governance Guidelines',
+    titleOd: 'ଭାରତ AI ଶାସନ ନିର୍ଦ୍ଦେଶାବଳୀ',
+    date: '2025-11-15',
+    description: 'MeitY unveils India AI Governance Guidelines under IndiaAI Mission to ensure safe, inclusive, and responsible adoption of AI across sectors. Framework focuses on human-centric development and risk mitigation.',
+    descriptionOd: 'ସମସ୍ତ କ୍ଷେତ୍ରରେ AI ର ନିରାପଦ, ଅନ୍ତର୍ଭୁକ୍ତ ଏବଂ ଦାୟିତ୍ୱପୂର୍ଣ୍ଣ ଗ୍ରହଣ ସୁନିଶ୍ଚିତ କରିବା ପାଇଁ MeitY ଇଣ୍ଡିଆAI ମିଶନ ଅଧୀନରେ ଭାରତ AI ଶାସନ ନିର୍ଦ୍ଦେଶାବଳୀ ପ୍ରକାଶ କଲା।',
+    fileUrl: 'https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc2025115685601.pdf',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186639&reg=3&lang=2',
+    icon: 'Shield',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
+    type: 'Notification',
+    title: 'YUVA AI for ALL - Free National AI Course',
+    titleOd: 'ଯୁବ AI ସମସ୍ତଙ୍କ ପାଇଁ - ମାଗଣା ଜାତୀୟ AI ପାଠ୍ୟକ୍ରମ',
+    date: '2025-12-10',
+    description: 'Government launches free 4.5-hour AI course to empower 1 crore citizens with foundational AI skills. Course available on FutureSkills Prime and iGOT Karmayogi with Government of India certification.',
+    descriptionOd: '୧ କୋଟି ନାଗରିକଙ୍କୁ ମୌଳିକ AI ଦକ୍ଷତା ସହ ସଶକ୍ତ କରିବା ପାଇଁ ସରକାର ମାଗଣା ୪.୫-ଘଣ୍ଟା AI ପାଠ୍ୟକ୍ରମ ଆରମ୍ଭ କଲେ।',
+    fileUrl: 'https://www.futureskillsprime.in/course/yuva-ai-for-all/',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2191334&reg=3&lang=2',
+    icon: 'GraduationCap',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
+    type: 'Govt Order',
+    title: 'IndiaAI Mission Panel at ESTIC 2025',
+    titleOd: 'ESTIC 2025 ରେ ଇଣ୍ଡିଆAI ମିଶନ ପ୍ୟାନେଲ',
+    date: '2025-11-14',
+    description: 'AI is a horizontal, cross-cutting technology that can transform lives and accelerate India\'s progress towards Viksit Bharat 2047. IndiaAI Mission laying foundations for world-class AI ecosystem.',
+    descriptionOd: 'AI ଏକ ଅନୁଭୂମିକ, ଅନ୍ତର୍-ବିଭାଗୀୟ ପ୍ରଯୁକ୍ତି ଯାହା ଜୀବନ ବଦଳାଇପାରେ ଏବଂ ବିକଶିତ ଭାରତ ୨୦୪୭ ଆଡ଼କୁ ଭାରତର ଅଗ୍ରଗତି ତ୍ୱରାନ୍ୱିତ କରିପାରେ।',
+    fileUrl: '#',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2186623&reg=3&lang=2',
+    icon: 'Building2',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
+    type: 'Act',
+    title: 'IndiaAI Mission - ₹10,300+ Crore Investment',
+    titleOd: 'ଇଣ୍ଡିଆAI ମିଶନ - ₹୧୦,୩୦୦+ କୋଟି ବିନିଯୋଗ',
+    date: '2025-10-28',
+    description: 'Transforming India with AI. Over ₹10,300 crore investment over 5 years with 38,000 GPUs powering inclusive innovation. AI could add $1.7 trillion to India\'s economy by 2035.',
+    descriptionOd: 'AI ସହ ଭାରତକୁ ରୂପାନ୍ତରିତ କରୁଛି। ୫ ବର୍ଷରେ ₹୧୦,୩୦୦ କୋଟିରୁ ଅଧିକ ବିନିଯୋଗ ଏବଂ ୩୮,୦୦୦ GPUs ଅନ୍ତର୍ଭୁକ୍ତ ନବସୃଜନକୁ ଶକ୍ତି ଦେଉଛି।',
+    fileUrl: '#',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2178092&reg=3&lang=2',
+    icon: 'FileText',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
+    type: 'Notification',
+    title: 'India\'s Compute Capacity Crosses 34,000 GPUs',
+    titleOd: 'ଭାରତର କମ୍ପ୍ୟୁଟ କ୍ଷମତା ୩୪,୦୦୦ GPUs ଅତିକ୍ରମ କଲା',
+    date: '2025-05-06',
+    description: 'India\'s national compute capacity has crossed 34,000 GPUs. 3 more startups selected to develop and deploy Indian Foundation Models including Sarvam AI, Soket AI, Gnani AI, and Gan AI.',
+    descriptionOd: 'ଭାରତର ଜାତୀୟ କମ୍ପ୍ୟୁଟ କ୍ଷମତା ୩୪,୦୦୦ GPUs ଅତିକ୍ରମ କଲା। ଭାରତୀୟ ଫାଉଣ୍ଡେସନ ମଡେଲ ବିକାଶ ପାଇଁ ଆଉ ୩ଟି ଷ୍ଟାର୍ଟଅପ୍ ଚୟନ କରାଗଲା।',
+    fileUrl: '#',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2132817&reg=3&lang=2',
+    icon: 'Gift',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
+    type: 'Guideline',
+    title: 'Government Expands AI-Driven Skilling',
+    titleOd: 'ସରକାର AI-ଚାଳିତ ଦକ୍ଷତା ବିସ୍ତାର କଲେ',
+    date: '2025-02-25',
+    description: 'India AI Mission gains momentum with 67 proposals for indigenous AI models. Digital India Bhashini initiative boosts AI-powered vernacular language accessibility with 350+ language AI models.',
+    descriptionOd: 'ଭାରତ AI ମିଶନ ସ୍ୱଦେଶୀ AI ମଡେଲ ପାଇଁ ୬୭ଟି ପ୍ରସ୍ତାବ ସହ ଗତି ପାଇଲା। ଡିଜିଟାଲ ଇଣ୍ଡିଆ ଭାଷିଣୀ AI-ଚାଳିତ ଭାଷା ସୁଲଭତା ବୃଦ୍ଧି କଲା।',
+    fileUrl: '#',
+    externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2113095&reg=3&lang=2',
+    icon: 'GraduationCap',
+    source: 'Ministry of Electronics & IT'
+  },
+  {
     type: 'Act',
     title: 'Odisha Artificial Intelligence Policy 2025',
-    date: '2025-01-15',
-    description: 'Comprehensive policy framework for AI adoption in Odisha',
-    fileUrl: '#',
-    icon: 'FileText'
-  },
-  {
-    type: 'Notification',
-    title: 'AI Ethics Guidelines Notification',
-    date: '2025-02-01',
-    description: 'Guidelines for ethical AI implementation across government departments',
-    fileUrl: '#',
-    icon: 'Shield'
-  },
-  {
-    type: 'Govt Order',
-    title: 'Establishment of AI Innovation Centres',
-    date: '2024-12-10',
-    description: 'Government order for setting up 7 AI Innovation Centres across Odisha',
-    fileUrl: '#',
-    icon: 'Building2'
-  },
-  {
-    type: 'Guideline',
-    title: 'Data Privacy and Security Guidelines for AI Projects',
-    date: '2025-01-20',
-    description: 'Mandatory guidelines for data handling in AI implementations',
-    fileUrl: '#',
-    icon: 'Lock'
-  },
-  {
-    type: 'Act',
-    title: 'Odisha Digital Infrastructure Act',
-    date: '2024-11-15',
-    description: 'Legal framework for digital infrastructure development',
-    fileUrl: '#',
-    icon: 'FileText'
-  },
-  {
-    type: 'Notification',
-    title: 'AI Startup Incentive Scheme Notification',
-    date: '2025-02-15',
-    description: 'Financial incentives and benefits for AI startups registered in Odisha',
-    fileUrl: '#',
-    icon: 'Gift'
-  },
-  {
-    type: 'Govt Order',
-    title: 'Mandatory AI Training for Government Officials',
-    date: '2025-01-05',
-    description: 'Order mandating AI awareness training for all state government employees',
-    fileUrl: '#',
-    icon: 'GraduationCap'
-  },
-  {
-    type: 'Guideline',
-    title: 'AI Procurement Guidelines',
-    date: '2024-12-20',
-    description: 'Standard procedures for procuring AI solutions and services',
-    fileUrl: '#',
-    icon: 'ShoppingCart'
+    titleOd: 'ଓଡ଼ିଶା କୃତ୍ରିମ ବୁଦ୍ଧିମତ୍ତା ନୀତି ୨୦୨୫',
+    date: '2025-05-01',
+    description: 'Comprehensive policy framework for AI adoption in Odisha focusing on governance, healthcare, agriculture, education, and disaster management with ethical AI principles.',
+    descriptionOd: 'ଓଡ଼ିଶାରେ AI ଗ୍ରହଣ ପାଇଁ ବ୍ୟାପକ ନୀତି ଢାଞ୍ଚା ଯାହା ଶାସନ, ସ୍ୱାସ୍ଥ୍ୟସେବା, କୃଷି, ଶିକ୍ଷା ଏବଂ ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା ଉପରେ ଧ୍ୟାନ ଦିଏ।',
+    fileUrl: '/odisha-ai_website-v2-/Odisha AI Policy-2025.pdf',
+    externalUrl: '#',
+    icon: 'FileText',
+    source: 'Government of Odisha'
   }
 ];
 
@@ -1808,7 +1828,7 @@ export const contactInfo = {
   address: 'Odisha Computer Application Centre (OCAC)',
   fullAddress: 'N-1/7, Acharya Vihar, IRC Village, Bhubaneswar, Odisha 751015',
   phone: '+91-674-2567892',
-  email: 'contact@odisha-ai-mission.gov.in',
+  email: 'aiteam.ocac@odisha.gov.in',
   mapCoordinates: { lat: 20.2961, lng: 85.8245 },
   mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.196748844831!2d85.82228931490087!3d20.296153086404562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7d9f9c7d7d7%3A0x9c0c0c0c0c0c0c0c!2sOdisha%20Computer%20Application%20Centre!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin'
 };
