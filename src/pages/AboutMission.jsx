@@ -194,7 +194,7 @@ const AboutMission = () => {
                                 <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Target className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ନୀତି ଏବଂ ଆଇନ' : 'Policy & Acts'}</h3>
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ଅଫିସିଆଲ୍ ଅପଡେଟ୍ସ' : 'Official Updates'}</h3>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଆଇନଗତ ଢାଞ୍ଚା ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ' : 'Legal framework and guidelines'}</p>
                             </div>
                         </Link>

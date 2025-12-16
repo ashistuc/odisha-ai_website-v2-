@@ -18,6 +18,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     const [isPDFReaderOpen, setIsPDFReaderOpen] = useState(false);
     const [videoPopup, setVideoPopup] = useState({ isOpen: false, url: '', title: '', originalUrl: '' });
     const [videoKey, setVideoKey] = useState(0);
+    const [pdfPopup, setPdfPopup] = useState({ isOpen: false, url: '', title: '' });
 
     const handleOpenPolicyPDF = () => {
         if (onOpenPolicyPDF) {
@@ -34,16 +35,28 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
         }
     }, [searchParams]);
 
-    // Handle Escape key to close video popup
+    // Handle Escape key to close popups (PDF popup first, then video popup)
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (e.key === 'Escape' && videoPopup.isOpen) {
-                setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+            if (e.key === 'Escape') {
+                // Close PDF popup first if open (it's on top)
+                if (pdfPopup.isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setPdfPopup({ isOpen: false, url: '', title: '' });
+                    return; // Don't close video popup or parent dialog
+                }
+                // Then close video popup if open
+                if (videoPopup.isOpen) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+                }
             }
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [videoPopup.isOpen]);
+    }, [videoPopup.isOpen, pdfPopup.isOpen]);
 
     // State to control iframe rendering with delay
     const [iframeReady, setIframeReady] = useState(false);
@@ -63,6 +76,10 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
 
     const handleOpenChange = (open) => {
         if (!open) {
+            // Don't close parent dialog if PDF popup or Video popup is open
+            if (pdfPopup.isOpen || videoPopup.isOpen) {
+                return;
+            }
             setActiveDialog(null);
             // Optional: Clear the query param when closing
             // setSearchParams({}); 
@@ -133,27 +150,31 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     const productivityResources = [
         {
             useCase: "Chat with Document",
-            video: "https://drive.google.com/file/d/1s7ZtsIDMQMTQt73t7uIAo0gMVWOFDcsw/preview",
+            video: "https://aimission.odisha.gov.in/media/Video-4-Chat-With-Document.mp4",
             videoOriginal: "https://bit.ly/video_chatwithdoc",
-            guide: "https://bit.ly/guide_chatwithdoc"
+            guide: "https://bit.ly/guide_chatwithdoc",
+            pdfFile: "/pdf/Chat_with_Document.pdf"
         },
         {
             useCase: "Drafting a Document",
-            video: "https://drive.google.com/file/d/1OKeefpgmSFjAMjaSWgXmGGzIZXy4FD9L/preview",
+            video: "https://aimission.odisha.gov.in/media/Video-2-Drafting-Document.mp4",
             videoOriginal: "https://bit.ly/video_draftadoc",
-            guide: "https://bit.ly/guide_draftadoc"
+            guide: "https://bit.ly/guide_draftadoc",
+            pdfFile: "/pdf/Document_Drafting.pdf"
         },
         {
             useCase: "Deep Research",
-            video: "https://drive.google.com/file/d/1gYHU9sS4G6rKxG1lFpClYJiHm69kfGzP/preview",
+            video: "https://aimission.odisha.gov.in/media/Video-3-Deep-Research.mp4",
             videoOriginal: "https://bit.ly/video_deepresearch",
-            guide: "https://bit.ly/guide_deepresearch"
+            guide: "https://bit.ly/guide_deepresearch",
+            pdfFile: "/pdf/Deep_Research.pdf"
         },
         {
             useCase: "Data Analysis and Visualisation",
-            video: "https://drive.google.com/file/d/1yXQ3ZGAcXPOlD_e6i3UU8HLEqCAl7dEN/preview",
+            video: "https://aimission.odisha.gov.in/media/Video-1-Data-Analysis.mp4",
             videoOriginal: "https://bit.ly/video_data_analysis",
-            guide: "https://bit.ly/guide_data_analysis"
+            guide: "https://bit.ly/guide_data_analysis",
+            pdfFile: "/pdf/Data_Analysis.pdf"
         }
     ];
 
@@ -341,13 +362,9 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                     <div className="space-y-3">
                                         <button
                                             onClick={() => {
-                                                // Close the parent dialog first to release focus trap
-                                                setActiveDialog(null);
-                                                // Then open video popup with a small delay
-                                                setTimeout(() => {
-                                                    setVideoKey(prev => prev + 1);
-                                                    setVideoPopup({ isOpen: true, url: resource.video, title: resource.useCase, originalUrl: resource.videoOriginal || resource.video });
-                                                }, 50);
+                                                // Open video popup on top of the current dialog (don't close parent)
+                                                setVideoKey(prev => prev + 1);
+                                                setVideoPopup({ isOpen: true, url: resource.video, title: resource.useCase, originalUrl: resource.videoOriginal || resource.video });
                                             }}
                                             className="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
                                         >
@@ -357,18 +374,19 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                             </span>
                                             <PlayCircle className="w-4 h-4 opacity-50 group-hover/link:opacity-100" />
                                         </button>
-                                        <a
-                                            href={resource.guide}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
+                                        <button
+                                            onClick={() => {
+                                                // Open PDF popup on top of the current dialog (don't close parent)
+                                                setPdfPopup({ isOpen: true, url: resource.pdfFile, title: resource.useCase });
+                                            }}
+                                            className="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
                                         >
                                             <span className="flex items-center gap-3 font-medium">
                                                 <FileText className="w-5 h-5 text-orange-500 group-hover/link:text-orange-600" />
                                                 Read One-Pager Guide
                                             </span>
-                                            <ExternalLink className="w-4 h-4 opacity-50 group-hover/link:opacity-100" />
-                                        </a>
+                                            <FileText className="w-4 h-4 opacity-50 group-hover/link:opacity-100" />
+                                        </button>
                                     </div>
                                 </div>
                             ))}
@@ -489,15 +507,16 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
             {videoPopup.isOpen && ReactDOM.createPortal(
                 <div
                     className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
-                    style={{ zIndex: 9999 }}
+                    style={{ zIndex: 10000 }}
                     onClick={(e) => {
                         e.preventDefault();
                         e.stopPropagation();
+                        // Only close video popup when clicking backdrop
                         setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
                     }}
                 >
-                    {/* Backdrop */}
-                    <div className="absolute inset-0 bg-black/95 backdrop-blur-md" />
+                    {/* Backdrop - slightly transparent to show parent dialog is still open */}
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
 
                     {/* Modal Content */}
                     <div
@@ -520,12 +539,17 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
+                                    e.nativeEvent.stopImmediatePropagation();
                                     setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
                                 }}
-                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors shrink-0 cursor-pointer"
+                                onMouseDown={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                }}
+                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors shrink-0 cursor-pointer pointer-events-auto z-10"
                                 aria-label="Close video"
                             >
-                                <X className="w-5 h-5" />
+                                <X className="w-5 h-5 pointer-events-none" />
                             </button>
                         </div>
 
@@ -542,16 +566,26 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                             )}
                             {/* Video iframe - only render when ready */}
                             {iframeReady && videoPopup.url && (
-                                <iframe
-                                    key={`video-frame-${videoKey}`}
-                                    src={getEmbedUrl(videoPopup.url)}
-                                    title={videoPopup.title}
-                                    className="absolute top-0 left-0 w-full h-full bg-black"
-                                    frameBorder="0"
-                                    loading="eager"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                />
+                                videoPopup.url.endsWith('.mp4') ? (
+                                    <video
+                                        key={`video-frame-${videoKey}`}
+                                        src={videoPopup.url}
+                                        className="absolute top-0 left-0 w-full h-full bg-black"
+                                        controls
+                                        autoPlay
+                                    />
+                                ) : (
+                                    <iframe
+                                        key={`video-frame-${videoKey}`}
+                                        src={getEmbedUrl(videoPopup.url)}
+                                        title={videoPopup.title}
+                                        className="absolute top-0 left-0 w-full h-full bg-black"
+                                        frameBorder="0"
+                                        loading="eager"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                    />
+                                )
                             )}
                         </div>
 
@@ -565,6 +599,86 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors font-medium"
+                                onClick={(e) => e.stopPropagation()}
+                            >
+                                Open in new tab <ExternalLink className="w-4 h-4" />
+                            </a>
+                        </div>
+                    </div>
+                </div>,
+                document.body
+            )}
+
+            {/* PDF Popup for Productivity Resources - Simple iframe viewer */}
+            {pdfPopup.isOpen && ReactDOM.createPortal(
+                <div
+                    className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
+                    style={{ zIndex: 10000 }}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        // Only close PDF popup when clicking backdrop (parent dialog stays open)
+                        setPdfPopup({ isOpen: false, url: '', title: '' });
+                    }}
+                >
+                    {/* Backdrop - slightly transparent to show parent dialog is still open */}
+                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+
+                    {/* Modal Content */}
+                    <div
+                        className="relative w-full max-w-5xl h-[90vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-gray-200 bg-white shrink-0">
+                            <div className="flex items-center gap-3">
+                                <div className="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center shrink-0">
+                                    <FileText className="w-5 h-5 text-orange-600" />
+                                </div>
+                                <div className="min-w-0">
+                                    <p className="text-xs uppercase tracking-widest text-orange-600 font-medium">One-Pager Guide</p>
+                                    <h3 className="text-base sm:text-lg font-semibold text-gray-900 truncate">{pdfPopup.title}</h3>
+                                </div>
+                            </div>
+                            <button
+                                type="button"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    e.nativeEvent.stopImmediatePropagation();
+                                    setPdfPopup({ isOpen: false, url: '', title: '' });
+                                }}
+                                onMouseDown={(e) => {
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                }}
+                                className="ml-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors shrink-0 cursor-pointer pointer-events-auto z-10"
+                                aria-label="Close PDF"
+                            >
+                                <X className="w-5 h-5 pointer-events-none" />
+                            </button>
+                        </div>
+
+                        {/* PDF Container */}
+                        <div className="flex-1 bg-gray-100">
+                            <iframe
+                                src={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}`}
+                                title={pdfPopup.title}
+                                className="w-full h-full border-0"
+                                style={{ minHeight: '100%' }}
+                            />
+                        </div>
+
+                        {/* Footer */}
+                        <div className="px-4 sm:px-6 py-3 border-t border-gray-200 bg-white flex flex-wrap items-center justify-between gap-2 shrink-0">
+                            <p className="text-xs sm:text-sm text-gray-500">
+                                Press <kbd className="px-2 py-0.5 rounded bg-gray-100 border border-gray-300 text-gray-700 font-mono text-xs">Esc</kbd> or click outside to close
+                            </p>
+                            <a
+                                href={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 transition-colors font-medium"
                                 onClick={(e) => e.stopPropagation()}
                             >
                                 Open in new tab <ExternalLink className="w-4 h-4" />

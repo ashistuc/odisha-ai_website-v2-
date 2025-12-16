@@ -80,7 +80,7 @@ const AIProjectIdeaForm = () => {
   return (
     <div>
       <div className="text-center mb-12">
-        <Badge className="bg-purple-100 text-purple-700 hover:bg-purple-200 mb-4 px-4 py-2">
+        <Badge className="bg-orange-100 text-orange-700 hover:bg-orange-200 mb-4 px-4 py-2">
           <Lightbulb className="w-4 h-4 mr-2" />
           {isOdia ? 'ନବସୃଜନ କେନ୍ଦ୍ର' : 'Innovation Hub'}
         </Badge>

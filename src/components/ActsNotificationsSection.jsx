@@ -20,7 +20,7 @@ const ActsNotificationsSection = ({ items, limit, showViewAll = true }) => {
   };
 
   const typeColorMap = {
-    'Act': 'bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-200',
+    'Act': 'bg-orange -100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-200',
     'Notification': 'bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-200',
     'Govt Order': 'bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-200',
     'Guideline': 'bg-orange-100 text-orange-800 border-orange-300 dark:bg-orange-900 dark:text-orange-200'
@@ -32,7 +32,7 @@ const ActsNotificationsSection = ({ items, limit, showViewAll = true }) => {
   return (
     <div>
       <div className="text-center mb-12">
-        <Badge className="bg-indigo-100 text-indigo-700 dark:bg-indigo-900 dark:text-indigo-300 hover:bg-indigo-200 mb-4 px-4 py-2">
+        <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 hover:bg-orange-200 mb-4 px-4 py-2">
           <FileText className="w-4 h-4 mr-2" />
           {isOdia ? 'ଆଇନଗତ ଏବଂ ନିୟାମକ ଢାଞ୍ଚା' : 'Legal & Regulatory Framework'}
         </Badge>

@@ -55,7 +55,7 @@ const Header = () => {
     { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', type: 'link', href: '/strategic-pillars' },
     { name: isOdia ? 'ସମ୍ବଳ' : 'Resources', type: 'link', href: '/resources' },
     { name: isOdia ? 'ସହଯୋଗୀ' : 'Partners', type: 'link', href: '/partners' },
-    { name: isOdia ? 'ନୀତି ଏବଂ ଆଇନ' : 'Policy & Acts', type: 'link', href: '/policy-acts' },
+    { name: isOdia ? 'ଅଫିସିଆଲ୍ ଅପଡେଟ୍ସ' : 'Official Updates', type: 'link', href: '/policy-acts' },
     /*  { name: isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events', type: 'link', href: '/events' },*/
     { name: isOdia ? 'ଧାରଣା ଦାଖଲ' : 'Submit Idea', type: 'scroll', section: 'submit-idea-section' },
 
@@ -105,9 +105,9 @@ const Header = () => {
                 className="flex items-center space-x-3 group border-r border-gray-200 dark:border-gray-700 pr-6"
               >
                 <img
-                  src="/odisha-ai_website-v2-/logo/india_elc_it.png"
+                  src="/odisha-ai_website-v2-/logo/1666094039681.jpg"
                   alt="Government of Odisha"
-                  className="w-[200px] object-contain"
+                  className="w-[100px] object-contain"
                 />
               </Link>
               <Link

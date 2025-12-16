@@ -13,6 +13,9 @@ import ResourcesPage from './pages/ResourcesPage';
 import EventsPage from './pages/EventsPage';
 import ContactPage from './pages/ContactPage';
 import PolicyActsPage from './pages/PolicyActsPage';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfUse from './pages/TermsOfUse';
+import Disclaimer from './pages/Disclaimer';
 
 
 import ScrollToTop from './components/ScrollToTop';
@@ -35,6 +38,9 @@ function App() {
                 <Route path="/events" element={<EventsPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/policy-acts" element={<PolicyActsPage />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<TermsOfUse />} />
+                <Route path="/disclaimer" element={<Disclaimer />} />
               </Routes>
             </main>
             <Footer />

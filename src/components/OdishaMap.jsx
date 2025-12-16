@@ -25,16 +25,16 @@ const OdishaMap = () => {
             <stop offset="0%" style={{ stopColor: '#FFF3E0', stopOpacity: 1 }} />
             <stop offset="100%" style={{ stopColor: '#FFE0B2', stopOpacity: 1 }} />
           </linearGradient>
-          
+
           <filter id="shadow">
-            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3"/>
+            <feDropShadow dx="0" dy="2" stdDeviation="2" floodOpacity="0.3" />
           </filter>
-          
+
           <filter id="glow">
-            <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+            <feGaussianBlur stdDeviation="1.5" result="coloredBlur" />
             <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
+              <feMergeNode in="coloredBlur" />
+              <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
         </defs>
@@ -75,7 +75,7 @@ const OdishaMap = () => {
                 className="animate-ping"
                 style={{ animationDelay: `${index * 0.2}s` }}
               />
-              
+
               {/* Main Hotspot Circle */}
               <circle
                 cx={hotspot.x}
@@ -87,7 +87,7 @@ const OdishaMap = () => {
                 onMouseEnter={() => setHoveredPoint(hotspot.id)}
                 onMouseLeave={() => setHoveredPoint(null)}
               />
-              
+
               {/* Connection Lines */}
               <line
                 x1="50"

@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') {
 // (especially on GitHub Pages / subpath deployments).
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.mjs`;
 
-const InteractivePDFReader = ({ isOpen, onClose, pdfUrl }) => {
+const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Policy 2025' }) => {
   const [pages, setPages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -262,7 +262,7 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl }) => {
         <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-900/80 text-white flex-shrink-0">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-orange-300">Official Document</p>
-            <h2 className="text-xl font-semibold">Odisha AI Policy 2025</h2>
+            <h2 className="text-xl font-semibold">{title}</h2>
           </div>
           <div className="flex items-center space-x-3">
             <span className="text-sm text-white/70">

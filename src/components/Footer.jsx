@@ -58,9 +58,9 @@ const Footer = () => {
     {
       titleKey: 'footer.legal',
       links: [
-        { nameKey: 'footer.privacyPolicy', path: '/privacy' },
+        { nameKey: 'footer.privacyPolicy', path: '/privacy-policy' },
         { nameKey: 'footer.termsOfService', path: '/terms' },
-        { nameKey: 'footer.accessibility', path: '/accessibility' },
+        { name: 'Disclaimer', path: '/disclaimer' },
         { nameKey: 'footer.sitemap', path: '/sitemap' }
       ]
     }
