@@ -1843,7 +1843,7 @@ export const countdownConfig = {
 
   // Target date and time in ISO format: "YYYY-MM-DDTHH:MM:SS"
   // Example: "2025-12-17T15:00:00" means December 17, 2025 at 3:00 PM
-  targetDate: "2025-12-16T15:00:00",
+  targetDate: "2025-12-20T21:11:00",
 
   // Event title displayed on the countdown screen
   eventTitle: "ODISHA AI Mission",
