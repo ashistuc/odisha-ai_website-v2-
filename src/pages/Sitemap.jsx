@@ -23,7 +23,7 @@ const Sitemap = () => {
                 { name: isOdia ? 'ମିଶନ ବିଷୟରେ' : 'About Mission', path: '/about-mission', description: isOdia ? 'ଆମ ଦୃଷ୍ଟି ଏବଂ ମିଶନ ବିଷୟରେ ଜାଣନ୍ତୁ' : 'Learn about our vision and mission' },
                 { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', path: '/strategic-pillars', description: isOdia ? 'ଆମର ମୁଖ୍ୟ ରଣନୀତିକ ଦିଗ' : 'Our key strategic focus areas' },
                 { name: isOdia ? 'ସହଭାଗୀ' : 'Partners', path: '/partners', description: isOdia ? 'ଆମର ସହଭାଗୀ ଏବଂ ସହଯୋଗୀ' : 'Our partners and collaborators' },
-                { name: isOdia ? 'ଇଭେଣ୍ଟ୍' : 'Events', path: '/events', description: isOdia ? 'ଆଗାମୀ ଏବଂ ଅତୀତ ଇଭେଣ୍ଟ୍' : 'Upcoming and past events' },
+
                 { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact Us', path: '/contact', description: isOdia ? 'ଆମ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Get in touch with us' }
             ]
         },
