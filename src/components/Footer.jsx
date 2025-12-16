@@ -60,7 +60,7 @@ const Footer = () => {
       links: [
         { nameKey: 'footer.privacyPolicy', path: '/privacy-policy' },
         { nameKey: 'footer.termsOfService', path: '/terms' },
-        { name: 'Disclaimer', path: '/disclaimer' },
+        { nameKey: 'footer.disclaimer', path: '/disclaimer' },
         { nameKey: 'footer.sitemap', path: '/sitemap' }
       ]
     }

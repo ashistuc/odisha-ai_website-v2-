@@ -88,7 +88,7 @@ const AIProjectIdeaForm = () => {
           {isOdia ? 'ଆପଣଙ୍କ ' : 'Share Your '}<span className="bg-gradient-to-r from-orange-600 to-orange-600 bg-clip-text text-transparent">{isOdia ? 'ନବସୃଜନମୂଳକ AI ପ୍ରକଳ୍ପ ଧାରଣା ଶେୟାର କରନ୍ତୁ' : 'Innovative AI Project Idea'}</span>
         </h2>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-          {isOdia ? 'ଏକ ଅଭୂତପୂର୍ବ AI ସମାଧାନ ଅଛି? ଆପଣଙ୍କ ଧାରଣା ଦାଖଲ କରନ୍ତୁ ଏବଂ ଓଡ଼ିଶାର AI ଇକୋସିଷ୍ଟମରୁ ସମର୍ଥନ ପାଆନ୍ତୁ' : 'Have a groundbreaking AI solution? Submit your idea and get support from Odisha\'s AI ecosystem'}
+          {isOdia ? 'ଏକ ଅଦ୍ଭୁତପୂର୍ବAI ସମାଧାନ ଅଛି? ଆପଣଙ୍କ ଧାରଣା ଦାଖଲ କରନ୍ତୁ ଏବଂ ଓଡ଼ିଶାର AI ଇକୋସିଷ୍ଟମରୁ ସମର୍ଥନ ପାଆନ୍ତୁ' : 'Have a groundbreaking AI solution? Submit your idea and get support from Odisha\'s AI ecosystem'}
         </p>
       </div>
 

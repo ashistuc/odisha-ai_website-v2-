@@ -284,6 +284,7 @@ export const translations = {
             copyright: '© 2025 Odisha AI Mission. All rights reserved. Powered by OCAC | Electronics & IT Department, Government of Odisha',
             privacyPolicy: 'Privacy Policy',
             termsOfService: 'Terms of Use',
+            disclaimer: 'Disclaimer',
             accessibility: 'Accessibility',
             sitemap: 'Sitemap',
             aboutUs: 'About Us',
@@ -588,7 +589,7 @@ export const translations = {
 
         // Footer (Odia)
         footer: {
-            quickLinks: 'ଦ୍ରୁତ ଲିଙ୍କ',
+            quickLinks: 'ଦ୍ରୁତ ଲିଙ୍କ୍',
             resources: 'ସମ୍ବଳ',
             skilling: 'ଦକ୍ଷତା',
             legal: 'ଆଇନଗତ',
@@ -597,6 +598,7 @@ export const translations = {
             copyright: '© ୨୦୨୫ ଓଡ଼ିଶା AI ମିଶନ୍ | ସମସ୍ତ ଅଧିକାର ସଂରକ୍ଷିତ | OCAC ଦ୍ୱାରା ଚାଳିତ | ଇଲେକ୍ଟ୍ରୋନିକ୍ସ ଏବଂ IT ବିଭାଗ, ଓଡ଼ିଶା ସରକାର',
             privacyPolicy: 'ଗୋପନୀୟତା ନୀତି',
             termsOfService: 'ବ୍ୟବହାର ସର୍ତ୍ତାବଳୀ',
+            disclaimer: 'ଦାୟିତ୍ୱ ଅସ୍ୱୀକାର',
             accessibility: 'ଅଭିଗମ୍ୟତା',
             sitemap: 'ସାଇଟମ୍ୟାପ୍',
             aboutUs: 'ଆମ ବିଷୟରେ',

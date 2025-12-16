@@ -190,11 +190,11 @@ const StrategicPillarsPage = () => {
                     </Badge>
                     <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
                         {isOdia ? 'ରଣନୀତିକ ' : 'Strategic '}
-                        <span className="text-orange-200">{isOdia ? 'ସ୍ତମ୍ଭ' : 'Pillars'}</span>
+                        <span>{isOdia ? 'ସ୍ତମ୍ଭ' : 'Pillars'}</span>
                     </h1>
                     <p className="text-xl text-orange-100 max-w-3xl leading-relaxed">
                         {isOdia
-                            ? 'ନବସୃଜନ, ଅନ୍ତର୍ଭୁକ୍ତି ଏବଂ ସ୍ଥିରତାର ଭବିଷ୍ୟତ ଆଡ଼କୁ ଓଡ଼ିଶା AI ମିଶନକୁ ଚାଳିତ କରୁଥିବା ଚାରିଟି ମୂଳ ସ୍ତମ୍ଭ।'
+                            ? 'ନବସୃଜନ, ଅନ୍ତର୍ଭୁକ୍ତି ଏବଂ ସ୍ଥିରତାର ଭବିଷ୍ୟତ ଆଡ଼କୁ ଓଡ଼ିଶା AI ମିଶନକୁ ଚାଳିତ କରୁଥିବା ଚାରୋଟିମୂଳ ସ୍ତମ୍ଭ।'
                             : 'Four foundational pillars driving the Odisha AI Mission towards a future of innovation, inclusion, and sustainability.'}
                     </p>
                 </div>

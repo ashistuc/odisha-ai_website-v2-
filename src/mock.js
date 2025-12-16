@@ -1790,7 +1790,7 @@ export const heroSlides = [
     titleOd: 'କୃଷି ପାଇଁ AI',
     subtitle: '',
     description: 'AI-driven real-time crop insights, predictive analytics, and faster insurance support to boost farm productivity and resilience.',
-    descriptionOd: 'ଫାର୍ମ ଉତ୍ପାଦନଶୀଳତା ଏବଂ ସ୍ଥିରତା ବୃଦ୍ଧି ପାଇଁ AI-ଚାଳିତ ବାସ୍ତବ-ସମୟ ଫସଲ ଅନ୍ତର୍ଦୃଷ୍ଟି, ଭବିଷ୍ୟଦ୍ବାଣୀ ବିଶ୍ଳେଷଣ ଏବଂ ଦ୍ରୁତ ବୀମା ସମର୍ଥନ।',
+    descriptionOd: 'ଫାର୍ମ ଉତ୍ପାଦନଶୀଳତା ଏବଂ ସ୍ଥିରତା ବୃଦ୍ଧି ପାଇଁ AI-ଚାଳିତ ବାସ୍ତବ-ସମୟ ଫସଲ ଅନ୍ତର୍ଦୃଷ୍ଟି, ଭବିଷ୍ୟବାଣୀ ବିଶ୍ଳେଷଣ ଏବଂ ଦ୍ରୁତ ବୀମା ସମର୍ଥନ।',
     logos: ['Govt of Odisha', 'IndiaAI'],
     event: 'AI Crop Advisory for 85% Farmland by 2036',
     eventOd: '୨୦୩୬ ସୁଦ୍ଧା ୮୫% କୃଷିଜମି ପାଇଁ AI ଫସଲ ପରାମର୍ଶ'
@@ -1817,7 +1817,7 @@ export const heroSlides = [
     titleOd: 'ବିପର୍ଯ୍ୟୟ ପରିଚାଳନା ପାଇଁ AI',
     subtitle: '',
     description: 'Advanced AI simulations and predictive intelligence to enhance climate preparedness and disaster response capabilities.',
-    descriptionOd: 'ଜଳବାୟୁ ପ୍ରସ୍ତୁତି ଏବଂ ବିପର୍ଯ୍ୟୟ ପ୍ରତିକ୍ରିୟା ସାମର୍ଥ୍ୟ ବୃଦ୍ଧି ପାଇଁ ଉନ୍ନତ AI ସିମୁଲେସନ୍ ଏବଂ ଭବିଷ୍ୟଦ୍ବାଣୀ ବୁଦ୍ଧିମତ୍ତା।',
+    descriptionOd: 'ଜଳବାୟୁ ପ୍ରସ୍ତୁତି ଏବଂ ବିପର୍ଯ୍ୟୟ ପ୍ରତିକ୍ରିୟା ସାମର୍ଥ୍ୟ ବୃଦ୍ଧି ପାଇଁ ଉନ୍ନତ AI ଷ୍ଟିମ୍ୟୁଲେସନ୍ ଏବଂ ଭବିଷ୍ୟବାଣୀ ବୁଦ୍ଧିମତ୍ତା।',
     logos: ['Govt of Odisha', 'OCAC'],
     event: 'Apurva AI Workshop Series - Ongoing',
     eventOd: 'ଅପୂର୍ବ AI ୱର୍କସପ ସିରିଜ୍ - ଚାଲୁ'

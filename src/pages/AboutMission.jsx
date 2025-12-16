@@ -142,7 +142,7 @@ const AboutMission = () => {
                                 </p>
                                 <Link to="/strategic-pillars" className="mt-6 inline-block">
                                     <Button className="bg-orange-600 hover:bg-orange-700 text-white">
-                                        {isOdia ? 'ରଣନୈତିକ ସ୍ତମ୍ଭଗୁଡ଼ିକ ଦେଖନ୍ତୁ' : 'View Strategic Pillars'}
+                                        {isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭଗୁଡ଼ିକ ଦେଖନ୍ତୁ' : 'View Strategic Pillars'}
                                         <ArrowRight className="w-4 h-4 ml-2" />
                                     </Button>
                                 </Link>
@@ -186,7 +186,7 @@ const AboutMission = () => {
                                     <Server className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ରଣନୈତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars'}</h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଚାରିଟି ମୂଳ ସ୍ତମ୍ଭ ଅନୁସନ୍ଧାନ କରନ୍ତୁ' : 'Explore the four foundational pillars'}</p>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଚାରୋଟିମୂଳ ସ୍ତମ୍ଭ ଅନୁସନ୍ଧାନ କରନ୍ତୁ' : 'Explore the four foundational pillars'}</p>
                             </div>
                         </Link>
                         <Link to="/policy-acts" className="group">

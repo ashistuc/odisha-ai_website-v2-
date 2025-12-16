@@ -47,7 +47,7 @@ const ContactPage = () => {
 
 
                             <div className="flex items-start space-x-4">
-                                <div className="minw-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <div className="min-w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                                     <Mail className="w-6 h-6 text-orange-600" />
                                 </div>
                                 <div>
