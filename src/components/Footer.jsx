@@ -21,7 +21,7 @@ const Footer = () => {
     { name: isOdia ? 'ମିଶନ ବିଷୟରେ' : 'About Mission', path: '/about-mission' },
     { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', path: '/strategic-pillars' },
     { name: isOdia ? 'ସହଭାଗୀ' : 'Partners', path: '/partners' },
-    { name: isOdia ? 'ସମ୍ପଦ' : 'Resources', path: '/resources' },
+
 
     { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact Us', path: '/contact' }
   ];
