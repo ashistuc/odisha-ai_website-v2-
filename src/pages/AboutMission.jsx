@@ -207,13 +207,13 @@ const AboutMission = () => {
                                 <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଆମର ସହଯୋଗୀଙ୍କୁ ଦେଖନ୍ତୁ' : 'Meet our collaborators'}</p>
                             </div>
                         </Link>
-                        <Link to="/events" className="group">
+                        <Link to="/resources" className="group">
                             <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-gray-700 dark:to-gray-800 p-6 rounded-2xl border-2 border-transparent hover:border-orange-300 transition-all duration-300 hover:shadow-lg">
                                 <div className="w-14 h-14 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                                     <Lightbulb className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'କାର୍ଯ୍ୟକ୍ରମ' : 'Events'}</h3>
-                                <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଆଗାମୀ ଇଭେଣ୍ଟ ଏବଂ ୱର୍କସପ' : 'Upcoming events and workshops'}</p>
+                                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{isOdia ? 'ସମ୍ବଳଗୁଡିକ' : 'Resources'}</h3>
+                                <p className="text-sm text-gray-600 dark:text-gray-400">{isOdia ? 'ଶିଳ୍ପ ସହିତ ସହଯୋଗ କରିବା' : 'Collaborating with industry'}</p>
                             </div>
                         </Link>
                     </div>

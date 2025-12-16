@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Handshake, ExternalLink, Building2, GraduationCap, Lightbulb } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Badge } from '../components/ui/badge';
@@ -139,9 +140,9 @@ const PartnersPage = () => {
                             ? 'ଆସନ୍ତୁ ଏକତ୍ର ହୋଇ ଓଡ଼ିଶାରେ AI ନବସୃଜନକୁ ଅଗ୍ରସର କରିବା।'
                             : 'Join us in driving AI innovation in Odisha.'}
                     </p>
-                    <button className="bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors">
+                    <Link to="/contact" className="inline-block bg-white text-orange-600 px-8 py-4 rounded-xl font-semibold hover:bg-orange-50 transition-colors">
                         {isOdia ? 'ଆମ ସହ ଯୋଗାଯୋଗ' : 'Contact Us'}
-                    </button>
+                    </Link>
                 </div>
             </div>
         </div>

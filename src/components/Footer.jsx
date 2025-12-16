@@ -143,7 +143,10 @@ const Footer = () => {
               <MapPin className="w-5 h-5 text-orange-500 mt-1 flex-shrink-0" />
               <div>
                 <h5 className="text-white font-medium mb-1">{t('contact.address')}</h5>
-                <p className="text-sm text-gray-400">OCAC, Electronics Niketan, Bhubaneswar, Odisha - 751012</p>
+                <p className="text-sm text-gray-400">Odisha Computer Application Centre
+                  (Technical Directorate to Electronics & IT Department)
+                  OCAC BUILDING, PLOT NO-N-1/7-D, ACHARYA VIHAR
+                  RRL POST OFFICE, BHUBANESWAR- 751013.</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">

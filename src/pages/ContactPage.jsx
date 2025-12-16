@@ -33,18 +33,21 @@ const ContactPage = () => {
                             </h2>
 
                             <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <div className="min-w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                                     <MapPin className="w-6 h-6 text-orange-600" />
                                 </div>
                                 <div>
                                     <p className="font-semibold text-gray-900">{isOdia ? 'ଠିକଣା' : 'Address'}</p>
-                                    <p className="text-gray-600">N-1/7, Acharya Vihar, IRC Village, Bhubaneswar, Odisha 751015</p>
+                                    <p className="text-gray-600">Odisha Computer Application Centre
+                                        (Technical Directorate to Electronics & IT Department)
+                                        OCAC BUILDING, PLOT NO-N-1/7-D, ACHARYA VIHAR
+                                        RRL POST OFFICE, BHUBANESWAR- 751013.</p>
                                 </div>
                             </div>
 
 
                             <div className="flex items-start space-x-4">
-                                <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                                <div className="minw-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
                                     <Mail className="w-6 h-6 text-orange-600" />
                                 </div>
                                 <div>
