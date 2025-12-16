@@ -537,18 +537,36 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                     <h3 className="text-base sm:text-lg font-semibold text-white truncate">{videoPopup.title}</h3>
                                 </div>
                             </div>
-                            <button
-                                type="button"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
-                                }}
-                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors cursor-pointer"
-                                aria-label="Close video"
-                            >
-                                <X className="w-5 h-5" />
-                            </button>
+                            <div className="flex items-center gap-2">
+                                {/* Download Button - Opens video in new tab */}
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        // Open video in new tab for download
+                                        window.open(videoPopup.url, '_blank', 'noopener,noreferrer');
+                                    }}
+                                    className="w-10 h-10 rounded-full bg-orange-500/20 hover:bg-orange-500/40 flex items-center justify-center text-orange-400 hover:text-orange-300 transition-colors cursor-pointer"
+                                    title="Download Video"
+                                >
+                                    <Download className="w-5 h-5" />
+                                </button>
+                                {/* Close Button */}
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+                                    }}
+                                    className="w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors cursor-pointer"
+                                    aria-label="Close video"
+                                    title="Close"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
                         </div>
 
                         {/* Video Container - with proper pointer-events for controls */}
