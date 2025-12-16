@@ -1849,7 +1849,7 @@ export const countdownConfig = {
   eventTitle: "ODISHA AI Mission",
 
   // Event title in Odia
-  eventTitleOd: "ଓଡ଼ିଶା AI ମୀସିନ୍",
+  eventTitleOd: "ଓଡ଼ିଶା AI ମିଶନ",
 
   // Subtitle/tagline for the event
   subtitle: "Get ready for the biggest AI event in Odisha!",
