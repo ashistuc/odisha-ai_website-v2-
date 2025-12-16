@@ -56,14 +56,14 @@ const ActsNotificationsSection = ({ items, limit, showViewAll = true }) => {
               className="h-full border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 hover:shadow-xl transition-all duration-300 group bg-white dark:bg-gray-800"
             >
               <CardHeader className="pb-3">
-                <div className="flex items-start justify-between mb-3">
+                {/* <div className="flex items-start justify-between mb-3">
                   <Badge className={`${typeColor} border text-xs font-medium`}>
                     {item.type}
                   </Badge>
                   <div className="bg-gradient-to-br from-orange-100 to-blue-100 dark:from-orange-900 dark:to-blue-900 p-3 rounded-xl group-hover:scale-110 transition-transform">
                     <IconComponent className="w-6 h-6 text-orange-600 dark:text-orange-400" />
                   </div>
-                </div>
+                </div> */}
                 <CardTitle className="text-lg font-bold text-gray-900 dark:text-white leading-tight group-hover:text-orange-600 transition-colors line-clamp-2">
                   {isOdia && item.titleOd ? item.titleOd : item.title}
                 </CardTitle>

@@ -416,7 +416,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                         {isOdia ? 'ଜ୍ଞାନ କେନ୍ଦ୍ର' : 'Knowledge Hub'}
                     </Badge>
                     <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                        <span className="text-gray-900">{isOdia ? 'ସମ୍ପଦ' : 'RESOURCES'}</span>
+                        <span className="text-gray-900">{isOdia ? 'ସମ୍ପଦ' : 'Resources'}</span>
                     </h2>
                     <p className="text-xl text-gray-700 font-medium max-w-4xl mx-auto mb-3">
                         {isOdia ? 'ଆପଣଙ୍କ AI ଯାତ୍ରାକୁ ଶକ୍ତିଶାଳୀ କରିବା ପାଇଁ ବ୍ୟାପକ ସାଧନ ଓ ତଥ୍ୟ' : 'Comprehensive tools and information to empower your AI journey'}

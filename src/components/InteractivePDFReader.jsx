@@ -207,6 +207,11 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
         event.preventDefault();
         handlePrev();
       } else if (event.key === 'ArrowRight') {
+        // Disable right arrow on last page
+        if (displayPage >= totalPages) {
+          event.preventDefault();
+          return;
+        }
         event.preventDefault();
         handleNext();
       }
@@ -217,7 +222,7 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, displayPage, totalPages]);
 
   const handlePrev = () => {
     if (turnInstanceRef.current) {
@@ -226,6 +231,8 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
   };
 
   const handleNext = () => {
+    // Don't allow next if on last page
+    if (displayPage >= totalPages) return;
     if (turnInstanceRef.current) {
       turnInstanceRef.current.turn('next');
     }

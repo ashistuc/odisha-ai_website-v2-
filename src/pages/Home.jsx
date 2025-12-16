@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Badge } from '../components/ui/badge';
-import { detailedProjects, partners, innovationCentres, quickLinks, aiNews, aiTools, policyTargets, faqs, aiTrainingPrograms, heroTargets2029, heroTargets2036, actsNotifications, tenders, eventGallery, aiStartups, heroSlides, contactInfo, countdownConfig } from '../mock';
+import { detailedProjects, partners, innovationCentres, quickLinks, aiNews, aiTools, policyTargets, faqs, aiTrainingPrograms, heroTargets2029, heroTargets2036, actsNotifications, tenders, eventGallery, aiStartups, heroSlides, contactInfo } from '../mock';
 import { useLanguage } from '../contexts/LanguageContext';
 import { useTranslation } from '../translations/translations';
 import InnovationCentres from '../components/InnovationCentres';
@@ -30,7 +30,6 @@ import EnhancedHeroCarousel from '../components/EnhancedHeroCarousel';
 import ContactUsSection from '../components/ContactUsSection';
 import AboutMissionSection from '../components/AboutMissionSection';
 import StrategicPillars from '../components/StrategicPillars';
-import LaunchCountdown from '../components/LaunchCountdown';
 
 const Home = () => {
   const { language } = useLanguage();
@@ -38,7 +37,6 @@ const Home = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showIntroQuotes, setShowIntroQuotes] = useState(false);
   const [isPDFReaderOpen, setIsPDFReaderOpen] = useState(false);
-  const [showCountdown, setShowCountdown] = useState(countdownConfig.isActive);
 
   const handleIntroComplete = () => {
     setShowIntroQuotes(false);
@@ -55,18 +53,6 @@ const Home = () => {
       {/* <LoadingScreen onLoadComplete={() => setIsLoading(false)} /> */}
       {showIntroQuotes && <IntroQuotesSequence onComplete={handleIntroComplete} />}
 
-      {/* Launch Countdown Overlay - Controlled by countdownConfig in mock.js */}
-      {showCountdown && countdownConfig.isActive && (
-        <LaunchCountdown
-          targetDate={countdownConfig.targetDate}
-          title={countdownConfig.eventTitle}
-          titleOd={countdownConfig.eventTitleOd}
-          subtitle={countdownConfig.subtitle}
-          subtitleOd={countdownConfig.subtitleOd}
-          lockWebsite={countdownConfig.lockWebsite}
-          onClose={() => setShowCountdown(false)}
-        />
-      )}
       <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300 scroll-smooth">
         {/* Hero Carousel Section */}
         <section id="main-content" className="relative section-transition">
