@@ -1390,7 +1390,7 @@ export const actsNotifications = [
     date: '2025-12-10',
     description: 'Government launches free 4.5-hour AI course to empower 1 crore citizens with foundational AI skills. Course available on FutureSkills Prime and iGOT Karmayogi with Government of India certification.',
     descriptionOd: '୧ କୋଟି ନାଗରିକଙ୍କୁ ମୌଳିକ AI ଦକ୍ଷତା ସହ ସଶକ୍ତ କରିବା ପାଇଁ ସରକାର ମାଗଣା ୪.୫-ଘଣ୍ଟା AI ପାଠ୍ୟକ୍ରମ ଆରମ୍ଭ କଲେ।',
-    fileUrl: 'https://www.futureskillsprime.in/course/yuva-ai-for-all/',
+    fileUrl: '#',
     externalUrl: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2191334&reg=3&lang=2',
     icon: 'GraduationCap',
     source: 'Ministry of Electronics & IT'
