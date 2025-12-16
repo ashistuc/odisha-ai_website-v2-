@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/odisha-ai_website-v2-/static/css/main.e555ac0b.css",
-    "main.js": "/odisha-ai_website-v2-/static/js/main.cfb17a8b.js",
+    "main.css": "/odisha-ai_website-v2-/static/css/main.38797fa9.css",
+    "main.js": "/odisha-ai_website-v2-/static/js/main.90816e26.js",
     "index.html": "/odisha-ai_website-v2-/index.html",
-    "main.e555ac0b.css.map": "/odisha-ai_website-v2-/static/css/main.e555ac0b.css.map",
-    "main.cfb17a8b.js.map": "/odisha-ai_website-v2-/static/js/main.cfb17a8b.js.map"
+    "main.38797fa9.css.map": "/odisha-ai_website-v2-/static/css/main.38797fa9.css.map",
+    "main.90816e26.js.map": "/odisha-ai_website-v2-/static/js/main.90816e26.js.map"
   },
   "entrypoints": [
-    "static/css/main.e555ac0b.css",
-    "static/js/main.cfb17a8b.js"
+    "static/css/main.38797fa9.css",
+    "static/js/main.90816e26.js"
   ]
 }
