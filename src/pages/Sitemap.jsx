@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
     Map, Home, Users, Building2, BookOpen, Calendar, Mail, FileText,
@@ -6,9 +6,11 @@ import {
     GraduationCap, Database, BarChart, Newspaper
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import InteractivePDFReader from '../components/InteractivePDFReader';
 
 const Sitemap = () => {
     const { isOdia } = useLanguage();
+    const [isPDFReaderOpen, setIsPDFReaderOpen] = useState(false);
 
     // Define sitemap structure with categories
     const sitemapData = [
@@ -23,7 +25,7 @@ const Sitemap = () => {
                 { name: isOdia ? 'ମିଶନ ବିଷୟରେ' : 'About Mission', path: '/about-mission', description: isOdia ? 'ଆମ ଦୃଷ୍ଟି ଏବଂ ମିଶନ ବିଷୟରେ ଜାଣନ୍ତୁ' : 'Learn about our vision and mission' },
                 { name: isOdia ? 'ରଣନୀତିକ ସ୍ତମ୍ଭ' : 'Strategic Pillars', path: '/strategic-pillars', description: isOdia ? 'ଆମର ମୁଖ୍ୟ ରଣନୀତିକ ଦିଗ' : 'Our key strategic focus areas' },
                 { name: isOdia ? 'ସହଭାଗୀ' : 'Partners', path: '/partners', description: isOdia ? 'ଆମର ସହଭାଗୀ ଏବଂ ସହଯୋଗୀ' : 'Our partners and collaborators' },
-
+                { name: isOdia ? 'ଅଫିସିଆଲ୍ ଅପଡେଟ୍ସ' : 'Official Updates', path: '/policy-acts', description: isOdia ? 'ଆଗାମୀ ଏବଂ ଅତୀତ ଇଭେଣ୍ଟ୍' : 'Upcoming and past events' },
                 { name: isOdia ? 'ଯୋଗାଯୋଗ' : 'Contact Us', path: '/contact', description: isOdia ? 'ଆମ ସହ ଯୋଗାଯୋଗ କରନ୍ତୁ' : 'Get in touch with us' }
             ]
         },
@@ -35,7 +37,7 @@ const Sitemap = () => {
             iconColor: 'text-orange-600',
             links: [
                 { name: isOdia ? 'ସମ୍ପଦ ହବ୍' : 'Resources Hub', path: '/resources', description: isOdia ? 'ସମସ୍ତ AI ସମ୍ପଦ ଏକ ଜାଗାରେ' : 'All AI resources in one place' },
-                { name: isOdia ? 'ଓଡ଼ିଶା AI ନୀତି' : 'Odisha AI Policy', path: '/policy-acts', description: isOdia ? 'ରାଜ୍ୟ AI ନୀତି ଦସ୍ତାବିଜ୍' : 'State AI policy document' },
+                { name: isOdia ? 'ଓଡ଼ିଶା AI ନୀତି' : 'Odisha AI Policy', action: 'openPDF', description: isOdia ? 'ରାଜ୍ୟ AI ନୀତି ଦସ୍ତାବିଜ୍' : 'State AI policy document' },
                 { name: isOdia ? 'ଶିକ୍ଷଣ' : 'Learning', path: '/resources?dialog=learning', description: isOdia ? 'AI କୋର୍ସ ଏବଂ ଟ୍ୟୁଟୋରିଆଲ୍' : 'AI courses and tutorials' },
                 { name: isOdia ? 'ଡାଟାସେଟ୍' : 'Datasets', path: '/resources?dialog=datasets', description: isOdia ? 'ଉନ୍ମୁକ୍ତ ଡାଟାସେଟ୍ ଆକ୍ସେସ୍ କରନ୍ତୁ' : 'Access open datasets' },
                 { name: isOdia ? 'ସରକାରୀ ଉତ୍ପାଦକତା ପାଇଁ AI' : 'AI for Govt Productivity', path: '/resources?dialog=productivity', description: isOdia ? 'ସରକାରୀ AI ଉପକରଣ' : 'Government AI tools' }
@@ -146,6 +148,23 @@ const Sitemap = () => {
                                                             </p>
                                                         </div>
                                                     </a>
+                                                ) : link.action === 'openPDF' ? (
+                                                    <button
+                                                        onClick={() => setIsPDFReaderOpen(true)}
+                                                        className="group flex items-start gap-3 p-3 rounded-xl hover:bg-gray-50 transition-all duration-200 w-full text-left cursor-pointer"
+                                                    >
+                                                        <div className={`${section.bgColor} p-2 rounded-lg shrink-0 group-hover:scale-110 transition-transform duration-200`}>
+                                                            <FileText className={`w-4 h-4 ${section.iconColor}`} />
+                                                        </div>
+                                                        <div className="flex-1 min-w-0">
+                                                            <span className="font-medium text-gray-900 group-hover:text-orange-600 transition-colors block">
+                                                                {link.name}
+                                                            </span>
+                                                            <p className="text-sm text-gray-500 mt-0.5 line-clamp-1">
+                                                                {link.description}
+                                                            </p>
+                                                        </div>
+                                                    </button>
                                                 ) : (
                                                     <Link
                                                         to={link.path}
@@ -224,6 +243,13 @@ const Sitemap = () => {
                 </div>
                 */}
             </div>
+
+            {/* PDF Reader Popup for Odisha AI Policy */}
+            <InteractivePDFReader
+                isOpen={isPDFReaderOpen}
+                onClose={() => setIsPDFReaderOpen(false)}
+                pdfUrl="/Odisha AI Policy-2025.pdf"
+            />
         </div>
     );
 };
