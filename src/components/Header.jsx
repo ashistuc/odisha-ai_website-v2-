@@ -100,19 +100,10 @@ const Header = () => {
 
             {/* Logo Section with Government Logos */}
             <div className="flex items-center space-x-6">
+
               <Link
                 to="/"
-                className="flex items-center space-x-3 group border-r border-gray-200 dark:border-gray-700 pr-6"
-              >
-                <img
-                  src="/odisha-ai_website-v2-/logo/1666094039681.jpg"
-                  alt="Government of Odisha"
-                  className="w-[100px] object-contain"
-                />
-              </Link>
-              <Link
-                to="/"
-                className="flex items-center space-x-3 group"
+                className="flex items-center space-x-3 group border-r border-gray-200 pr-6"
               >
                 <img
                   src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
@@ -120,7 +111,16 @@ const Header = () => {
                   className="w-[200px] object-contain"
                 />
               </Link>
-
+              <Link
+                to="/"
+                className="flex items-center space-x-3 group dark:border-gray-700 "
+              >
+                <img
+                  src="/odisha-ai_website-v2-/logo/1666094039681.jpg"
+                  alt="Government of Odisha"
+                  className="w-[100px] object-contain"
+                />
+              </Link>
               {/* Partner Logos */}
               <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
                 {/* Odisha Govt Logo 
@@ -183,7 +183,7 @@ const Header = () => {
         <nav className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-500 shadow-md">
           <div className="w-full mx-auto px-4 sm:px-6 lg:px-8">
             {/* Desktop Navigation - Reduced Padding */}
-            <div className="hidden lg:flex items-center justify-center">
+            <div className="hidden lg:flex items-center justify-center h-[50px]">
               <ul className="flex items-center space-x-1">
                 {navItems.map((item, index) => (
                   <li key={index}>

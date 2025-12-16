@@ -75,7 +75,7 @@ const PolicyActsPage = () => {
                     <p className="text-xl text-orange-100 max-w-3xl leading-relaxed">
                         {isOdia
                             ? 'ବିଭାଗ ବର୍ଣ୍ଣନା: AI ଇକୋସିଷ୍ଟମ ସହ ଜଡିତ ସରକାରୀ ନୀତି, ଆଇନ, ସରକାରୀ ନିର୍ଦ୍ଦେଶ, ବିଜ୍ଞପ୍ତି ଏବଂ ପ୍ରେସ୍ ରିଲିଜ୍ ବିଷୟରେ ଅବଗତ ରୁହନ୍ତୁ।'
-                            : 'Section description: Stay informed with official policies, acts, government orders, notifications, and press releases related to AI ecosystem'}
+                            : 'Stay informed with official policies, acts, government orders, notifications, and press releases related to AI ecosystem'}
                     </p>
                 </div>
             </div>
@@ -127,14 +127,14 @@ const PolicyActsPage = () => {
                                 className={`border-2 ${typeStyle.border} ${typeStyle.hoverBorder} hover:shadow-xl transition-all duration-300 group bg-white dark:bg-gray-800`}
                             >
                                 <CardHeader className="pb-3">
-                                    <div className="flex items-start justify-between mb-3">
+                                    {/* <div className="flex items-start justify-between mb-3">
                                         <Badge className={`${typeStyle.bg} ${typeStyle.text} border ${typeStyle.border}`}>
                                             {getFilterLabel(item.type)}
                                         </Badge>
                                         <div className={`${typeStyle.bg} p-3 rounded-xl group-hover:scale-110 transition-transform`}>
                                             <IconComponent className={`w-5 h-5 ${typeStyle.text}`} />
                                         </div>
-                                    </div>
+                                    </div> */}
                                     <CardTitle className="text-lg font-bold text-gray-900 dark:text-white leading-tight group-hover:text-orange-600 transition-colors">
                                         {isOdia && item.titleOd ? item.titleOd : item.title}
                                     </CardTitle>

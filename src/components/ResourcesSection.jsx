@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
-import { Newspaper, GraduationCap, Database, ArrowRight, ExternalLink, FileText, BarChart, PlayCircle, X } from 'lucide-react';
+import { Newspaper, GraduationCap, Database, ArrowRight, ExternalLink, FileText, BarChart, PlayCircle, X, Download } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
@@ -122,7 +122,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     };
 
     const learningResources = [
-        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Official AI portal of the Government of Odisha.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
+        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Odisha for AI’ is a self-learning online program designed to raise public awareness about Artificial Intelligence.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
         { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
         { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: "/odisha-ai_website-v2-/logo/deeplearning.png" },
         { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: "/odisha-ai_website-v2-/logo/elementsofai.png" },
@@ -507,20 +507,23 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
             {videoPopup.isOpen && ReactDOM.createPortal(
                 <div
                     className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
-                    style={{ zIndex: 10000 }}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        // Only close video popup when clicking backdrop
-                        setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
-                    }}
+                    style={{ zIndex: 10000, pointerEvents: 'none' }}
                 >
-                    {/* Backdrop - slightly transparent to show parent dialog is still open */}
-                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+                    {/* Backdrop - clicking here closes the popup */}
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        style={{ pointerEvents: 'auto' }}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
+                        }}
+                    />
 
-                    {/* Modal Content */}
+                    {/* Modal Content - all interactions work normally */}
                     <div
                         className="relative w-full max-w-5xl bg-gray-900 rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200"
+                        style={{ pointerEvents: 'auto' }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Header */}
@@ -539,21 +542,16 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                 onClick={(e) => {
                                     e.preventDefault();
                                     e.stopPropagation();
-                                    e.nativeEvent.stopImmediatePropagation();
                                     setVideoPopup({ isOpen: false, url: '', title: '', originalUrl: '' });
                                 }}
-                                onMouseDown={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                }}
-                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors shrink-0 cursor-pointer pointer-events-auto z-10"
+                                className="ml-4 w-10 h-10 rounded-full bg-gray-700 hover:bg-gray-600 flex items-center justify-center text-white transition-colors cursor-pointer"
                                 aria-label="Close video"
                             >
-                                <X className="w-5 h-5 pointer-events-none" />
+                                <X className="w-5 h-5" />
                             </button>
                         </div>
 
-                        {/* Video Container */}
+                        {/* Video Container - with proper pointer-events for controls */}
                         <div className="relative w-full bg-black" style={{ paddingBottom: '56.25%' }}>
                             {/* Loading Spinner - shown when iframe is not ready */}
                             {!iframeReady && (
@@ -564,13 +562,14 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                     </div>
                                 </div>
                             )}
-                            {/* Video iframe - only render when ready */}
+                            {/* Video player - with pointer-events for controls */}
                             {iframeReady && videoPopup.url && (
                                 videoPopup.url.endsWith('.mp4') ? (
                                     <video
                                         key={`video-frame-${videoKey}`}
                                         src={videoPopup.url}
                                         className="absolute top-0 left-0 w-full h-full bg-black"
+                                        style={{ pointerEvents: 'auto' }}
                                         controls
                                         autoPlay
                                     />
@@ -580,6 +579,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                         src={getEmbedUrl(videoPopup.url)}
                                         title={videoPopup.title}
                                         className="absolute top-0 left-0 w-full h-full bg-black"
+                                        style={{ pointerEvents: 'auto' }}
                                         frameBorder="0"
                                         loading="eager"
                                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -598,10 +598,15 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                 href={videoPopup.originalUrl || videoPopup.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors font-medium"
-                                onClick={(e) => e.stopPropagation()}
+                                className="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors font-medium cursor-pointer"
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    // Use window.open as fallback for reliable opening
+                                    const videoUrl = videoPopup.originalUrl || videoPopup.url;
+                                    window.open(videoUrl, '_blank', 'noopener,noreferrer');
+                                }}
                             >
-                                Open in new tab <ExternalLink className="w-4 h-4" />
+
                             </a>
                         </div>
                     </div>
@@ -613,20 +618,23 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
             {pdfPopup.isOpen && ReactDOM.createPortal(
                 <div
                     className="fixed inset-0 flex items-center justify-center p-4 sm:p-6"
-                    style={{ zIndex: 10000 }}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        e.stopPropagation();
-                        // Only close PDF popup when clicking backdrop (parent dialog stays open)
-                        setPdfPopup({ isOpen: false, url: '', title: '' });
-                    }}
+                    style={{ zIndex: 10000, pointerEvents: 'none' }}
                 >
-                    {/* Backdrop - slightly transparent to show parent dialog is still open */}
-                    <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
+                    {/* Backdrop - clicking here closes the popup */}
+                    <div
+                        className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+                        style={{ pointerEvents: 'auto' }}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setPdfPopup({ isOpen: false, url: '', title: '' });
+                        }}
+                    />
 
-                    {/* Modal Content */}
+                    {/* Modal Content - all interactions work normally */}
                     <div
                         className="relative w-full max-w-5xl h-[90vh] bg-white rounded-xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-200 flex flex-col"
+                        style={{ pointerEvents: 'auto' }}
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Header */}
@@ -640,49 +648,50 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                     <h3 className="text-base sm:text-lg font-semibold text-gray-900 truncate">{pdfPopup.title}</h3>
                                 </div>
                             </div>
-                            <button
-                                type="button"
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    e.nativeEvent.stopImmediatePropagation();
-                                    setPdfPopup({ isOpen: false, url: '', title: '' });
-                                }}
-                                onMouseDown={(e) => {
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                }}
-                                className="ml-4 w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors shrink-0 cursor-pointer pointer-events-auto z-10"
-                                aria-label="Close PDF"
-                            >
-                                <X className="w-5 h-5 pointer-events-none" />
-                            </button>
+                            <div className="flex items-center gap-2">
+                                {/* Download Button */}
+                                <a
+                                    href={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}`}
+                                    download
+                                    className="w-10 h-10 rounded-full bg-orange-100 hover:bg-orange-200 flex items-center justify-center text-orange-600 hover:text-orange-700 transition-colors cursor-pointer"
+                                    title="Download PDF"
+                                    onClick={(e) => e.stopPropagation()}
+                                >
+                                    <Download className="w-5 h-5" />
+                                </a>
+                                {/* Close Button */}
+                                <button
+                                    type="button"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setPdfPopup({ isOpen: false, url: '', title: '' });
+                                    }}
+                                    className="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+                                    aria-label="Close PDF"
+                                    title="Close"
+                                >
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
                         </div>
 
-                        {/* PDF Container */}
-                        <div className="flex-1 bg-gray-100">
+                        {/* PDF Container - Clean view without toolbar/sidebar */}
+                        <div className="flex-1 bg-gray-100 overflow-hidden">
                             <iframe
-                                src={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}`}
+                                src={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}#toolbar=0&navpanes=0&scrollbar=1&view=FitH`}
                                 title={pdfPopup.title}
                                 className="w-full h-full border-0"
-                                style={{ minHeight: '100%' }}
+                                style={{ minHeight: '100%', pointerEvents: 'auto' }}
+                                allow="fullscreen"
                             />
                         </div>
 
-                        {/* Footer */}
-                        <div className="px-4 sm:px-6 py-3 border-t border-gray-200 bg-white flex flex-wrap items-center justify-between gap-2 shrink-0">
+                        {/* Footer - Simplified */}
+                        <div className="px-4 sm:px-6 py-3 border-t border-gray-200 bg-white flex items-center justify-center shrink-0">
                             <p className="text-xs sm:text-sm text-gray-500">
                                 Press <kbd className="px-2 py-0.5 rounded bg-gray-100 border border-gray-300 text-gray-700 font-mono text-xs">Esc</kbd> or click outside to close
                             </p>
-                            <a
-                                href={`${process.env.PUBLIC_URL || ''}${pdfPopup.url}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="flex items-center gap-2 text-sm text-orange-600 hover:text-orange-700 transition-colors font-medium"
-                                onClick={(e) => e.stopPropagation()}
-                            >
-                                Open in new tab <ExternalLink className="w-4 h-4" />
-                            </a>
                         </div>
                     </div>
                 </div>,

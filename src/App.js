@@ -16,6 +16,7 @@ import PolicyActsPage from './pages/PolicyActsPage';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import Disclaimer from './pages/Disclaimer';
+import Sitemap from './pages/Sitemap';
 
 
 import ScrollToTop from './components/ScrollToTop';
@@ -41,6 +42,7 @@ function App() {
                 <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                 <Route path="/terms" element={<TermsOfUse />} />
                 <Route path="/disclaimer" element={<Disclaimer />} />
+                <Route path="/sitemap" element={<Sitemap />} />
               </Routes>
             </main>
             <Footer />

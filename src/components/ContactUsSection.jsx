@@ -70,18 +70,18 @@ const ContactUsSection = ({ contactInfo }) => {
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-white mb-2">{isOdia ? 'ସୋସିଆଲ ମିଡିଆ' : 'Follow Us'}</p>
                   <div className="flex space-x-4">
-                    <a href="https://www.facebook.com/share/1BjYfN9pnG/" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Facebook">
+                    <a href="https://www.facebook.com/EIT.Odisha" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors" aria-label="Facebook">
                       <Facebook className="w-6 h-6" />
                     </a>
-                    <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" aria-label="X (Twitter)">
+                    <a href="https://x.com/EIT_Odisha" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors" aria-label="X (Twitter)">
                       <svg className="w-6 h-6" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                       </svg>
                     </a>
-                    <a href="https://www.linkedin.com/company/odisha-computer-application-centre" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/company/eitodisha/" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-blue-700 dark:hover:text-blue-500 transition-colors" aria-label="LinkedIn">
                       <Linkedin className="w-6 h-6" />
                     </a>
-                    <a href="https://www.instagram.com/eit_odisha" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/eit_odisha/" target="_blank" rel="noopener noreferrer" className="text-gray-500 dark:text-gray-400 hover:text-pink-600 dark:hover:text-pink-400 transition-colors" aria-label="Instagram">
                       <Instagram className="w-6 h-6" />
                     </a>
                   </div>

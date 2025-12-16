@@ -7,7 +7,7 @@ const SocialMediaSection = () => {
     {
       name: 'Facebook',
       icon: Facebook,
-      url: 'https://www.facebook.com/ETDeptOdisha',
+      url: 'https://www.facebook.com/EIT.Odisha',
       color: 'from-blue-600 to-blue-700',
       hoverColor: 'hover:from-blue-700 hover:to-blue-800',
       description: 'Follow us on Facebook for latest updates and announcements'
@@ -15,7 +15,7 @@ const SocialMediaSection = () => {
     {
       name: 'Twitter / X',
       icon: Twitter,
-      url: 'https://twitter.com/odisha_eit',
+      url: 'x.com/EIT_Odisha',
       color: 'from-gray-800 to-black',
       hoverColor: 'hover:from-black hover:to-gray-900',
       description: 'Get real-time updates and engage with us on X'
@@ -23,15 +23,15 @@ const SocialMediaSection = () => {
     {
       name: 'Instagram',
       icon: Instagram,
-      url: 'https://www.instagram.com/etdeptodisha',
+      url: 'https://www.instagram.com/eit_odisha/',
       color: 'from-pink-500 to-purple-600',
       hoverColor: 'hover:from-pink-600 hover:to-purple-700',
       description: 'Explore visual stories and behind-the-scenes content'
     },
     {
-      name: 'YouTube',
-      icon: Youtube,
-      url: 'https://www.youtube.com/@odishaeit',
+      name: 'Linkedin',
+      icon: Linkedin,
+      url: 'https://www.linkedin.com/company/eitodisha/',
       color: 'from-red-600 to-red-700',
       hoverColor: 'hover:from-red-700 hover:to-red-800',
       description: 'Watch informative videos and event coverage'
@@ -64,7 +64,7 @@ const SocialMediaSection = () => {
                 <Card className="h-full p-6 hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-orange-200 relative overflow-hidden">
                   {/* Background gradient on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${social.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                  
+
                   <div className="relative">
                     {/* Icon */}
                     <div className={`w-16 h-16 bg-gradient-to-br ${social.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg mx-auto`}>

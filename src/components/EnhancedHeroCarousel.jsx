@@ -44,7 +44,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[85vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] overflow-hidden">
       {/* Slide Background */}
       <div className="absolute inset-0 transition-opacity duration-1000">
         {slide.type === 'video' ? (
@@ -69,7 +69,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-[85vh] flex items-center">
+      <div className="relative z-10 h-[85vh] sm:h-[95vh] md:h-[90vh] lg:h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
             {/* Event Badge - Animated */}
@@ -80,7 +80,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
                 <img
                   src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
                   alt="Odisha AI Mission"
-                  className="h-[250px] w-[250px] object-contain"
+                  className="h-[250px] w-[250px] sm:h-[150px] sm:w-[150px] md:h-[200px] md:w-[200px]  object-contain"
                 />
               </div>
             </div>
