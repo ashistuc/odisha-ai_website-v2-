@@ -15,7 +15,7 @@ const Sitemap = () => {
         {
             category: isOdia ? 'ମୁଖ୍ୟ ପୃଷ୍ଠାଗୁଡ଼ିକ' : 'Main Pages',
             icon: Home,
-            color: 'from-orange-500 to-red-500',
+            color: 'from-orange-500 to-orange-500',
             bgColor: 'bg-orange-50',
             iconColor: 'text-orange-600',
             links: [
