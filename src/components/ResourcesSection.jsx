@@ -183,7 +183,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
             id: 'policy',
             title: isOdia ? 'ଓଡ଼ିଶା AI ନୀତି' : 'Odisha AI Policy',
             icon: FileText,
-            description: isOdia ? 'ରାଜ୍ୟର AI ଦୃଷ୍ଟିକୋଣ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ ଜାଣନ୍ତୁ।' : 'Explore the comprehensive AI policy framework and guidelines for the state.',
+            description: isOdia ? 'ରାଜ୍ୟର AI ଦୃଷ୍ଟିକୋଣ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ ଜାଣନ୍ତୁ।' : 'Explore the comprehensive AI policy framework and     s for the state.',
             color: 'from-orange-500 to-red-600',
             delay: '0'
         },
