@@ -1826,9 +1826,36 @@ export const heroSlides = [
 // Contact Us and Map Section
 export const contactInfo = {
   address: 'Odisha Computer Application Centre (OCAC)',
-  fullAddress: 'N-1/7, Acharya Vihar, IRC Village, Bhubaneswar, Odisha 751015',
+  fullAddress: 'Odisha Computer Application Centre (Technical Directorate to Electronics & IT Department) OCAC BUILDING, PLOT NO-N-1/7-D, ACHARYA VIHAR RRL POST OFFICE, BHUBANESWAR- 751013.',
   phone: '+91-674-2567892',
   email: 'aiteam.ocac@odisha.gov.in',
   mapCoordinates: { lat: 20.2961, lng: 85.8245 },
   mapEmbedUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3742.196748844831!2d85.82228931490087!3d20.296153086404562!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a19a7d9f9c7d7d7%3A0x9c0c0c0c0c0c0c0c!2sOdisha%20Computer%20Application%20Centre!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin'
+};
+
+// ============================================
+// LAUNCH COUNTDOWN CONFIGURATION
+// ============================================
+// Set these variables to control the countdown overlay
+export const countdownConfig = {
+  // Set to true to show countdown, false to hide it
+  isActive: true,
+
+  // Target date and time in ISO format: "YYYY-MM-DDTHH:MM:SS"
+  // Example: "2025-12-17T15:00:00" means December 17, 2025 at 3:00 PM
+  targetDate: "2025-12-17T15:00:00",
+
+  // Event title displayed on the countdown screen
+  eventTitle: "ODISHA AI Mission",
+
+  // Event title in Odia
+  eventTitleOd: "ଓଡ଼ିଶା AI ମୀସିନ୍",
+
+  // Subtitle/tagline for the event
+  subtitle: "Get ready for the biggest AI event in Odisha!",
+  subtitleOd: "ଓଡ଼ିଶାର ସର୍ବବୃହତ AI ଇଭେଣ୍ଟ ପାଇଁ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ!",
+
+  // If true, users CANNOT skip/close the countdown (website is locked)
+  // If false, users can click to continue to website
+  lockWebsite: true
 };

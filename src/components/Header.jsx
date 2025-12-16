@@ -212,36 +212,8 @@ const Header = () => {
               </ul>
             </div>
 
-            {/* Mobile Navigation - Horizontal Scroll - Reduced Padding */}
-            <div className="lg:hidden overflow-x-auto py-1.5 scrollbar-hide">
-              <ul className="flex items-center space-x-1 min-w-max">
-                {navItems.map((item, index) => (
-                  <li key={index}>
-                    {item.type === 'link' ? (
-                      <Link
-                        to={item.href}
-                        aria-label={item.ariaLabel || item.name}
-                        className={`px-2.5 py-1 text-white font-medium text-xs rounded-md transition-all duration-200 whitespace-nowrap ${
-                          // Remove active state for home icon (index 0), keep for others  
-                          index !== 0 && location.pathname === item.href ? 'bg-white/30' : 'hover:bg-white/20'
-                          }`}
-                        onClick={() => setIsMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ) : (
-                      <button
-                        onClick={() => handleNavClick(item)}
-                        aria-label={item.ariaLabel || item.name}
-                        className="px-2.5 py-1 text-white font-medium text-xs hover:bg-white/20 rounded-md transition-all duration-200 whitespace-nowrap"
-                      >
-                        {item.name}
-                      </button>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            {/* Mobile Navigation - Hidden on mobile, show only on larger screens */}
+            {/* Navigation hidden on mobile - only show on lg and above */}
           </div>
         </nav>
 

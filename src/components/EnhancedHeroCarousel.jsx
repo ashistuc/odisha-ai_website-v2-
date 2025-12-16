@@ -103,18 +103,18 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
               {isOdia && slide.descriptionOd ? slide.descriptionOd : slide.description}
             </p>
 
-            {/* CTA Buttons - Animated */}
-            <div className="flex  gap-4 justify-start animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
+            {/* CTA Buttons - Single Line Layout */}
+            <div className="flex flex-wrap gap-3 md:gap-4 justify-start animate-in fade-in slide-in-from-bottom duration-1000 delay-500">
               <Button
                 size="lg"
-                className=" bg-transparent outline-orange-600 border-orange-600 border-2 w-[35%] sm:w-auto hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
+                className="bg-transparent outline-orange-600 border-orange-600 border-2 hover:bg-orange-700 text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 md:py-6 shadow-2xl transform transition-all hover:scale-105 whitespace-nowrap"
                 onClick={() => document.getElementById('submit-idea-section')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 {isOdia ? 'ଆପଣଙ୍କ AI ପ୍ରସ୍ତାବ ଦାଖଲ କରନ୍ତୁ' : 'Submit Your AI Proposal'}
               </Button>
               <Button
                 size="lg"
-                className="outline-orange-600 border-orange-600 border-2 bg-orange-600 w-[35%] sm:w-auto hover:bg-orange-700 text-white text-lg px-8 py-6 shadow-2xl transform transition-all hover:scale-105"
+                className="outline-orange-600 border-orange-600 border-2 bg-orange-600 hover:bg-orange-700 text-white text-sm sm:text-base md:text-lg px-4 sm:px-6 md:px-8 py-3 md:py-6 shadow-2xl transform transition-all hover:scale-105 whitespace-nowrap"
                 onClick={handleReadPolicy}
               >
                 {isOdia ? 'ଓଡ଼ିଶା AI ନୀତି ୨୦୨୫ ପଢ଼ନ୍ତୁ' : 'Read Odisha AI policy 2025'}
