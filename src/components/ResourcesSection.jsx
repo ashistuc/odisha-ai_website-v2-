@@ -122,7 +122,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     };
 
     const learningResources = [
-        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Odisha for AI’ is a self-learning online program designed to raise public awareness about Artificial Intelligence.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
+        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Odisha for AI is a self-learning online program designed to raise public awareness about Artificial Intelligence.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
         { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
         { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: "/odisha-ai_website-v2-/logo/deeplearning.png" },
         { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: "/odisha-ai_website-v2-/logo/elementsofai.png" },
