@@ -12,19 +12,19 @@ const PartnersScrolling = () => {
       id: 1,
       name: 'AHRC, IIT Bhubaneswar',
       role: isOdia ? 'ଶୈକ୍ଷିକ ସହଯୋଗୀ' : 'Academic Collaborators',
-      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
+      logo: '/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
     },
     {
       id: 2,
       name: 'Wadhwani Foundation',
       role: isOdia ? 'ତାଲିମ ସହଭାଗୀ' : 'Training Partner',
-      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/wadhwani-logo.webp',
+      logo: '/Our_Partners_in_Innovation/wadhwani-logo.webp',
     },
     {
       id: 3,
       name: 'NASSCOM',
       role: isOdia ? 'ଉତ୍କୃଷ୍ଟତା କେନ୍ଦ୍ର ସହଭାଗୀ' : 'Centre of Excellence Partner',
-      logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/nasscom-logo.jpg',
+      logo: '/Our_Partners_in_Innovation/nasscom-logo.jpg',
     }
   ];
 

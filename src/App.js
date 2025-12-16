@@ -82,7 +82,7 @@ function App() {
             />
           )}
 
-          <BrowserRouter basename="/odisha-ai_website-v2-">
+          <BrowserRouter basename={process.env.PUBLIC_URL || ''}>
             <CountdownRedirect showCountdown={showCountdown}>
               <ScrollToTop />
               <Header />

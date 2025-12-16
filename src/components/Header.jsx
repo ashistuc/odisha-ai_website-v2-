@@ -106,7 +106,7 @@ const Header = () => {
                 className="flex items-center space-x-3 group border-r border-gray-200 pr-6"
               >
                 <img
-                  src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
+                  src="/logo/odisha-govt.svg"
                   alt="Government of Odisha"
                   className="w-[200px] object-contain"
                 />
@@ -116,7 +116,7 @@ const Header = () => {
                 className="flex items-center space-x-3 group dark:border-gray-700 "
               >
                 <img
-                  src="/odisha-ai_website-v2-/logo/1666094039681.jpg"
+                  src="/logo/1666094039681.jpg"
                   alt="Government of Odisha"
                   className="w-[100px] object-contain"
                 />
@@ -126,7 +126,7 @@ const Header = () => {
                 {/* Odisha Govt Logo 
                 <div className="flex flex-col items-center space-y-1">
                   <img
-                    src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
+                    src="/logo/Odisha_Ai_Mission.png"
                     alt="Odisha AI Mission Logo"
                     className="w-[100px] object-contain group-hover:scale-110 transition-transform duration-300"
                   />
@@ -135,7 +135,7 @@ const Header = () => {
                 {/* E&IT Dept / OCAC Logo */}
                 <div className="flex flex-col items-center space-y-1">
                   <img
-                    src="/odisha-ai_website-v2-/logo/ocac-logo.png"
+                    src="/logo/ocac-logo.png"
                     alt="E&IT Department, OCAC"
                     className="h-10 w-auto object-contain"
                   />
@@ -160,7 +160,7 @@ const Header = () => {
                 {/* CM Photo - Extends from bottom */}
                 <div className="relative">
                   <img
-                    src="/odisha-ai_website-v2-/images/cm-img.png"
+                    src="/images/cm-img.png"
                     alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
                     className="h-[90px] w-auto object-contain object-bottom"
                   />

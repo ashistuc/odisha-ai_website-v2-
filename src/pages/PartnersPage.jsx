@@ -16,7 +16,7 @@ const PartnersPage = () => {
             description: isOdia
                 ? 'ବାସ୍ତବ ଜଗତ ପ୍ରୟୋଗ ପାଇଁ ଉଚ୍ଚ-ପ୍ରଭାବ AI ଗବେଷଣା ଏବଂ ନବସୃଜନକୁ ଅଗ୍ରସର କରୁଥିବା ଏକ ଅଗ୍ରଣୀ ଶୈକ୍ଷିକ କେନ୍ଦ୍ର।'
                 : 'A leading academic hub advancing high-impact AI research and innovation.',
-            logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
+            logo: '/Our_Partners_in_Innovation/IIT_Bhubaneswar_Logo.png',
             url: 'https://www.iitbbs.ac.in/index.php/ahrc/',
             icon: GraduationCap
         },
@@ -27,7 +27,7 @@ const PartnersPage = () => {
             description: isOdia
                 ? 'କର୍ମଶକ୍ତି ରୂପାନ୍ତରଣ ପାଇଁ ବୃହତ୍ ମାପର ଦକ୍ଷତା ଏବଂ ଉଦ୍ୟମଶୀଳତାକୁ ତ୍ୱରାନ୍ୱିତ କରୁଥିବା ଏକ ବିଶ୍ୱ ଅଲାଭକାରୀ ସଂସ୍ଥା।'
                 : 'A global non-profit accelerating large-scale skilling and entrepreneurship.',
-            logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/wadhwani-logo.webp',
+            logo: '/Our_Partners_in_Innovation/wadhwani-logo.webp',
             url: 'https://wadhwanifoundation.org/',
             icon: Building2
         },
@@ -38,7 +38,7 @@ const PartnersPage = () => {
             description: isOdia
                 ? 'ଭାରତର ଶୀର୍ଷ ପ୍ରଯୁକ୍ତି ଶିଳ୍ପ ସଂସ୍ଥା ଯାହା AI ନବସୃଜନ ଏବଂ ଷ୍ଟାର୍ଟଅପ୍ ଅଭିବୃଦ୍ଧିକୁ ଚାଳିତ କରେ।'
                 : "India's apex technology industry body driving AI innovation and startup growth.",
-            logo: '/odisha-ai_website-v2-/Our_Partners_in_Innovation/nasscom-logo.jpg',
+            logo: '/Our_Partners_in_Innovation/nasscom-logo.jpg',
             url: 'https://nasscom.in/',
             icon: Lightbulb
         }

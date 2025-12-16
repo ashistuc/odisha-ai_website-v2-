@@ -274,7 +274,7 @@ const LaunchCountdown = ({
                 {/* Logo at Top - Responsive and Larger */}
                 <div className="mb-6 md:mb-8">
                     <img
-                        src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
+                        src="/logo/Odisha_Ai_Mission.png"
                         alt="Odisha AI Mission"
                         className="h-20 sm:h-24 md:h-28 lg:h-48 mx-auto drop-shadow-lg"
                     />

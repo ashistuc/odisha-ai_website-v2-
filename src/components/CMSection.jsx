@@ -21,7 +21,7 @@ const CMSection = () => {
                     {/* CM Photo */}
                     <div className="ml-auto">
                         <img
-                            src="/odisha-ai_website-v2-/images/Mohan_Charan_Majhi.jpg"
+                            src="/images/Mohan_Charan_Majhi.jpg"
                             alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
                             className="w-24 h-24 md:w-28 md:h-28 rounded-lg object-cover border-2 border-orange-200 dark:border-orange-700 shadow-lg"
                         />

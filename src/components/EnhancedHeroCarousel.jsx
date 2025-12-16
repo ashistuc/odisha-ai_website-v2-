@@ -78,7 +78,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
 
               <div className="p-2 rounded-lg animate-in fade-in duration-1000 delay-100">
                 <img
-                  src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
+                  src="/logo/Odisha_Ai_Mission.png"
                   alt="Odisha AI Mission"
                   className="h-[250px] w-[250px] sm:h-[150px] sm:w-[150px] md:h-[200px] md:w-[200px]  object-contain"
                 />

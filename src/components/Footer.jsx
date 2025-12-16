@@ -74,7 +74,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4">
-              <img alt="Odisha AI Mission Logo" class="w-[150px] object-contain group-hover:scale-110 transition-transform duration-300" src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"></img>
+              <img alt="Odisha AI Mission Logo" class="w-[150px] object-contain group-hover:scale-110 transition-transform duration-300" src="/logo/Odisha_Ai_Mission.png"></img>
 
             </div>
             <p className="text-sm text-gray-400 mb-6">
