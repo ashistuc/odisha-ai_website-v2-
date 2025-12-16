@@ -96,7 +96,7 @@ const CelebrationEffect = ({ onComplete }) => {
 const LaunchCountdown = ({
     targetDate,
     title = "ODISHA AI Mission",
-    titleOd = "ଓଡ଼ିଶା AI ମୀସିନ୍",
+    titleOd = "ଓଡ଼ିଶା AI ମିଶନ",
     subtitle = "Get ready for the biggest AI event in Odisha!",
     subtitleOd = "ଓଡ଼ିଶାର ସର୍ବବୃହତ AI ଇଭେଣ୍ଟ ପାଇଁ ପ୍ରସ୍ତୁତ ହୁଅନ୍ତୁ!",
     lockWebsite = false,
@@ -289,15 +289,15 @@ const LaunchCountdown = ({
                 </div>
 
                 {/* Title */}
-                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-2 md:mb-3 tracking-tight drop-shadow-lg">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black text-white mb-10 md:mb-10 tracking-tight drop-shadow-lg">
                     {isOdia ? titleOd : title}
                 </h1>
 
-                {/* Subtitle */}
+                {/* Subtitle 
                 <p className="text-sm sm:text-base md:text-lg text-white/90 mb-6 md:mb-8 max-w-xl mx-auto px-4">
                     {isOdia ? subtitleOd : subtitle}
                 </p>
-
+*/}
                 {/* Countdown Timer */}
                 <div className="grid grid-cols-4 gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 max-w-xl md:max-w-2xl mx-auto px-2">
                     {timeUnits.map((unit, index) => (
@@ -360,13 +360,13 @@ const LaunchCountdown = ({
                     </div>
                 )}
 
-                {/* Locked message */}
+                {/* Locked message 
                 {lockWebsite && (
                     <div className="mt-3 md:mt-4 text-white/80 text-xs sm:text-sm flex items-center justify-center gap-2">
                         <span className="w-2 h-2 bg-white rounded-full animate-pulse" />
                         {isOdia ? 'ଇଭେଣ୍ଟ ଆରମ୍ଭ ପର୍ଯ୍ୟନ୍ତ ଅପେକ୍ଷା କରନ୍ତୁ' : 'Website will be available when the event begins'}
                     </div>
-                )}
+                )}*/}
             </div>
         </div>
     );

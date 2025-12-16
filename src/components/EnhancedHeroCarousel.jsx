@@ -124,21 +124,44 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
         </div>
       </div>
 
-      {/* Left Navigation Button */}
+      {/* Navigation Buttons - Right Side Vertical Stack on Mobile */}
+      <div className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden z-10 flex flex-col gap-3">
+        {/* Up/Previous Button - Mobile */}
+        <Button
+          onClick={prevSlide}
+          size="icon"
+          className="w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </Button>
+
+        {/* Down/Next Button - Mobile */}
+        <Button
+          onClick={nextSlide}
+          size="icon"
+          className="w-12 h-12 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </Button>
+      </div>
+
+      {/* Left Navigation Button - Desktop Only */}
       <Button
         onClick={prevSlide}
         size="icon"
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
       </Button>
 
-      {/* Right Navigation Button */}
+      {/* Right Navigation Button - Desktop Only */}
       <Button
         onClick={nextSlide}
         size="icon"
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />

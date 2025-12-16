@@ -122,7 +122,7 @@ const Header = () => {
                 />
               </Link>
               {/* Partner Logos */}
-              <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
+              <div className=" xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
                 {/* Odisha Govt Logo 
                 <div className="flex flex-col items-center space-y-1">
                   <img
