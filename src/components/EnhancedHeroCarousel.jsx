@@ -44,7 +44,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[90vh] overflow-hidden">
+    <div className="relative w-full h-[82vh] md:h-[90vh] overflow-hidden">
       {/* Slide Background */}
       <div className="absolute inset-0 transition-opacity duration-1000">
         {slide.type === 'video' ? (
@@ -69,7 +69,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-[85vh] sm:h-[95vh] md:h-[90vh] lg:h-[90vh] flex items-center">
+      <div className="relative z-10 h-[82vh] md:h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
             {/* Event Badge - Animated */}
@@ -124,8 +124,8 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
         </div>
       </div>
 
-      {/* Navigation Buttons - Right Side Vertical Stack on Mobile */}
-      <div className="absolute right-4 top-1/2 -translate-y-1/2 md:hidden z-10 flex flex-col gap-3">
+      {/* Navigation Buttons - Bottom Right on Mobile */}
+      <div className="absolute right-4 bottom-6 md:hidden z-10 flex flex-row gap-3">
         {/* Up/Previous Button - Mobile */}
         <Button
           onClick={prevSlide}
@@ -151,7 +151,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       <Button
         onClick={prevSlide}
         size="icon"
-        className="hidden md:block absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="hidden md:flex absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-6 h-6 md:w-7 md:h-7" />
@@ -161,7 +161,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       <Button
         onClick={nextSlide}
         size="icon"
-        className="hidden md:block absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
+        className="hidden md:flex  absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 bg-white/20 hover:bg-white/40 backdrop-blur-sm text-white rounded-full border-2 border-white/40 hover:border-white/60 transition-all duration-300 hover:scale-110 shadow-lg"
         aria-label="Next slide"
       >
         <ChevronRight className="w-6 h-6 md:w-7 md:h-7" />

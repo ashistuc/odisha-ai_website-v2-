@@ -93,18 +93,22 @@ const AIProjectIdeaForm = () => {
     }
   };
 
-  // Special handler for phone input - only allow numbers and phone characters
+  // Special handler for phone input - only allow numbers (max 10 digits)
   const handlePhoneChange = (e) => {
     const { value } = e.target;
-    // Only allow digits, +, -, spaces
-    const filteredValue = value.replace(/[^0-9+\-\s]/g, '');
+    // Only allow digits, remove all non-numeric characters
+    const filteredValue = value.replace(/[^0-9]/g, '');
+
+    // Restrict to maximum 10 digits
+    const limitedValue = filteredValue.slice(0, 10);
+
     setFormData(prev => ({
       ...prev,
-      phone: filteredValue
+      phone: limitedValue
     }));
 
     if (touched.phone) {
-      const error = validateField('phone', filteredValue);
+      const error = validateField('phone', limitedValue);
       setErrors(prev => ({
         ...prev,
         phone: error
@@ -176,7 +180,7 @@ const AIProjectIdeaForm = () => {
     console.log('Form submitted:', formData);
     setSubmitted(true);
 
-    // Reset after 3 seconds
+    // Hide popup and reset form after 2 seconds
     setTimeout(() => {
       setSubmitted(false);
       setFormData({
@@ -191,7 +195,7 @@ const AIProjectIdeaForm = () => {
       });
       setErrors({});
       setTouched({});
-    }, 3000);
+    }, 2000);
   };
 
   const sectors = [
@@ -218,21 +222,26 @@ const AIProjectIdeaForm = () => {
     );
   };
 
-  if (submitted) {
+  // Success popup overlay
+  const SuccessPopup = () => {
+    if (!submitted) return null;
+
     return (
-      <Card className="border-2 border-green-400 bg-green-50">
-        <CardContent className="p-12 text-center">
-          <CheckCircle className="w-16 h-16 text-green-600 mx-auto mb-4" />
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">
-            {isOdia ? 'ଆପଣଙ୍କ ଦାଖଲ ପାଇଁ ଧନ୍ୟବାଦ!' : 'Thank You for Your Submission!'}
-          </h3>
-          <p className="text-gray-600">
-            {isOdia ? 'ଆପଣଙ୍କ ନବସୃଜନମୂଳକ AI ପ୍ରକଳ୍ପ ଧାରଣା ପ୍ରାପ୍ତ ହୋଇଛି। ଆମ ଦଳ ଏହାକୁ ସମୀକ୍ଷା କରି ଶୀଘ୍ର ଆପଣଙ୍କ ସହ ଯୋଗାଯୋଗ କରିବେ।' : 'Your innovative AI project idea has been received. Our team will review it and get back to you soon.'}
-          </p>
-        </CardContent>
-      </Card>
+      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm animate-in fade-in duration-300">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-4 border-2 border-green-400 animate-in zoom-in duration-300">
+          <div className="text-center">
+            <CheckCircle className="w-20 h-20 text-green-600 mx-auto mb-4 animate-in zoom-in duration-500" />
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              {isOdia ? 'ଆପଣଙ୍କ ଦାଖଲ ପାଇଁ ଧନ୍ୟବାଦ!' : 'Thank You for Your Submission!'}
+            </h3>
+            <p className="text-gray-600">
+              {isOdia ? 'ଆପଣଙ୍କ ନବସୃଜନମୂଳକ AI ପ୍ରକଳ୍ପ ଧାରଣା ପ୍ରାପ୍ତ ହୋଇଛି। ଆମ ଦଳ ଏହାକୁ ସମୀକ୍ଷା କରି ଶୀଘ୍ର ଆପଣଙ୍କ ସହ ଯୋଗାଯୋଗ କରିବେ।' : 'Your innovative AI project idea has been received. Our team will review it and get back to you soon.'}
+            </p>
+          </div>
+        </div>
+      </div>
     );
-  }
+  };
 
   return (
     <div>
@@ -304,13 +313,13 @@ const AIProjectIdeaForm = () => {
                   onKeyDown={handlePhoneKeyDown}
                   onBlur={handleBlur}
                   inputMode="numeric"
-                  pattern="[0-9+\-\s]*"
-                  maxLength={15}
+                  pattern="[0-9]*"
+                  maxLength={10}
                   className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none transition-colors ${errors.phone && touched.phone
                     ? 'border-red-400 focus:border-red-500'
                     : 'border-gray-300 focus:border-orange-500'
                     }`}
-                  placeholder="+91 XXXXX XXXXX"
+                  placeholder="XXXXXXXXXX (10 digits)"
                 />
                 <ErrorMessage error={touched.phone && errors.phone} />
               </div>
@@ -433,6 +442,9 @@ const AIProjectIdeaForm = () => {
           </form>
         </CardContent>
       </Card>
+
+      {/* Success Popup Overlay */}
+      <SuccessPopup />
     </div>
   );
 };
