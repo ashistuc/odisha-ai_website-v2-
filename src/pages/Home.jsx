@@ -69,7 +69,7 @@ const Home = () => {
         <StrategicPillars />
 
         {/* Policy Targets Carousel 
-      <section id="targets-section" className="py-20 bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
+      <section id="targets-section" className="py-10 pb-5  bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
        
         <div className="absolute inset-0 opacity-5 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] dark:opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -78,7 +78,7 @@ const Home = () => {
       </section>
 */}
         {/* Featured AI Projects 
-        <section id="projects-section" className="py-20 bg-orange-50 dark:bg-gray-800 section-transition relative overflow-hidden">
+        <section id="projects-section" className="py-10 bg-orange-50 dark:bg-gray-800 section-transition relative overflow-hidden">
         
           <div className="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80')] bg-cover bg-center bg-fixed"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -98,7 +98,7 @@ const Home = () => {
         </section>
 */}
         {/* Resources Section */}
-        <section id="resources-section" className="py-20 bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
+        <section id="resources-section" className="py-10 pb-5  bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
           {/* Transparent background */}
           <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1920&q=80')] bg-cover bg-center bg-fixed"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ">
@@ -107,7 +107,7 @@ const Home = () => {
         </section>
 
         {/* Implementation Phase Section 
-        <section id="implementation-section" className="py-20 bg-orange-50 dark:bg-gray-800 section-transition relative overflow-hidden">
+        <section id="implementation-section" className="py-10 bg-orange-50 dark:bg-gray-800 section-transition relative overflow-hidden">
         
           <div className="absolute inset-0 opacity-10 bg-gradient-to-br from-orange-100 via-transparent to-blue-100"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative" >
@@ -116,7 +116,7 @@ const Home = () => {
         </section>
 */}
         {/* Innovation Centres 
-        <section id="innovation-section" className="py-20 bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
+        <section id="innovation-section" className="py-10 pb-5  bg-white dark:bg-gray-900 section-transition relative overflow-hidden">
          
           <div className="absolute inset-0 opacity-5 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&q=80')] bg-cover bg-center bg-fixed"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative ">
@@ -125,28 +125,28 @@ const Home = () => {
         </section>
 */}
         {/* AI Startups Section 
-        <section id="startups-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="startups-section" className="py-10 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AIStartupsSection startups={aiStartups} />
           </div>
         </section>
 */}
         {/* Partners Section */}
-        <section id="partners-section" className="py-20 bg-white dark:bg-gray-900">
+        <section id="partners-section" className="py-8  bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <PartnersScrolling partners={partners} />
           </div>
         </section>
 
         {/* Acts & Notifications Section */}
-        <section id="policy-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="policy-section" className="py-10 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <ActsNotificationsSection items={actsNotifications} limit={3} />
           </div>
         </section>
 
         {/* Tenders Section 
-        <section id="tenders-section" className="py-20 bg-white dark:bg-gray-900">
+        <section id="tenders-section" className="py-8  bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <TendersSection tenders={tenders} />
           </div>
@@ -154,7 +154,7 @@ const Home = () => {
 */}
         {/* Event Gallery Section */}
         {/* Event Gallery Section - Hidden
-        <section id="gallery-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="gallery-section" className="py-10 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <EventGallery events={eventGallery} limit={3} showViewAll={true} />
           </div>
@@ -162,7 +162,7 @@ const Home = () => {
         */}
 
         {/* AI News Section
-        <section id="news-section" className="py-20 bg-white dark:bg-gray-900">
+        <section id="news-section" className="py-8  bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 mb-4 px-4 py-2">
@@ -180,7 +180,7 @@ const Home = () => {
         </section>
  */}
         {/* AI Tools Section 
-        <section id="tools-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="tools-section" className="py-10 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 mb-4 px-4 py-2">
@@ -198,7 +198,7 @@ const Home = () => {
         </section>
 */}
         {/* Quick Links Section 
-        <section id="links-section" className="py-20 bg-white dark:bg-gray-900">
+        <section id="links-section" className="py-8  bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge className="bg-orange-100 text-orange-700 dark:bg-orange-900 dark:text-orange-300 mb-4 px-4 py-2">
@@ -216,14 +216,14 @@ const Home = () => {
         </section>
 */}
         {/* AI Project Idea Form */}
-        <section id="submit-idea-section" className="py-20 bg-orange-50 dark:bg-gray-800">
+        <section id="submit-idea-section" className="py-10 bg-orange-50 dark:bg-gray-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <AIProjectIdeaForm />
           </div>
         </section>
 
         {/* FAQ Section 
-        <section id="faq-section" className="py-20 bg-white dark:bg-gray-900">
+        <section id="faq-section" className="py-8  bg-white dark:bg-gray-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FAQSection faqs={faqs} />
           </div>
