@@ -12,8 +12,8 @@ const LanguageToggle = ({ inline = false }) => {
                 <button
                     onClick={() => isOdia && toggleLanguage()}
                     className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all duration-200 ${!isOdia
-                            ? 'bg-white text-orange-700 shadow-sm scale-105'
-                            : 'text-white/90 hover:text-white hover:bg-white/10'
+                        ? 'bg-white text-orange-700 shadow-sm scale-105'
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
                         }`}
                     aria-label="Switch to English"
                 >
@@ -22,8 +22,8 @@ const LanguageToggle = ({ inline = false }) => {
                 <button
                     onClick={() => !isOdia && toggleLanguage()}
                     className={`px-3 py-1.5 rounded-md text-xs font-bold transition-all duration-200 ${isOdia
-                            ? 'bg-white text-orange-700 shadow-sm scale-105'
-                            : 'text-white/90 hover:text-white hover:bg-white/10'
+                        ? 'bg-white text-orange-700 shadow-sm scale-105'
+                        : 'text-white/90 hover:text-white hover:bg-white/10'
                         }`}
                     aria-label="Switch to Odia"
                 >

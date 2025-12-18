@@ -11,16 +11,16 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-    const [language, setLanguage] = useState('od'); // 'en' or 'od' (Odia) - Default is Odia
+    const [language, setLanguage] = useState('en'); // 'en' or 'od' (Odia) - Default is English
 
     useEffect(() => {
         // Get saved language preference from localStorage
         const savedLanguage = localStorage.getItem('language');
 
-        // If no saved preference exists, set to Odia and save it
+        // If no saved preference exists, set to English and save it
         if (!savedLanguage) {
-            setLanguage('od');
-            localStorage.setItem('language', 'od');
+            setLanguage('en');
+            localStorage.setItem('language', 'en');
         } else {
             setLanguage(savedLanguage);
         }
