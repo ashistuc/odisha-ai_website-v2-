@@ -16,22 +16,25 @@ export const ThemeProvider = ({ children }) => {
   const [highContrast, setHighContrast] = useState(false);
 
   useEffect(() => {
-    // Load saved preferences
+    // Detect if user prefers dark mode from system
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    // Load saved preferences, default to 'light' to avoid dark mode issues on mobile
     const savedTheme = localStorage.getItem('theme') || 'light';
     const savedFontSize = localStorage.getItem('fontSize') || 'normal';
     const savedHighContrast = localStorage.getItem('highContrast') === 'true';
-    
+
     setTheme(savedTheme);
     setFontSize(savedFontSize);
     setHighContrast(savedHighContrast);
-    
+
     applyTheme(savedTheme, savedFontSize, savedHighContrast);
   }, []);
 
   const applyTheme = (newTheme, newFontSize, newHighContrast) => {
     const root = document.documentElement;
     const body = document.body;
-    
+
     // Apply theme to both html and body
     if (newTheme === 'dark') {
       root.classList.add('dark');
@@ -42,7 +45,7 @@ export const ThemeProvider = ({ children }) => {
       body.classList.remove('dark');
       document.getElementById('root')?.classList.remove('dark');
     }
-    
+
     // Apply font size
     root.classList.remove('text-small', 'text-large');
     if (newFontSize === 'small') {
@@ -50,7 +53,7 @@ export const ThemeProvider = ({ children }) => {
     } else if (newFontSize === 'large') {
       root.classList.add('text-large');
     }
-    
+
     // Apply high contrast
     if (newHighContrast) {
       root.classList.add('high-contrast');

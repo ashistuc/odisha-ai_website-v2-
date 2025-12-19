@@ -376,8 +376,16 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                         </button>
                                         <button
                                             onClick={() => {
-                                                // Open PDF popup on top of the current dialog (don't close parent)
-                                                setPdfPopup({ isOpen: true, url: resource.pdfFile, title: resource.useCase });
+                                                // Check if mobile device
+                                                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+                                                if (isMobile) {
+                                                    // On mobile, open PDF in new tab to avoid iframe issues
+                                                    window.open(`${process.env.PUBLIC_URL || ''}${resource.pdfFile}`, '_blank', 'noopener,noreferrer');
+                                                } else {
+                                                    // On desktop, open PDF popup
+                                                    setPdfPopup({ isOpen: true, url: resource.pdfFile, title: resource.useCase });
+                                                }
                                             }}
                                             className="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
                                         >

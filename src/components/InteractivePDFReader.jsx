@@ -203,7 +203,10 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
     if (!isOpen) return;
 
     const handleKeyDown = (event) => {
-      if (event.key === 'ArrowLeft') {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        handleClose();
+      } else if (event.key === 'ArrowLeft') {
         event.preventDefault();
         handlePrev();
       } else if (event.key === 'ArrowRight') {
@@ -259,29 +262,30 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
 
   return (
     <div
-      className="fixed inset-0 z-[1000] bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-6"
+      className="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-sm flex items-center justify-center p-2 sm:p-6 overflow-y-auto"
       onClick={handleClose}
     >
       <div
-        className="relative w-full max-w-6xl max-h-[90vh] bg-slate-900/70 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+        className="relative w-full max-w-6xl max-h-[95vh] sm:max-h-[90vh] bg-slate-900/70 border border-white/10 rounded-xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col my-auto"
         onClick={(event) => event.stopPropagation()}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b border-white/10 bg-slate-900/80 text-white flex-shrink-0">
+        <div className="flex items-center justify-between px-3 sm:px-6 py-3 sm:py-4 border-b border-white/10 bg-slate-900/80 text-white flex-shrink-0">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-orange-300">Official Document</p>
-            <h2 className="text-xl font-semibold">{title}</h2>
+            <p className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-orange-300">Official Document</p>
+            <h2 className="text-base sm:text-xl font-semibold">{title}</h2>
           </div>
-          <div className="flex items-center space-x-3">
-            <span className="text-sm text-white/70">
+          <div className="flex items-center space-x-2 sm:space-x-3">
+            <span className="text-xs sm:text-sm text-white/70">
               {totalPages > 0 ? `Page ${displayPage} / ${totalPages}` : 'Preparing document…'}
             </span>
             <Button
               variant="ghost"
               size="icon"
-              className="text-white hover:text-orange-300 hover:bg-white/10"
+              className="w-8 h-8 sm:w-10 sm:h-10 text-white hover:text-orange-300 hover:bg-white/10 rounded-full"
               onClick={handleClose}
+              aria-label="Close PDF Reader"
             >
-              <X className="w-5 h-5" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </Button>
           </div>
         </div>
@@ -336,7 +340,7 @@ const InteractivePDFReader = ({ isOpen, onClose, pdfUrl, title = 'Odisha AI Poli
           )}
         </div>
 
-        <div className="px-6 py-4 border-t border-white/10 bg-slate-900/85 flex flex-wrap items-center justify-between gap-4 flex-shrink-0">
+        <div className="px-3 sm:px-6 py-3 sm:py-4 border-t border-white/10 bg-slate-900/85 flex flex-wrap items-center justify-between gap-2 sm:gap-4 flex-shrink-0">
           <div className="flex w-full md:w-auto items-center justify-center md:justify-start gap-3">
             <Button
               onClick={(event) => {

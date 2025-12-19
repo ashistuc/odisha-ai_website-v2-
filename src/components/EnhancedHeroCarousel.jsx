@@ -44,7 +44,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative w-full h-[82vh] md:h-[90vh] overflow-hidden">
+    <div className="relative w-full min-h-screen md:h-[90vh] overflow-hidden">
       {/* Slide Background */}
       <div className="absolute inset-0 transition-opacity duration-1000">
         {slide.type === 'video' ? (
@@ -69,18 +69,18 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 h-[82vh] md:h-[90vh] flex items-center">
+      <div className="relative z-10 min-h-screen md:h-[90vh] flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-3xl animate-in fade-in slide-in-from-left duration-1000">
             {/* Event Badge - Animated */}
             {/* Government Logos - Updated with Images */}
-            <div className="flex items-center flex-wrap gap-4 mb-6">
+            <div className="flex items-center flex-wrap gap-4 mb-3">
 
               <div className="p-2 rounded-lg animate-in fade-in duration-1000 delay-100">
                 <img
                   src="/logo/Odisha_Ai_Mission.png"
                   alt="Odisha AI Mission"
-                  className="h-[250px] w-[250px] sm:h-[150px] sm:w-[150px] md:h-[200px] md:w-[200px]  object-contain"
+                  className="h-[150px] w-[150px] sm:h-[150px] sm:w-[150px] md:h-[200px] md:w-[200px] lg:h-[250px] lg:w-[250px] object-contain"
                 />
               </div>
             </div>
@@ -89,17 +89,17 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
 
 
             {/* Title - Animated */}
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight text-left animate-in fade-in slide-in-from-left duration-1000">
+            <h1 className="text-3xl lg:text-7xl md:text-5xl font-bold text-white mb-4 leading-tight text-left animate-in fade-in slide-in-from-left duration-1000">
               {isOdia && slide.titleOd ? slide.titleOd : slide.title}
             </h1>
 
             {/* Subtitle - Animated */}
-            <h2 className="text-2xl md:text-3xl text-orange-400 font-semibold mb-4 text-left animate-in fade-in slide-in-from-left duration-1000 delay-200">
+            <h2 className="text-md md:text-4xl text-orange-400 font-semibold mb-2 text-left animate-in fade-in slide-in-from-left duration-1000 delay-200 ">
               {slide.subtitle}
             </h2>
 
             {/* Description - Animated */}
-            <p className="text-xl text-gray-200 mb-8 leading-relaxed text-left max-w-2xl animate-in fade-in slide-in-from-left duration-1000 delay-300">
+            <p className="text-md md:text-lg lg:text-2xl text-gray-200 mb-4 leading-relaxed text-left max-w-2xl animate-in fade-in slide-in-from-left duration-1000 delay-300 line-height-1">
               {isOdia && slide.descriptionOd ? slide.descriptionOd : slide.description}
             </p>
 
