@@ -99,7 +99,7 @@ const EnhancedHeroCarousel = ({ slides, onReadPolicy }) => {
             </h2>
 
             {/* Description - Animated */}
-            <p className="text-md md:text-lg lg:text-2xl text-gray-200 mb-4 leading-relaxed text-left max-w-2xl animate-in fade-in slide-in-from-left duration-1000 delay-300 line-height-1">
+            <p className="text-xl text-gray-200 mb-8 leading-relaxed text-left max-w-2xl animate-in fade-in slide-in-from-left duration-1000 delay-300">
               {isOdia && slide.descriptionOd ? slide.descriptionOd : slide.description}
             </p>
 
