@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Logo from './Logo';
+import Logo from './layout/Logo';
 
 const IntroQuotesSequence = ({ onComplete }) => {
   const [step, setStep] = useState(0);

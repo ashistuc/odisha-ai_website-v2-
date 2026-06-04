@@ -106,7 +106,7 @@ const Header = () => {
                 className="flex items-center space-x-3 group border-r border-gray-200 pr-6"
               >
                 <img
-                  src="/logo/odisha-govt.svg"
+                  src="/odisha-ai_website-v2-/logo/odisha-govt.svg"
                   alt="Government of Odisha"
                   className="w-[200px] object-contain"
                 />
@@ -116,17 +116,17 @@ const Header = () => {
                 className="flex items-center space-x-3 group dark:border-gray-700 "
               >
                 <img
-                  src="/logo/1666094039681.jpg"
+                  src="/odisha-ai_website-v2-/logo/1666094039681.jpg"
                   alt="Government of Odisha"
                   className="w-[100px] object-contain"
                 />
               </Link>
               {/* Partner Logos */}
-              <div className=" xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
+              <div className="hidden xl:flex items-center space-x-6 pl-6 ml-4 border-l border-gray-200 dark:border-gray-700">
                 {/* Odisha Govt Logo 
                 <div className="flex flex-col items-center space-y-1">
                   <img
-                    src="/logo/Odisha_Ai_Mission.png"
+                    src="/odisha-ai_website-v2-/logo/Odisha_Ai_Mission.png"
                     alt="Odisha AI Mission Logo"
                     className="w-[100px] object-contain group-hover:scale-110 transition-transform duration-300"
                   />
@@ -135,7 +135,7 @@ const Header = () => {
                 {/* E&IT Dept / OCAC Logo */}
                 <div className="flex flex-col items-center space-y-1">
                   <img
-                    src="/logo/ocac-logo.png"
+                    src="/odisha-ai_website-v2-/logo/ocac-logo.png"
                     alt="E&IT Department, OCAC"
                     className="h-10 w-auto object-contain"
                   />
@@ -160,7 +160,7 @@ const Header = () => {
                 {/* CM Photo - Extends from bottom */}
                 <div className="relative">
                   <img
-                    src="/images/cm-img.png"
+                    src="/odisha-ai_website-v2-/images/cm-img.png"
                     alt="Shri Mohan Charan Majhi - Hon'ble Chief Minister"
                     className="h-[90px] w-auto object-contain object-bottom"
                   />

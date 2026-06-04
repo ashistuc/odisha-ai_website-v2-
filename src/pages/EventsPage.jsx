@@ -2,8 +2,8 @@ import React from 'react';
 import { Calendar } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Badge } from '../components/ui/badge';
-import EventGallery from '../components/EventGallery';
-import { eventGallery } from '../mock';
+import EventGallery from '../components/sections/EventGallery';
+import { eventGallery } from '../data/mock';
 
 const EventsPage = () => {
     const { isOdia } = useLanguage();

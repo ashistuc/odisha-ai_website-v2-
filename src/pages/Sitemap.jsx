@@ -6,7 +6,7 @@ import {
     GraduationCap, Database, BarChart, Newspaper
 } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import InteractivePDFReader from '../components/InteractivePDFReader';
+import InteractivePDFReader from '../components/sections/InteractivePDFReader';
 
 const Sitemap = () => {
     const { isOdia } = useLanguage();

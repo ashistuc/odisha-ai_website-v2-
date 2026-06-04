@@ -4,7 +4,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Badge } from '../components/ui/badge';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { actsNotifications } from '../mock';
+import { actsNotifications } from '../data/mock';
 
 const PolicyActsPage = () => {
     const { isOdia } = useLanguage();

@@ -37,6 +37,15 @@ export const LanguageProvider = ({ children }) => {
         localStorage.setItem('language', lang);
     };
 
+    useEffect(() => {
+        document.documentElement.lang = language === 'od' ? 'or' : 'en';
+        if (language === 'od') {
+            document.documentElement.classList.add('lang-odia');
+        } else {
+            document.documentElement.classList.remove('lang-odia');
+        }
+    }, [language]);
+
     return (
         <LanguageContext.Provider
             value={{

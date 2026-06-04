@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
+import './assets/styles/App.css';
 import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 import Home from './pages/Home';
 import AboutMission from './pages/AboutMission';
 import StrategicPillarsPage from './pages/StrategicPillarsPage';
@@ -17,10 +17,10 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfUse from './pages/TermsOfUse';
 import Disclaimer from './pages/Disclaimer';
 import Sitemap from './pages/Sitemap';
-import LaunchCountdown from './components/LaunchCountdown';
-import { countdownConfig } from './mock';
+import LaunchCountdown from './components/layout/LaunchCountdown';
+import { countdownConfig } from './data/mock';
 
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 // Component to handle countdown redirect
 const CountdownRedirect = ({ showCountdown, children }) => {

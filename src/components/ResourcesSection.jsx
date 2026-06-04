@@ -122,12 +122,12 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
     };
 
     const learningResources = [
-        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Odisha for AI is a self-learning online program designed to raise public awareness about Artificial Intelligence.", logo: "/logo/odisha-logo.png" },
-        { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/logo/India_AI_logo.png" },
-        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: "/logo/deeplearning.png" },
-        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: "/logo/elementsofai.png" },
-        { title: "Google AI", url: "https://grow.google/ai/", description: "Learn to use AI to make things faster and smarter.", logo: "/logo/Google-AI-Logo.png" },
-        { title: "IndiaAI Learning", url: "https://indiaai.gov.in/learning", description: "Comprehensive learning resources from IndiaAI.", logo: "/logo/India_AI_logo.png" },
+        { title: "Odisha For AI Portal", url: "https://ai.odisha.gov.in/", description: "Odisha for AI is a self-learning online program designed to raise public awareness about Artificial Intelligence.", logo: "/odisha-ai_website-v2-/logo/odisha-logo.png" },
+        { title: "AI For All", url: "https://ai-for-all.in/", description: "Self-learning programme for everyone in India.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
+        { title: "AI for Everyone", url: "https://www.deeplearning.ai/courses/ai-for-everyone/", description: "Introductory course by deeplearning.ai to understand AI.", logo: "/odisha-ai_website-v2-/logo/deeplearning.png" },
+        { title: "Elements of AI", url: "https://www.elementsofai.com/", description: "Free online course to demystify AI.", logo: "/odisha-ai_website-v2-/logo/elementsofai.png" },
+        { title: "Google AI", url: "https://grow.google/ai/", description: "Learn to use AI to make things faster and smarter.", logo: "/odisha-ai_website-v2-/logo/Google-AI-Logo.png" },
+        { title: "IndiaAI Learning", url: "https://indiaai.gov.in/learning", description: "Comprehensive learning resources from IndiaAI.", logo: "/odisha-ai_website-v2-/logo/India_AI_logo.png" },
     ];
 
     const datasetResources = [
@@ -183,7 +183,7 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
             id: 'policy',
             title: isOdia ? 'ଓଡ଼ିଶା AI ନୀତି' : 'Odisha AI Policy',
             icon: FileText,
-            description: isOdia ? 'ରାଜ୍ୟର AI ଦୃଷ୍ଟିକୋଣ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ ଜାଣନ୍ତୁ।' : 'Explore the comprehensive AI policy framework and guidelines for the state.',
+            description: isOdia ? 'ରାଜ୍ୟର AI ଦୃଷ୍ଟିକୋଣ ଏବଂ ନିର୍ଦ୍ଦେଶାବଳୀ ଜାଣନ୍ତୁ।' : 'Explore the comprehensive AI policy framework and     s for the state.',
             color: 'from-orange-500 to-red-600',
             delay: '0'
         },
@@ -376,16 +376,8 @@ const ResourcesSection = ({ aiNews, limit, onOpenPolicyPDF }) => {
                                         </button>
                                         <button
                                             onClick={() => {
-                                                // Check if mobile device
-                                                const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-
-                                                if (isMobile) {
-                                                    // On mobile, open PDF in new tab to avoid iframe issues
-                                                    window.open(`${process.env.PUBLIC_URL || ''}${resource.pdfFile}`, '_blank', 'noopener,noreferrer');
-                                                } else {
-                                                    // On desktop, open PDF popup
-                                                    setPdfPopup({ isOpen: true, url: resource.pdfFile, title: resource.useCase });
-                                                }
+                                                // Open PDF popup on top of the current dialog (don't close parent)
+                                                setPdfPopup({ isOpen: true, url: resource.pdfFile, title: resource.useCase });
                                             }}
                                             className="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-orange-50 text-gray-700 hover:text-orange-700 transition-colors group/link"
                                         >

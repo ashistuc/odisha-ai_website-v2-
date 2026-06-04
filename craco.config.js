@@ -35,6 +35,11 @@ const webpackConfig = {
       '@': path.resolve(__dirname, 'src'),
     },
     configure: (webpackConfig) => {
+      // Disable code splitting to consolidate JS and CSS files
+      if (webpackConfig.optimization) {
+        webpackConfig.optimization.splitChunks = false;
+        webpackConfig.optimization.runtimeChunk = false;
+      }
 
       // Disable hot reload completely if environment variable is set
       if (config.disableHotReload) {

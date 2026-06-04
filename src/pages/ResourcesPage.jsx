@@ -2,8 +2,8 @@ import React from 'react';
 import { Badge } from '../components/ui/badge';
 import { BookOpen } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
-import ResourcesSection from '../components/ResourcesSection';
-import { aiNews } from '../mock';
+import ResourcesSection from '../components/sections/ResourcesSection';
+import { aiNews } from '../data/mock';
 
 const ResourcesPage = () => {
     const { isOdia } = useLanguage();
