@@ -1,0 +1,74 @@
+﻿
+> frontend@0.1.0 start
+> craco start
+
+[dotenv@17.2.4] injecting env (5) from .env -- tip: ΓÜÖ∩╕Å  load multiple .env files with { path: ['.env.local', '.env'] }
+node.exe : node:internal/modu
+les/cjs/loader:1421
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: (node:in  
+  ternal/modules/cjs/loade   
+ r:1421:String) [], Remot    
+eException
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+  const err = new 
+Error(message);
+              ^
+
+Error: Cannot find module 
+'react-scripts\config\env.js'
+Require stack:
+- D:\TUC\odisha-ai_website-v2
+-\node_modules\@craco\craco\l
+ib\cra.js
+- D:\TUC\odisha-ai_website-v2
+-\node_modules\@craco\craco\s
+cripts\start.js
+    at 
+Module._resolveFilename (node
+:internal/modules/cjs/loader:
+1421:15)
+    at require.resolve (node:
+internal/modules/helpers:163:
+19)
+    at 
+resolveConfigFilePathInner (D
+:\TUC\odisha-ai_website-v2-\n
+ode_modules\@craco\craco\lib\
+cra.js:22:20)
+    at resolveConfigFilePath 
+(D:\TUC\odisha-ai_website-v2-
+\node_modules\@craco\craco\li
+b\cra.js:13:17)
+    at getCraPaths (D:\TUC\od
+isha-ai_website-v2-\node_modu
+les\@craco\craco\lib\cra.js:4
+5:37)
+    at D:\TUC\odisha-ai_websi
+te-v2-\node_modules\@craco\cr
+aco\scripts\start.js:22:21
+    at process.processTicksAn
+dRejections (node:internal/pr
+ocess/task_queues:103:5) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'D:\\TUC\\odisha-ai_websi
+te-v2-\\node_modules\\@craco\
+\craco\\lib\\cra.js',
+    'D:\\TUC\\odisha-ai_websi
+te-v2-\\node_modules\\@craco\
+\craco\\scripts\\start.js'
+  ]
+}
+
+Node.js v24.13.0
